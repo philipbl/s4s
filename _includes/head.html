@@ -1,7 +1,7 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <!-- #BeginEditable "doctitle" -->
-<title>Air Quality Science</title>
+<title>Air Quality Science{% if page.title %} :: {{ page.title }}{% endif %}</title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <style type="text/css">
     .auto-style2 {
@@ -39,7 +39,7 @@
 
 </style>
 <!-- #EndEditable -->
-<link href="styles/style2.css" media="screen" rel="stylesheet" title="CSS" type="text/css" />
+<link href="{% link styles/style2.css %}" media="screen" rel="stylesheet" title="CSS" type="text/css" />
 <style type="text/css">
     .auto-style1 {
         text-decoration: underline;
