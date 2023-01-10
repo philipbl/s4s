@@ -142,3 +142,44 @@ a:hover {
 .style_italic {
 	font-style: italic;
 }
+
+.ms-color2-main {
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	border-bottom: 1.5pt solid black;
+	background-color: silver;
+}
+
+.ms-color2-tl {
+	font-weight: bold;
+	color: white;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	border-bottom: 1.5pt solid black;
+	background-color: maroon;
+}
+
+.ms-color2-left {
+	font-weight: bold;
+	color: black;
+	border-style: none;
+	background-color: #FFFFEF;
+}
+
+.ms-color2-top {
+	font-weight: bold;
+	color: white;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	border-bottom: 1.5pt solid black;
+	background-color: maroon;
+}
+
+.ms-color2-even {
+	color: black;
+	border-style: none;
+	background-color: #FFFFEF;
+}
