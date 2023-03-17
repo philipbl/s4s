@@ -15,7 +15,8 @@ body {
 #masthead {
 	text-align: right;
 	width: 100%;
-	background-color: #c5d5e5;
+	background: #c5d5e5;
+	background: linear-gradient(90deg, rgba(255,255,255,1) 9%, rgba(197,213,229,1) 31%);
 }
 #navigation {
 	background-color: #ca7;
