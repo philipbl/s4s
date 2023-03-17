@@ -19,10 +19,7 @@
 	border: 0;
 	clear: both;
 }
-#column_l {
-	position: relative;
-	float: left;
-}
+
 #column_r {
 	float: left;
 }
@@ -40,7 +37,7 @@ h1 {
 }
 
 h2 {
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .schedule-container {
@@ -70,4 +67,16 @@ h2 {
 .schedule-talk-item {
 	margin-left: 20px;
 	margin-bottom: 10px;
+}
+
+.poster-author {
+	width: 200px;
+}
+
+.poster-item {
+	padding: 5px 0;
+}
+
+.poster-item:nth-of-type(odd) {
+    background: rgb(207,207,196);
 }

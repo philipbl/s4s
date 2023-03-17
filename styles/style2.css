@@ -31,6 +31,7 @@ body {
 #column_l {
 	position: relative;
 	margin: 0 350px 0 0;
+	margin-bottom: 20px;
 	padding: 0 2%;
 	background-color: #fff;
 	float: none;

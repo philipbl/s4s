@@ -29,4 +29,12 @@ title: Schedule
     </div>
 
     <h2>Conference Posters</h2>
+    <div class="container poster-container">
+        {% for poster in site.data.posters %}
+        <div class="row poster-item">
+            <div class="col poster-title">{{ poster.title }}</div>
+            <div class="poster-author">{{ poster.author }}</div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
