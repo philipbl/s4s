@@ -6,9 +6,37 @@ title: Schedule
 <!-- Begin Left Column -->
 <div id="column_l">
     <!-- #BeginEditable "content" -->
-    <h2>Air Quality: Science for Solutions 2023 Conference Schedule</h2>
+    <h2>Conference Schedule</h2>
 
-    <p>TBD</p>
+    <div class="container schedule-container">
+        <!-- <hr> -->
+
+        {% for item in site.data.schedule %}
+        <div class="row schedule-item" style="background: {{ item.color }};">
+            <div class="schedule-time">{{ item.start_time }}</div>
+            <div class="col schedule-header">
+                {{ item.name }}
+                {% if item.chair %}({{ item.chair }}){% endif %}
+            </div>
+            <div class="schedule-speaker"></div>
+        </div>
+        {% if item.talks %}
+        {% for talk in item.talks %}
+        <div class="row" style="background: {{ item.color }};">
+            <div class="schedule-time"></div>
+            <div class="col schedule-talk-item">{{ talk.title }}</div>
+            <div class="schedule-speaker">{{ talk.author }}</div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!-- <hr> -->
+        {% endfor %}
+
+    </div>
+
+    <h2>Conference Posters</h2>
+
+
 
     <!-- #EndEditable -->
 </div>
