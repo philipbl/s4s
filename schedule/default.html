@@ -32,7 +32,13 @@ title: Schedule
     <div class="container poster-container">
         {% for poster in site.data.posters %}
         <div class="row poster-item">
+            {% if poster.link %}
+            <div class="col poster-title"><a href="{{ poster.link }}" target="_blank" rel="noopener noreferrer">{{
+                    poster.title }}</a></div>
+            {% else %}
             <div class="col poster-title">{{ poster.title }}</div>
+            {% endif %}
+
             <div class="poster-author">{{ poster.author }}</div>
         </div>
         {% endfor %}
