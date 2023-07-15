@@ -24,7 +24,12 @@ description: >-
   Utah conference of air quality.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "aq.byu.edu" # the base hostname & protocol for your site, e.g. http://example.com
+permalink: pretty
 
+collections:
+  pages:
+    output: true
+    permalink: /:name
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
