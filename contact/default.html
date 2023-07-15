@@ -8,20 +8,17 @@ title: Contact
     <h2>Contact Us</h2>
     <h3>The Air Quality: Science for Solutions Organizing Committee:</h3>
 
-    <p>Rachel Edie (Overall Coordinator), Utah Division of Air Quality</p>
-    <p><a href="mailto:jhansen@chem.byu.edu">Jaron Hansen</a>, Brigham Young University</p>
-    <p><a href="mailto:kelly@eng.utah.edu">Kerry Kelly</a>, University of Utah</p>
-    <p><a href="mailto:randy.martin@usu.edu">Randy Martin</a>, Utah State University (Logan)</p>
-    <p><a href="mailto:seth.lyman@usu.edu">Seth Lyman</a>, Utah State University (Uintah Basin)</p>
-    <p><a href="mailto:jsohl@weber.edu">John Sohl</a>, Weber State University</p>
-    <p><a href="mailto:demetriospagonis@weber.edu">Demetrios Pagonis</a>, Weber State University</p>
-    <p><a href="mailto:lundrigan@byu.edu">Philip Lundrigan</a>, Brigham Young University (Webmaster)</p>
+    {% for member in site.data.committee.members %}
+    <p>
+        {% if member.email %}<a href="mailto:{{ member.email }}">{% endif %}{{ member.name }}{% if member.email %}</a>{%
+        endif %}, {{ member.affiliation }}
+    </p>
+    {% endfor %}
 
     <h3>Past Committee Members:</h3>
-    <p>Judy Ou, University of Utah, Salt Lake City, UT</p>
-    <p>Cate Youatt, Utah Division of Air Quality, Salt Lake City, UT</p>
-    <p>Lexie Wilson, Utah Division of Air Quality, Salt Lake City, UT</p>
-    <p>Chris Pennell, Utah Division of Air Quality, Salt Lake City, UT</p>
+    {% for member in site.data.committee.past_members %}
+    <p>{{ member.name }}, {{ member.affiliation }}</p>
+    {% endfor %}
 
     <p>&nbsp;</p>
     <!-- #EndEditable -->
