@@ -6,12 +6,21 @@
 </head>
 
 <body>
-    <div id="container">
-        {% include masthead.html %}
-        {% include nav.html %}
-        <div id="page_content">
-            {{ content }}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% include masthead.html %}
+            </div>
         </div>
+
+        <div class="row">
+            <div class="col">
+                {% include nav.html %}
+            </div>
+        </div>
+
+        {{ content }}
+
         {% include footer.html %}
     </div>
 </body>
