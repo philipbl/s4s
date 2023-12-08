@@ -18,19 +18,21 @@ members:
     email: seth.lyman@usu.edu
     affiliation: Utah State University (Uintah Basin)
 
-  - name: John Sohl,
-    email: jsohl@weber.edu
-    affiliation: Weber State University
-
   - name: Demetrios Pagonis
     email: demetriospagonis@weber.edu
     affiliation: Weber State University
+
+  - name: Kathy Sward
+    affiliation: University of Utah
 
   - name: Philip Lundrigan
     email: lundrigan@byu.edu
     affiliation: Brigham Young University (Webmaster)
 
 past_members:
+  - name: John Sohl
+    affiliation: Weber State University
+
   - name: Judy Ou
     affiliation: University of Utah, Salt Lake City, UT
 
