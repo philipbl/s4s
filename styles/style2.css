@@ -1,4 +1,5 @@
 ﻿@import url(layout.css);
+
 body {
 	color: #000;
 	font-family: Arial, Helvetica, sans-serif;
@@ -6,22 +7,26 @@ body {
 	font-style: normal;
 	background-color: #fff;
 }
+
 #container {
 	width: 100%;
 	margin: 0;
 	background-color: #fff;
 	position: relative;
 }
+
 #masthead {
 	text-align: right;
 	width: 100%;
 	background: #c5d5e5;
-	background: linear-gradient(90deg, rgba(255,255,255,1) 9%, rgba(197,213,229,1) 31%);
+	background: linear-gradient(90deg, rgba(255, 255, 255, 1) 9%, rgba(197, 213, 229, 1) 31%);
 }
+
 #navigation {
 	background-color: #ca7;
 	overflow: hidden;
 }
+
 #page_content {
 	position: relative;
 	width: 100%;
@@ -29,6 +34,7 @@ body {
 	border-top-style: solid;
 	border-top-color: #CCAA77;
 }
+
 #column_l {
 	position: relative;
 	margin: 0 350px 0 0;
@@ -37,6 +43,7 @@ body {
 	background-color: #fff;
 	float: none;
 }
+
 #column_r {
 	float: none;
 	width: 330px;
@@ -47,23 +54,42 @@ body {
 	right: 0px;
 	top: 0px;
 }
+
 #footer {
 	background-color: #dfcfbf;
 	padding-bottom: 5px;
 }
+
 /* Styles for Masthead */
 #masthead img {
 	float: left;
-	margin: 0;
+	margin: 5px;
 	padding: 0;
 }
-#masthead p {
+
+.masthead .conference_location p {
+	font-size: 14px;
+}
+
+.masthead p {
 	font-size: small;
 	text-align: right;
 	color: #000;
 	margin: 10px 10px 10px 0;
 	padding: 0;
 }
+
+.masthead h3 {
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+	margin: 30px 10px 5px 0;
+}
+
+.masthead .important_dates p {
+	margin: 0 10px 0 0;
+}
+
 /* Styles for Navigation */
 #navigation ul {
 	list-style-type: none;
@@ -71,9 +97,11 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
 #navigation li {
 	float: left;
 }
+
 #navigation a {
 	color: #000;
 	text-decoration: none;
@@ -82,37 +110,46 @@ body {
 	border: 1px solid #ca7;
 	background-color: #dc8;
 }
+
 #navigation a:hover {
 	color: #000;
 	text-decoration: none;
 	border: 1px solid #ed9;
 	background-color: #ed9;
 }
+
 /* Styles for Content */
 h1 {
 	font-size: 2em;
 	color: #393939;
+	margin: 20px 0 20px 0;
 }
+
 h2 {
 	font-size: 1.75em;
 	color: #469;
 }
+
 h3 {
 	font-size: 1.5em;
 	color: #469;
 }
+
 h4 {
 	font-size: 1.25em;
 	color: #469;
 }
+
 h5 {
 	font-size: 0.75em;
 	color: #469;
 }
+
 h6 {
 	font-size: 0.5em;
 	color: #469;
 }
+
 /* Styles for Footer */
 #footer p {
 	font-size: x-small;
@@ -121,26 +158,32 @@ h6 {
 	margin: 10px;
 	padding: 1px;
 }
+
 #footer a {
 	color: #393939;
 	text-decoration: underline;
 }
+
 #footer a:hover {
 	color: #000;
 	text-decoration: none;
 }
+
 /* Styles for Links */
 a {
 	color: #469;
 	text-decoration: underline;
 }
+
 a:hover {
 	color: #000;
 	text-decoration: underline;
 }
+
 .style_bold {
 	font-weight: bold;
 }
+
 .style_italic {
 	font-style: italic;
 }

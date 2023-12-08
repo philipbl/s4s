@@ -2,13 +2,13 @@
     <a href="{% link index.html %}" target="_self">
         <img alt="Air Quality: Science for Solutions" height="135" src="{% link photo_gallery/AirQuality-ScienceForSolutionsLogo.png %}" width="150" class="auto-style4" /></a>
 
-
-    <p>8th Annual conference: <b>{{ site.data.dates.conference }}</b> at <b>{{ site.data.dates.conference_location }}</b></p>
+    <div class="conference_location">
+        <p>8th Annual conference: <b>{{ site.data.dates.conference }}</b> at <b>{{ site.data.dates.conference_location }}</b></p>
+    </div>
 
     <h3>Important Dates</h3>
     <div class="important_dates">
         <p><a href="{% link _pages/registration.html %}">Registration</a> deadline: {{ site.data.dates.registration }}</p>
         <p><a href="{% link _pages/registration.html %}">Abstract</a> deadline: {{ site.data.dates.abstract }}</p>
-        <p>Conference <a href="{% link _pages/schedule.html %}">Schedule</a></p>
     </div>
 </div>
