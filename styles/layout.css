@@ -3,15 +3,18 @@
 	padding: 0;
 	border: 0;
 }
+
 #container {
 	padding: 0;
 }
+
 #masthead {
 	width: auto;
 	margin: 0;
 	padding: 0;
 	overflow: auto;
 }
+
 #navigation {
 	width: auto;
 	margin: 0;
@@ -23,13 +26,15 @@
 #column_r {
 	float: left;
 }
+
 #footer {
 	width: auto;
 	clear: both;
 	overflow: auto;
 }
+
 .float_right {
-	float:right;
+	float: right;
 }
 
 h1 {
@@ -40,13 +45,19 @@ h2 {
 	margin-top: 20px;
 }
 
+.caption {
+	font-size: 10px;
+	color: grey;
+	float: right;
+}
+
 .schedule-container {
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
 
 .schedule-time {
-    width: 80px;
+	width: 80px;
 	vertical-align: middle;
 }
 
@@ -78,5 +89,5 @@ h2 {
 }
 
 .poster-item:nth-of-type(odd) {
-    background: rgb(207,207,196);
+	background: rgb(207, 207, 196);
 }
