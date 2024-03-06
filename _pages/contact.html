@@ -2,21 +2,29 @@
 layout: default
 title: Contact
 ---
-<div id="column_l">
-    <h2>Organizing Committee</h2>
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <h1>Organizing Committee</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% for member in site.data.committee.members %}
+            <p>
+                {% if member.email %}<a href="mailto:{{ member.email }}">{% endif %}{{ member.name }}{% if member.email %}</a>{%
+                endif %}, {{ member.affiliation }}
+            </p>
+            {% endfor %}
+        </div>
+    </div>
 
-    <h3>The Air Quality: Science for Solutions Organizing Committee:</h3>
-
-    {% for member in site.data.committee.members %}
-    <p>
-        {% if member.email %}<a href="mailto:{{ member.email }}">{% endif %}{{ member.name }}{% if member.email %}</a>{%
-        endif %}, {{ member.affiliation }}
-    </p>
-    {% endfor %}
-
-    <h3>Past Committee Members:</h3>
-    {% for member in site.data.committee.past_members %}
-    <p>{{ member.name }}, {{ member.affiliation }}</p>
-    {% endfor %}
-
+    <div class="row mt-5">
+        <div class="col">
+            <h3>Past Committee Members</h3>
+            {% for member in site.data.committee.past_members %}
+            <p>{{ member.name }}, {{ member.affiliation }}</p>
+            {% endfor %}
+        </div>
+    </div>
 </div>
