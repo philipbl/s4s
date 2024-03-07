@@ -1,0 +1,272 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AireQualityScience.registration.Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>Air Quality Registration</title>
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<style type="text/css">
+
+
+
+
+.auto-style3 {
+	margin-left: 40px;
+}
+.auto-style4 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: large;
+	background-color: #FFFF00;
+}
+</style>
+<meta content="Registration and abstract submission page for the Air Quality: Science for Solutions conference. " name="description" />
+<!-- #EndEditable -->
+<link href="../styles/style2.css" media="screen" rel="stylesheet" title="CSS" type="text/css" />
+<style type="text/css">
+.auto-style1 {
+	text-decoration: underline;
+}
+.auto-style2 {
+	text-align: left;
+}
+.auto-style3 {
+	font-size: large;
+}
+    .auto-style5 {
+        width: 128px;
+    }
+    .auto-style6 {
+        width: 754px;
+    }
+    .auto-style7 {
+        width: 133px;
+    }
+    .auto-style8 {
+        height: 26px;
+    }
+    .auto-style9 {
+        width: 128px;
+        height: 26px;
+    }
+.auto-style10 {
+	font-size: 2em;
+	color: #393939;
+}
+.auto-style11 {
+	font-size: large;
+}
+.auto-style12 {
+	width: 133px;
+	color: #FF0000;
+}
+.auto-style13 {
+	font-size: large;
+	color: #FF0000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="masthead">
+		<a href="../default.htm">
+		<img alt="Air Quality: Science for Solutions" height="135" src="../photo_gallery/AirQuality-ScienceForSolutionsLogo.png" width="150" /></a><p><span class="auto-style3">Due 
+		to the COVID-19 virus, the
+		<a href="../schedule/S4S_poster_REMOTE.pdf">conference virtual</a>&nbsp; June 
+		17 &amp; 18, 2020.</span></p>
+		<p><span class="auto-style3">4th 
+		Annual conference: Thursday, June 17 &amp; 18, 2020<br />
+		</span>
+		<a href="https://harbor.weber.edu/AirQualityScience/registration/AbstractSubmission.aspx"><span class="auto-style4">Abstract</span></a> 
+		Deadline for late breaking posters: June 1, 2020. <br />
+		Conference <a href="../schedule/REMOTE%202020%20Conference_Agenda.pdf">
+		Schedule</a> is 9:00 am to ~1pm<br />
+		</p>
+		<p>Online Via Zoom: Registered Participants will get an email 
+		invitation.</p>
+		<p>Download the <a href="../schedule/S4S_poster_REMOTE.pdf">Conference Flyer</a>.</p>
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<ul>
+			<li><a href="../default.htm">Home</a></li>
+			<li><a href="../schedule/default.html">Schedule</a></li>
+			<li><a href="../registration/default.aspx">Conference Registration</a></li>
+			<li><a href="../abstracts/default.html">Conference Abstracts</a></li>
+			<li><a href="PresenterGuidelines.html">Guidelines for Presenters</a></li>
+			<li><a href="../contact/default.html">Contact</a></li>
+			<li><a href="../faq/default.html">FAQ</a></li>
+		</ul>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Page Content -->
+	<div id="page_content">
+		<!-- Begin Left Column -->
+		<div id="column_l">
+            <form id="form1" runat="server">
+                <div>
+                    <h1>Registration</h1>
+			<p class="auto-style3">The conference is virtual this year. All 
+			registered attendees will receive an email the day before with links 
+			for Zoom meetings. The links will include the main meeting and a 
+			specific link for each poster. You MUST be registered to attend the 
+			meeting. </p>
+					<p class="auto-style3">Please refer to the
+			<a href="PresenterGuidelines.html">Guidelines for Presenters</a> as 
+			you prepare your poster or talk. </p>
+			<p>There are one or two steps involved to register for the Air Quality: 
+			Science for Solutions conference. The sequence is not important. </p>
+			<ol>
+				<li>Fill out the registration form below. (Note, it does not 
+				give a confirmation notice, but it really does work the instant 
+				you hit submit!)</li>
+				<li>
+				<a href="http://harbor.weber.edu/AirQualityScience/registration/AbstractSubmission.aspx">
+				Submit an abstract</a> for a late breaking poster to the review committee. </li>
+			</ol>
+			<h2>1. 
+			Registration (everyone does this step too, fill out the form 
+			below) </h2>
+					<p><span class="auto-style7"><span class="auto-style13">IMPORTANT NOTE: We are having problems 
+			with the auto-confirm function. Your abstracts and registrations 
+					really are 
+			being saved 95% of the time. We'll do our best to send you a personal confirmation 
+			message within 24 hours of submitting. If you don't hear back in a 
+			day, please contact the webmaster: </span> </span>
+			<a class="auto-style12" href="mailto:jsohl@weber.edu">
+					<span class="auto-style11">jsohl@weber.edu</span></a> </p>
+			
+            <table class="auto-style6">
+                        <tr>
+                            <td class="auto-style7">
+                                <b>First Name:</b>
+                            </td>
+                            <td colspan="2" class="auto-style5">
+                                <asp:TextBox ID="tbFirst_name" placeholder="Given Name" runat="server" Width="300px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style7">
+                                <b>Middle (optional):</b>
+                            </td>
+                            <td colspan="2" class="auto-style5">
+                                <asp:TextBox ID="tbMiddle_name" placeholder="Middle name or initial" runat="server" Width="300px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style7">
+                                <b>Last Name:</b>
+                            </td>
+                            <td colspan="2" class="auto-style5">
+                                <asp:TextBox ID="tbLast_name" placeholder="Family Name" runat="server" Width="300px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style7">
+                                <b>Title (optional):</b>
+                            </td>
+                            <td colspan="2" class="auto-style5">
+                                <asp:TextBox ID="tbTitle" runat="server" placeholder="Dr., Director, etc." Width="300px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style7">
+                                <b>Alliliation:</b>
+                            </td>
+                            <td colspan="2" class="auto-style5">
+                                <asp:TextBox ID="tbAffiliation" runat="server" placeholder="University, Agency, or Company" Width="300px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="auto-style7">
+                                <b>Work Address:</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style8">
+                                Address Line 1
+                            </td>
+                            <td colspan="2" class="auto-style9">
+                                <asp:TextBox ID="tbWorkAddress1" runat="server" placeholder="Street Address" Width="300px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Address Line 2
+                            </td>
+                            <td colspan="2" class="auto-style5">
+                                <asp:TextBox ID="tbWorkAddress2" runat="server" placeholder="Optional 2nd address line" Width="300px"></asp:TextBox>
+                            </td>
+                        </tr>
+                    <tr class="auto-style7">
+                        <td>
+                            <b>City </b><asp:TextBox ID="tbCity" runat="server"></asp:TextBox>
+                        </td>
+                        <td>
+                            <b>State </b><asp:TextBox ID="tbState" runat="server"></asp:TextBox>
+                        </td>
+                        <td>
+                            <b>Zip </b><asp:TextBox ID="tbZip" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="auto-style7">
+                                <b>Email:</b>
+                            </td>
+                            <td colspan="2" class="auto-style5">
+                                <asp:TextBox ID="tbEmail" placeholder="email address" runat="server" Width="300px"></asp:TextBox>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <asp:Button ID="bSubmit" runat="server" Text="Submit Info" OnClick="bSubmit_Click" />
+                        &nbsp;<span class="auto-style7"><span class="auto-style13">(NOTE: 
+							We will typically reply to you by email within 24 hours.) </span> </span>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </form>
+			<!-- #BeginEditable "content" -->
+			
+			<h2>2. Submit an Abstract. Only late poster presenters need to do 
+			this step, this will bring you to a new webpage:</h2>
+			<p><sub><span class="auto-style10">
+			<a href="https://harbor.weber.edu/AirQualityScience/registration/AbstractSubmission.aspx">Abstract submission page</a>. </span></sub>&nbsp;</p>
+			
+			<p>&nbsp;</p>
+&nbsp;<!-- #EndEditable --></div>
+		<!-- End Left Column -->
+		<!-- Begin Right Column -->
+		<div id="column_r">
+			<!-- #BeginEditable "sidebar" -->
+			<!-- #EndEditable --></div>
+		<!-- End Right Column --></div>
+	<!-- End Page Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p class="auto-style2">
+        <a href="../default.htm">Home</a> | 
+		<a href="../schedule/default.html">Schedule</a> |
+		<a href="../contact/default.html">Contact</a> |
+		<a href="../faq/default.html">FAQ</a> |
+		<a href="../information_links/default.html">Information Links</a> |
+		<a href="../photo_gallery/default.html">Photo Gallery</a> |
+		<a href="Default.aspx">R<span class="auto-style1">egistration</span></a> | 
+		<a href="AbstractSubmission.aspx">Abstracts</a> |
+		<a href="../site_map/default.html">Site Map</a></p>
+		<p>Copyright &copy; 2018 Weber State University. All Rights Reserved.</p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>
