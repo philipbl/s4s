@@ -2,103 +2,87 @@
 
 - name: Welcome
   start_time: 9:00 AM
-  chair: Rachel & Kerry
+  chair: Demetrios
   color: rgb(207,207,196)
 
 - name: Keynote
   start_time: 9:05 AM
   color: rgba(144, 169, 89, .3)
   talks:
-    - author: Dan Jaffe
-      title: "The Challenge of O3 and PM in the Western U.S: How low can we go?"
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200205944830
+    - author: Professor Lee D. Hansen
+      title: "Ethics, Science, Money and Politics: A Tale of Four Industries and Their Effects on the Environment"
 
-- name: "Session 1: Wildfire Emissions"
+- name: "Session 1: Remote Sensing and Meteorology"
   start_time: 9:45 AM
-  chair: Seth
+  chair: Jaron
   color: rgba(100, 148, 170, .3)
   talks:
-    - author: Lu Hu
-      title: "Wildfire volatile organic compounds (VOCs): implications for urban photochemistry"
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200196476396
+    - author: Niranjan Vescio
+      title: Results of a Remote Sensing Device (RSD) Survey of Motor Vehicle Emissions in Salt Lake County
 
-    - author: Demetrios Pagonis
-      title: "Constraints on Semi- and Intermediate-Volatility Organic Compounds in Utah and in Biomass Burning Plumes"
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200199433589
+    - author: Dr. John R. Lawson
+      title: The Snow Shadow of the Uinta Basin
 
 - name: Break
   start_time: 10:25 AM
   color: rgb(207,207,196)
 
-- name: "Session 2: Regional PM"
+- name: "Session 2: Dust Characteristics and Impacts"
   start_time: 10:45 AM
   color: rgba(233, 184, 114, .3)
-  chair: Demetrios
+  chair: Rachel
   talks:
-    - author: Derek Mallia
-      title: "Warm season PM2.5 trends along the Wasatch Front: A Lagrangian modeling perspective"
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200204794889
-
     - author: Randy Martin
-      title: Elemental Compositional Analysis from PM10 Filters from GSL Dust Events
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200198084971
+      title: Elemental Analysis of PM10 Filters from 2022 and 2023 GSL Dust Events
 
-    - author: Reuben Attah
-      title: Effects of Photochemical Aging and Interactions with Secondary Organic Aerosols on Cellular Toxicity of Combustion Particles
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200203059833
+    - author: Eric Vernon
+      title: Monitoring short-term visibility impacts at Bryce Canyon National Park for adaptive management of the Alton Federal Coal Lease Tract
+
+    - author: Kerry Kelly
+      title: Assessing the Oxidative Potential of Dust from Great Salt Lake
 
 - name: Lunch
   start_time: 11:45 AM
   color: rgb(207,207,196)
 
 - name: Posters
-  chair: Kathy and Jaron
+  chair:
   start_time: 12:15 PM
   color: rgb(207,207,196)
 
-- name: "Session 3: Emission Sources"
+- name: "Session 3: Ozone Precursors and Trends"
   chair: Kerry
   start_time: 1:45 PM
   color: rgba(166, 61, 64, .21)
   talks:
-    - author: Darrell Sonntag
-      title: Light-Duty Vehicle Emissions in Utah Valley
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200198015541
+    - author: Callum Flowerday
+      title: Study of Tropospheric Ozone Genesis in Utah, USA
 
-    - author: Daniel Mendoza
-      title: "Mobile Air Quality Monitoring Platform: The First Years of the eBus Project"
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200198646170
+    - author: Wade Permar (for Emily Cope)
+      title: Volatile Organic Compounds in Salt Lake City and Implications for 2024–2025 Summer Ozone Studies
 
-    - author: Seth Lyman
-      title: "Interannual Trends in Ozone-forming Pollutant Emissions in the Uinta Basin"
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200204422867
+    - author: Alex Guenther
+      title: Wasatch Front Biogenic Emission Inventory Improvements
 
 - name: Break
   start_time: 2:45 PM
   color: rgb(207,207,196)
 
-- name: "Session 4: Summertime Ozone in the Wasatch Front"
-  chair: Randy
+- name: "Session 4: Impacts of Wildfires on Outdoor and Indoor Air Quality"
+  chair: Kathy
   start_time: 3:05 PM
   color: rgba(144, 169, 89, .3)
   talks:
-    - author: Jessica Haskins
-      title: "Halogens & Local Air Quality: An Overview"
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200198602814
+    - author: Derek Mallia
+      title: Simulating the Impacts of Regional Wildfire Smoke on Ozone Using a Coupled Fire-Atmosphere-Chemistry Model
 
-    - author: Matthew Ninneman
-      title: Investigation of Ozone Formation Chemistry During the Salt Lake Regional Smoke, Ozone, and Aerosol Study (SAMOZA)
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200206266091
+    - author: Tristalee Mangin
+      title: Effect of Poor Outdoor Air Quality on Indoor Air Quality on the University of Utah Campus
 
-    - author: Nancy Daher
-      title: "Source Apportionment of Summertime Ozone in Utah's Salt Lake Valley: Source Contributions and Policy Implications"
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200197729326
-
-    - author: John Horel
-      title: Impacts of the Great Salt Lake on Summer Ozone Concentrations Along the Wasatch Front
-      link: https://byu.app.box.com/s/v2cm42e4i73s0l1fhbn1301zi6dt5gtv/file/1200195293754
+    - author: Darrell Sonntag
+      title: Swamp Coolers, Air Conditioners, Wildfire Smoke, and Infiltration of Particulate Matter and Ozone Pollution into Homes in Utah County
 
 - name: Poster awards & adjourn
   start_time: 4:25 PM
-  chair: Kathy & Jaron
+  chair: Demetrios & Randy
   color: rgb(207,207,196)

@@ -3,7 +3,7 @@ layout: default
 title: Schedule
 ---
 
-<div class="container">
+<!-- <div class="container">
     <div class="row text-center">
         <div class="col">
             <h1>Conference Program</h1>
@@ -14,43 +14,60 @@ title: Schedule
             <p>Coming soon...</p>
         </div>
     </div>
-</div>
+</div> -->
 
-<!-- <div class="container schedule-container">
-        {% for item in site.data.schedule %}
-        <div class="row schedule-item" style="background: {{ item.color }};">
-            <div class="schedule-time">{{ item.start_time }}</div>
-            <div class="col schedule-header">
-                {{ item.name }}
-                {% if item.chair %}({{ item.chair }}){% endif %}
-            </div>
-            <div class="schedule-speaker"></div>
+<div class="container schedule-container">
+    <div class="row text-center">
+        <div class="col">
+            <h1>Conference Program</h1>
         </div>
-        {% if item.talks %}
-        {% for talk in item.talks %}
-        <div class="row" style="background: {{ item.color }};">
-            <div class="schedule-time"></div>
-            <div class="col schedule-talk-item"><a href="{{ talk.link }}" target="_blank" rel="noopener noreferrer">{{
-                    talk.title }}</a></div>
-            <div class="schedule-speaker">{{ talk.author }}</div>
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endfor %}
     </div>
 
-    <h2>Conference Posters</h2>
-    <div class="container poster-container">
-        {% for poster in site.data.posters %}
-        <div class="row poster-item">
-            {% if poster.link %}
-            <div class="col poster-title"><a href="{{ poster.link }}" target="_blank" rel="noopener noreferrer">{{
-                    poster.title }}</a></div>
-            {% else %}
-            <div class="col poster-title">{{ poster.title }}</div>
-            {% endif %}
-
-            <div class="poster-author">{{ poster.author }}</div>
+    {% for item in site.data.schedule %}
+    <div class="row schedule-item" style="background: {{ item.color }};">
+        <div class="schedule-time">{{ item.start_time }}</div>
+        <div class="col schedule-header">
+            {{ item.name }}
+            {% if item.chair %}({{ item.chair }}){% endif %}
         </div>
-        {% endfor %}
-    </div> -->
+        <div class="schedule-speaker"></div>
+    </div>
+    {% if item.talks %}
+    {% for talk in item.talks %}
+    <div class="row" style="background: {{ item.color }};">
+        <div class="schedule-time"></div>
+        {% if talk.link %}
+        <div class="col schedule-talk-item"><a href="{{ talk.link }}" target="_blank" rel="noopener noreferrer">{{
+                talk.title }}</a></div>
+        {% else %}
+        <div class="col schedule-talk-item">{{ talk.title }}</div>
+        {% endif %}
+        <div class="schedule-speaker">{{ talk.author }}</div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+</div>
+
+<h2>Conference Posters</h2>
+<div class="container poster-container">
+
+    {% if site.data.posters.size == null %}
+    <div class="row">
+        Coming soon...
+    </div>
+    {% endif %}
+
+    {% for poster in site.data.posters %}
+    <div class="row poster-item">
+        {% if poster.link %}
+        <div class="col poster-title"><a href="{{ poster.link }}" target="_blank" rel="noopener noreferrer">{{
+                poster.title }}</a></div>
+        {% else %}
+        <div class="col poster-title">{{ poster.title }}</div>
+        {% endif %}
+
+        <div class="poster-author">{{ poster.author }}</div>
+    </div>
+    {% endfor %}
+</div>
