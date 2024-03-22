@@ -89,5 +89,5 @@ h2 {
 }
 
 .poster-item:nth-of-type(odd) {
-	background: rgb(207, 207, 196);
+	background: #dc8;
 }

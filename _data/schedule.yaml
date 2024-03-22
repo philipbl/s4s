@@ -3,7 +3,7 @@
 - name: Welcome
   start_time: 9:00 AM
   chair: Demetrios
-  color: rgb(207,207,196)
+  color: "#dc8"
 
 - name: Keynote
   start_time: 9:05 AM
@@ -25,7 +25,7 @@
 
 - name: Break
   start_time: 10:25 AM
-  color: rgb(207,207,196)
+  color: "#dc8"
 
 - name: "Session 2: Dust Characteristics and Impacts"
   start_time: 10:45 AM
@@ -43,12 +43,12 @@
 
 - name: Lunch
   start_time: 11:45 AM
-  color: rgb(207,207,196)
+  color: "#dc8"
 
 - name: Posters
   chair:
   start_time: 12:15 PM
-  color: rgb(207,207,196)
+  color: "#dc8"
 
 - name: "Session 3: Ozone Precursors and Trends"
   chair: Kerry
@@ -66,7 +66,7 @@
 
 - name: Break
   start_time: 2:45 PM
-  color: rgb(207,207,196)
+  color: "#dc8"
 
 - name: "Session 4: Impacts of Wildfires on Outdoor and Indoor Air Quality"
   chair: Randy
@@ -85,4 +85,4 @@
 - name: Poster awards & adjourn
   start_time: 4:25 PM
   chair: Demetrios & Randy
-  color: rgb(207,207,196)
+  color: "#dc8"
