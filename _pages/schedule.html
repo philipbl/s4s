@@ -20,8 +20,14 @@ title: Schedule
     <div class="row text-center">
         <div class="col">
             <h1>Conference Program</h1>
+
+            {% if site.data.posters.size == null %}
+            Coming soon...
+            {% endif %}
         </div>
     </div>
+
+
 
     {% for item in site.data.schedule %}
     <div class="row schedule-item" style="background: {{ item.color }};">
@@ -49,14 +55,10 @@ title: Schedule
     {% endfor %}
 </div>
 
+{% if site.data.posters.size != null %}
 <h2 class="mt-5 mb-3">Conference Posters</h2>
+{% endif %}
 <div class="container poster-container">
-
-    {% if site.data.posters.size == null %}
-    <div class="row">
-        Coming soon...
-    </div>
-    {% endif %}
 
     {% for poster in site.data.posters %}
     <div class="row poster-item">
