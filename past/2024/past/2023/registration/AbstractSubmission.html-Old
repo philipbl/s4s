@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../master.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<!-- #BeginEditable "doctitle" -->
+<title>Air Quality Abstract Submission</title>
+<style type="text/css">
+
+
+
+
+
+.auto-style5 {
+	font-size: large;
+}
+</style>
+<meta content="Registration and abstract submission page for the Air Quality: Science for Solutions conference. " name="description" />
+<!-- #EndEditable -->
+<link href="../styles/style2.css" media="screen" rel="stylesheet" title="CSS" type="text/css" />
+<style type="text/css">
+
+.auto-style1 {
+	text-decoration: underline;
+}
+.auto-style2 {
+	text-align: left;
+}
+.auto-style3 {
+	font-size: large;
+}
+.auto-style4 {
+	color: #446699;
+	text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="masthead">
+		<a href="../default.htm">
+		<img alt="Air Quality: Science for Solutions" height="135" src="../photo_gallery/AirQuality-ScienceForSolutionsLogo.png" width="150" /></a><p>&nbsp;<span class="auto-style3">Conference: 
+		Thursday, March 30, 2017<br />
+		<a href="http://harbor.weber.edu/AirQualityScience/registration/AbstractSubmission.aspx"><span class="auto-style4">Abstract</span></a> Deadline: 
+		February 7, 2017<br />
+		<a href="Default.aspx">Registration</a> Deadline: March 1, 2017</span></p>
+		<p><a href="../schedule/default.html">Conference Schedule</a>: <br />
+		Scientific Sessions: 10:30a - 12:00p, 1:30p - 4:00p <br />
+		Public Forum: 6:00 pm to 8:00 pm</p>
+		<p>Location: Salt Lake City
+		<a href="http://www.slcpl.org/" target="_blank">Public Library</a><br />
+		210 E 400 S, Salt Lake City, UT 84111 </p>
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<ul>
+			<li><a href="../default.htm">Home</a></li>
+			<li>
+			<a href="http://harbor.weber.edu/AirQualityScience/registration/default.aspx">Conference Registration</a></li>
+			<li>
+			<a href="http://harbor.weber.edu/AirQualityScience/registration/AbstractSubmission.aspx">Conference Abstracts</a></li>
+			<li><a href="PresenterGuidelines.html">Guidelines for Presenters</a></li>
+			<li><a href="../schedule/default.html">Schedule</a></li>
+			<li><a href="../contact/default.html">Contact</a></li>
+		</ul>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Page Content -->
+	<div id="page_content">
+		<!-- Begin Left Column -->
+		<div id="column_l">
+			<!-- #BeginEditable "content" -->
+			<h1>Abstract Submission</h1>
+			<p>Please refer to the
+			<a href="PresenterGuidelines.html">Guidelines for Presenters</a> as 
+			you prepare your poster or talk. </p>
+			<p>There are two steps involved to register for the Air Quality: 
+			Science for Solutions conference. The sequence is not important. </p>
+			<ol>
+				<li>Pay the registration fee of $10.00 per person. 
+				<a href="default.html">Register here</a>. </li>
+				<li>&nbsp;Submit your abstract if you 
+				are presenting at the conference. </li>
+			</ol>
+			<h2>Principle Author and Contact:&nbsp; </h2>
+			<p>Please list the authors and affiliations at the top of your 
+			abstract exactly as you would like it to appear in the program. This 
+			next entry field is to allow us to contact you. </p>
+			<form action="--WEBBOT-SELF--" method="post" name="Air Quality Registration" onSubmit="location.href='../_derived/nortbots.htm';return false;" webbot-onSubmit="">
+				<!--webbot bot="SaveResults" S-Format="TEXT/CSV" U-File="../abstracts/Submission Results.csv" startspan --><input NAME="VTI-GROUP" TYPE="hidden" VALUE="0"><!--webbot bot="SaveResults" endspan i-checksum="37496" -->
+			
+			<label for="fname">First Name&nbsp; </label>
+				<input name="fname" placeholder="Given Name" size="20" label="fname" tabindex="1" type="text" autocomplete="given-name" />&nbsp; 
+			<label for="mname">Middle (optional)&nbsp; </label>
+				<input name="mname" placeholder="Middle name or initial" size="20" label="mname" tabindex="1" type="text" autocomplete="additional-name" />&nbsp; 
+			<label for="lname">Last Name&nbsp; </label>
+				<input name="lname" placeholder="Family Name" size="20" label="lname" tabindex="1" type="text" autocomplete="family-name" />&nbsp;  
+			<p>Affiliation 
+				<input name="company" placeholder="University, Agency, or Company" size="30" type="text" tabindex="1" />
+			<p>email 
+			
+				<input name="email" placeholder="Preferred email address" size="30" tabindex="1" type="text" />
+			
+			<h2> Abstract Submittal: </h2>
+			<div align="left">I would 
+			<br />
+				<input type="radio" name="group1" value="poster" style="height: 20px" tabindex="2" /> 
+				prefer to present a poster.<br />
+				<input type="radio" name="group1" value="oral" style="height: 20px" tabindex="2" /> prefer 
+				to present a talk.<br />
+				(Depending on the balance of submissions we reserve the right to 
+				request presenters to change between a talk and a poster.)&nbsp; 
+				<hr />
+				<br />
+				<div align="left">This presentation best fits in the following category:  
+			<br />
+				<input type="radio" name="group2" value="chemistry" style="height: 20px" tabindex="2" /> 
+					Atmospheric Chemistry<br />
+				<input type="radio" name="group2" value="health" style="height: 20px" tabindex="2" /> 
+					Health Impacts<br />
+				<input type="radio" name="group2" value="economic" style="height: 20px" tabindex="2"  /> 
+					Industry and Economic Impacts<br />
+				<input type="radio" name="group2" value="measurement" style="height: 20px" tabindex="2" /> 
+					Meteorology&nbsp; <br />
+				<input type="radio" name="group2" value="emissions" style="height: 20px" tabindex="2" /> 
+					Emissions &nbsp; <br />
+				<input type="radio" name="group2" value="modeling" style="height: 20px" tabindex="2" /> 
+					Modeling <br />
+				<input type="radio" name="group2" value="policy" style="height: 20px" tabindex="2" /> 
+					Policy<br />
+				<input type="radio" name="group2" value="other" style="height: 20px" tabindex="2" /> 
+					Other&nbsp;&nbsp; 
+				<hr />
+				<br />
+
+				Abstract (500 word limit)<br />
+				<textarea cols="150" name="Abstract" rows="10" tabindex="3"></textarea><br />
+				<br />
+				<strong><span class="auto-style5">Upload a file</span></strong> 
+				will be an option soon. I need to convert this page to an .ASP 
+				(Active Server Page) before that can happen. <br />
+				<strong><span class="auto-style5">Upload an </span></strong>
+					<strong>
+				<span class="auto-style5">image related to your 
+				presentation </span> </strong>Please upload an image related to 
+					your abstract.&nbsp; Uploading an image is not required but 
+					strongly encouraged.&nbsp; The image will be included with the 
+					abstract on the website and in the conference program. <br />
+				</div>
+			<input type="submit" name="submit" value="Submit" tabindex="4" /> Note, the 
+				"Submit" button is broken until I can get my server doing 
+				server-side actions such as email.</form>
+			</p>
+			
+			<p>
+			<form method="post">
+				<input name="File1" type="file" /></form>
+			</p>
+			<p>&nbsp;</p>
+&nbsp;<!-- #EndEditable --></div>
+		<!-- End Left Column -->
+		<!-- Begin Right Column -->
+		<div id="column_r">
+			<!-- #BeginEditable "sidebar" -->
+			<!-- #EndEditable --></div>
+		<!-- End Right Column --></div>
+	<!-- End Page Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p class="auto-style2"><a href="../default.htm">Home</a> | 
+		<a href="../schedule/default.html">Schedule</a> |
+		<a href="../contact/default.html">Contact</a> |
+		<a href="../faq/default.html">FAQ</a> |
+		<a href="../information_links/default.html">Information Links</a> |
+		<a href="../photo_gallery/default.html">Photo Gallery</a> |
+		<a href="default.html">
+		R<span class="auto-style1">egistration</span></a> | 
+		<a href="../abstracts/default.html">Abstracts</a> |
+		<a href="../site_map/default.html">Site Map</a></p>
+		<p>Copyright &copy; 2016 Weber State University. All Rights Reserved.</p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>
