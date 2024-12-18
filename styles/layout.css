@@ -91,3 +91,13 @@ h2 {
 .poster-item:nth-of-type(odd) {
 	background: #dc8;
 }
+
+.conference-title-header {
+	margin-bottom: 0;
+}
+
+.conference-date-header {
+	margin-bottom: 25px;
+	font-style: italic;
+	font-size: 20px;
+}
