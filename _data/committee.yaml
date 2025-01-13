@@ -2,10 +2,6 @@ members:
   - name: Rachel Edie (Overall Coordinator)
     affiliation: Utah Division of Air Quality
 
-  - name: Jaron Hansen
-    email: jhansen@chem.byu.edu
-    affiliation: Brigham Young University
-
   - name: Kerry Kelly
     email: kelly@eng.utah.edu
     affiliation: University of Utah
@@ -25,11 +21,17 @@ members:
   - name: Kathy Sward
     affiliation: University of Utah
 
+  - name: Darrell Sonntag
+    affiliation: Brigham Young University
+
   - name: Philip Lundrigan
     email: lundrigan@byu.edu
     affiliation: Brigham Young University (Webmaster)
 
 past_members:
+  - name: Jaron Hansen
+    affiliation: Brigham Young University
+
   - name: John Sohl
     affiliation: Weber State University
 
