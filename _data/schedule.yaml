@@ -1,0 +1,71 @@
+# Colors came from https://coolors.co/151515-a63d40-c87b59-d99a66-e9b872-90a959-85a46e-7a9f82-6f9a96-6494aa
+
+- name: Welcome
+  start_time: 9:00 AM
+  chair: Randy
+  color: "#dc8"
+
+- name: "Session 1: Health Impacts and Greenhouse Gas Emissions"
+  start_time: 9:10 AM
+  chair: Jaron
+  color: rgba(100, 148, 170, .3)
+  talks:
+    - author: Ryan Bares
+      title: "DAQ update: how S4S projects have impacted policy"
+    - author: Brenna Kelly
+      title: "Linking Air Pollution Mixtures and Health Outcomes With Machine Learning"
+    - author: Arden Pope
+      title: "Particles of Truth: Reflections on Utah Health and Air Pollution Studies"
+    - author: Aaron Meyer
+      title: "Characterizing Basin Scale GHG Emissions in Northern Utah Using Sun Tracking Spectrometers "
+
+- name: Break
+  start_time: 10:30 AM
+  color: "#dc8"
+
+- name: "Session 2: Summertime Ozone"
+  start_time: 10:50 AM
+  color: rgba(233, 184, 114, .3)
+  talks:
+    - author: Carrie Womack
+      title: Initial Findings from the 2024 Utah Summer Ozone Study (USOS)
+    - author: Demetrios Pagonis
+      title: Chemical Drivers of Ozone and Particulate Matter Concentrations During the Utah Summer Ozone Study
+    - author: Lexie Wilson
+      title: Summertime Ozone Sensitivity to Biogenic VOCs in Utah
+
+- name: Lunch & Posters
+  start_time: 11:50 AM
+  color: "#dc8"
+
+- name: "Session 3: Ozone and Ozone Precursors"
+  start_time: 1:20 PM
+  color: rgba(166, 61, 64, .21)
+  talks:
+    - author: Chris Emery
+      title: "Assessing Global Background Ozone Transport Pathways to the Northern Wasatch Front"
+    - author: Matti Maricq
+      title: "Insights from an Extreme Value Theory Analysis of Gasoline Vehicle High Emitter Trends"
+    - author: John Lawson
+      title: "Clyfar: an unorthodox solution to unreliable Uinta Basin ozone forecasts"
+
+- name: Break
+  start_time: 2:20 PM
+  color: "#dc8"
+
+- name: "Session 4: Particulate Matter"
+  start_time: 2:40 PM
+  color: rgba(144, 169, 89, .3)
+  talks:
+    - author: Kamaljeet Kaur
+      title: "Long-term trends in sources of PM2.5 along the Wasatch Front"
+    - author: Derek Malia
+      title: "Advancing air quality forecasting in Utah with an emphasis on wildfire smoke "
+    - author: Tim Berk
+      title: "Redefining Dust: Unexpected Long-Range Transport of Coarse Dust Aerosols"
+    - author: Kevin Perry
+      title: "What We Know and Don't Know About Great Salt Lake Dust"
+
+- name: Poster awards & adjourn
+  start_time: 4:00 PM
+  color: "#dc8"
