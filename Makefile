@@ -13,4 +13,4 @@ check_links: build
 	bundle exec htmlproofer --ignore_empty_alt --allow-hash-href ./_site
 
 deploy: build
-	rsync -av _site/* aq.byu.edu:/usr/share/nginx/html
+	rsync -av _site/* aq.byu.edu:aq.byu.edu/
