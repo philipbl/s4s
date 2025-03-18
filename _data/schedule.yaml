@@ -7,7 +7,7 @@
 
 - name: "Session 1: Health Impacts and Greenhouse Gas Emissions"
   start_time: 9:10 AM
-  chair: Jaron
+  chair: Randy
   color: rgba(100, 148, 170, .3)
   talks:
     - author: Ryan Bares
@@ -25,6 +25,7 @@
 
 - name: "Session 2: Summertime Ozone"
   start_time: 10:50 AM
+  chair: Seth
   color: rgba(233, 184, 114, .3)
   talks:
     - author: Carrie Womack
@@ -40,6 +41,7 @@
 
 - name: "Session 3: Ozone and Ozone Precursors"
   start_time: 1:20 PM
+  chair: Kerry
   color: rgba(166, 61, 64, .21)
   talks:
     - author: Chris Emery
@@ -55,6 +57,7 @@
 
 - name: "Session 4: Particulate Matter"
   start_time: 2:40 PM
+  chair: Demetrios
   color: rgba(144, 169, 89, .3)
   talks:
     - author: Kamaljeet Kaur
