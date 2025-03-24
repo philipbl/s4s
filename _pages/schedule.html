@@ -15,31 +15,45 @@ title: Schedule
     </div>
 
 
-
-    {% for item in site.data.schedule %}
-    <div class="row schedule-item" style="background: {{ item.color }};">
-        <div class="schedule-time">{{ item.start_time }}</div>
-        <div class="col schedule-header">
-            {{ item.name }}
-            {% if item.chair %}({{ item.chair }}){% endif %}
+    <div class="row">
+        <div class="col-lg-9">
+            {% for item in site.data.schedule %}
+            <div class="row schedule-item" style="background: {{ item.color }};">
+                <div class="schedule-time">{{ item.start_time }}</div>
+                <div class="col schedule-header">
+                    {{ item.name }}
+                    {% if item.chair %}({{ item.chair }}){% endif %}
+                </div>
+                <div class="schedule-speaker"></div>
+            </div>
+            {% if item.talks %}
+            {% for talk in item.talks %}
+            <div class="row" style="background: {{ item.color }};">
+                <div class="schedule-time"></div>
+                {% if talk.link %}
+                <div class="col schedule-talk-item"><a href="{{ talk.link }}" target="_blank" rel="noopener noreferrer">{{
+                        talk.title }}</a></div>
+                {% else %}
+                <div class="col schedule-talk-item">{{ talk.title }}</div>
+                {% endif %}
+                <div class="schedule-speaker">{{ talk.author }}</div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
         </div>
-        <div class="schedule-speaker"></div>
+        <div class="col">
+            <div class="row">
+                <h3>Our Supporters</h3>
+                <p>
+                    <img class="img-fluid" alt="USU Engineering" src="{% link images/combined_USU_logo_Science_for_Solutions.png %}" />
+                </p>
+                <p>
+                    <img class="img-fluid" alt="UCAIR - Utah Clean Air Partnership" longdesc="UCAIR - Utah Clean Air Partnership" src="{% link images/UCAIR-logo.png %}" />
+                </p>
+            </div>
+        </div>
     </div>
-    {% if item.talks %}
-    {% for talk in item.talks %}
-    <div class="row" style="background: {{ item.color }};">
-        <div class="schedule-time"></div>
-        {% if talk.link %}
-        <div class="col schedule-talk-item"><a href="{{ talk.link }}" target="_blank" rel="noopener noreferrer">{{
-                talk.title }}</a></div>
-        {% else %}
-        <div class="col schedule-talk-item">{{ talk.title }}</div>
-        {% endif %}
-        <div class="schedule-speaker">{{ talk.author }}</div>
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% endfor %}
 </div>
 
 {% if site.data.posters.size != null %}
