@@ -23,8 +23,11 @@ email: lundrigan@byu.edu
 description: >-
   Utah conference of air quality.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "aq.byu.edu" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://aq.byu.edu" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: pretty
+
+plugins:
+  - jekyll-sitemap
 
 collections:
   pages:
