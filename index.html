@@ -3,10 +3,12 @@ layout: default
 ---
 <div class="row">
     <div class="col-9">
+        {% if site.data.dates.next_year_message %}
         <h3 class="mt-4 conference-date-header text-center">
-            We are happy to announce that next year the conference will be held at <br>Brigham Young University on March 26, 2026. <br>More details will be posted here as they become available.
+            {{ site.data.dates.next_year_message }}
         </h3>
-        <h1 class="conference-title-header">Air Quality: Science for Solutions 2025</h1>
+        {% endif %}
+        <h1 class="conference-title-header">Air Quality: Science for Solutions {{ site.data.dates.year }}</h1>
         <h3 class="conference-date-header">{{ site.data.dates.conference }}</h3>
 
         <p><em>Air Quality: Science for Solutions</em> is an annual
