@@ -1,9 +1,0 @@
-Organic Contaminants in Airborne Dust of the Great Salt Lake
-
-J. Perala-Dewey1, M. Blakowski2, A. Bartos2, E. Heim2, J. Brahney2, K. Hageman1
-1Department of Chemistry and Biochemistry, Utah State University, Logan, UT, USA
-2Department of Watershed Sciences, Utah State University, Logan, UT, USA
-(*correspondence: jperaladewey@aggiemail.usu.edu)
-
-
-        As a terminal basin lake, the sediments of Utah’s Great Salt Lake (GSL) have long been the natural endpoint of many upstream anthropogenic contaminant inputs in its watershed. As the surface area of the GSL continues to decline, large areas of this sediment have become dry playa, which can act as a source of airborne dust particles to downwind areas. The inhalation of these dust particles by inhabitants along the Wasatch Front can lead to negative health outcomes and may be exacerbated by the presence of organic contaminants in the dust. During the summer and fall of 2019, we collected airborne dust and playa-sediments from five sites around the GSL’s Farmington Bay. At each site, dust was collected at three heights above the playa. Here we present concentrations of polycyclic aromatic hydrocarbons (PAHs) and polychlorinated biphenyls (PCBs) in these samples. Our results show enrichment of organic contaminants in the airborne dust at each site relative to its source playa, and concentration variability with sampling date, sampling site, and dust collection height. The highest observed concentrations in dust were 17.8 µg kg-1 for S-PAHs (sum of seven congeners) and 1.7 µg kg-1 for S-PCBs (sum of three congeners). Overall, these observed concentrations are low, but represent only a fraction of harmful species that may be present in GSL dust. 
