@@ -2,33 +2,39 @@ members:
   - name: Rachel Edie (Overall Coordinator)
     affiliation: Utah Division of Air Quality
 
-  - name: Kerry Kelly
-    email: kelly@eng.utah.edu
+  - name: Nancy Daher
     affiliation: University of Utah
 
   - name: Randy Martin
     email: randy.martin@usu.edu
     affiliation: Utah State University (Logan)
 
-  - name: Seth Lyman
-    email: seth.lyman@usu.edu
-    affiliation: Utah State University (Uintah Basin)
-
   - name: Demetrios Pagonis
     email: demetriospagonis@weber.edu
     affiliation: Weber State University
 
+  - name: Darrell Sonntag
+    affiliation: Brigham Young University
+
   - name: Kathy Sward
     affiliation: University of Utah
 
-  - name: Darrell Sonntag
-    affiliation: Brigham Young University
+  - name: Ryan Thalman
+    affiliation: Snow College
 
   - name: Philip Lundrigan
     email: lundrigan@byu.edu
     affiliation: Brigham Young University (Webmaster)
 
 past_members:
+  - name: Kerry Kelly
+    email: kelly@eng.utah.edu
+    affiliation: University of Utah
+
+  - name: Seth Lyman
+    email: seth.lyman@usu.edu
+    affiliation: Utah State University (Uintah Basin)
+
   - name: Jaron Hansen
     affiliation: Brigham Young University
 
