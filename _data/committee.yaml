@@ -1,8 +1,10 @@
 members:
-  - name: Rachel Edie (Overall Coordinator)
-    affiliation: Utah Division of Air Quality
+  - name: Rachel Edie
+    email: redie@utah.gov
+    affiliation: Utah Division of Air Quality (Overall Coordinator)
 
   - name: Nancy Daher
+    email: nancy.daher@utah.edu
     affiliation: University of Utah
 
   - name: Randy Martin
@@ -11,15 +13,18 @@ members:
 
   - name: Demetrios Pagonis
     email: demetriospagonis@weber.edu
-    affiliation: Weber State University
+    affiliation: Weber State University (Treasurer)
 
   - name: Darrell Sonntag
+    email: darrell_sonntag@byu.edu
     affiliation: Brigham Young University
 
   - name: Kathy Sward
+    email: kathy.sward@nurs.utah.edu
     affiliation: University of Utah
 
   - name: Ryan Thalman
+    email: ryan.thalman@snow.edu
     affiliation: Snow College
 
   - name: Philip Lundrigan
