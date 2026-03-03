@@ -73,17 +73,19 @@ title: Schedule
 
     {% for category in site.data.posters %}
     <h4>{{ category.category }}</h4>
-    {% for poster in category.posters %}
-    <div class="row poster-item">
-        {% if poster.link %}
-        <div class="col poster-title"><a href="{{ poster.link }}" target="_blank" rel="noopener noreferrer">{{
-                poster.title }}</a></div>
-        {% else %}
-        <div class="col poster-title">{{ poster.title }}</div>
-        {% endif %}
+    <div class="poster-group">
+        {% for poster in category.posters %}
+        <div class="row poster-item">
+            {% if poster.link %}
+            <div class="col poster-title"><a href="{{ poster.link }}" target="_blank" rel="noopener noreferrer">{{
+                    poster.title }}</a></div>
+            {% else %}
+            <div class="col poster-title">{{ poster.title }}</div>
+            {% endif %}
 
-        <div class="poster-author">{{ poster.author }}</div>
+            <div class="poster-author">{{ poster.author }}</div>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
     {% endfor %}
 </div>
