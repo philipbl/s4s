@@ -1,0 +1,97 @@
+# Colors came from https://coolors.co/151515-a63d40-c87b59-d99a66-e9b872-90a959-85a46e-7a9f82-6f9a96-6494aa
+
+draft: true
+
+schedule:
+  - name: Welcome & Activity
+    start_time: 9:00 AM
+    chair: Darrell
+    color: "#dc8"
+
+  - name: "Session 1: Exposure Assessment"
+    start_time: 9:30 AM
+    chair: Nancy
+    color: rgba(100, 148, 170, .3)
+    talks:
+      - author: Norlito Ranchez Jr.
+        title: "Comparative Assessment of Wasatch Front Pollutants: Mortality Risk and Toxicity"
+        # link: https://byu.app.box.com/v/s4s-2025-slides/file/1814866280736
+
+      - author: Autumn Jensen
+        title: "Mapping Polycyclic Aromatic Hydrocarbons (PAHs) in Two Utah Cities Using Pines Needles as Passive Samplers"
+        # link:
+
+      - author: Fiona Hopewell
+        title: "Understanding the Effect of Wildfire Smoke and HVAC Settings on Indoor Air Quality Using Networked Sensors"
+        # link:
+
+  - name: Break
+    start_time: 10:30 AM
+    color: "#dc8"
+
+  - name: "Session 2: Atmospheric Chemistry and Meteorology"
+    start_time: 10:50 AM
+    chair: Ryan B
+    color: rgba(233, 184, 114, .3)
+    talks:
+      - author: Carrie Womack
+        title: "Summertime Ozone Formation in Salt Lake City Modeled During the 2024 Utah Summer Ozone Study"
+        # link:
+
+      - author: Brian Carroll
+        title: "Urban Air Quality Coupled to Mountain and Lake Dynamics: Northern Wasatch Front Airborne Measurements in Summer 2024"
+        # link:
+
+      - author: Patrick J. Reddy
+        title: "Assessing Ozone Sensitivity to NOx and VOCs, Smoke, Heat, Drought, and Plant Stress in Utah and the Northern Wasatch Front"
+        # link:
+
+  - name: Lunch & Posters
+    start_time: 11:50 AM
+    color: "#dc8"
+
+  - name: "Session 3: Emissions and Source Characterization"
+    start_time: 1:40 PM
+    chair: Ryan T
+    color: rgba(166, 61, 64, .21)
+    talks:
+      - author: Haley Humble
+        title: "Characterizing NOx Emission Uncertainties in an Urban Valley Using Ground Based Column Observations and Transport Analysis"
+        # link:
+
+      - author: Amber Allen
+        title: "Heavy-Duty Diesel Vehicle Deterioration: Impact of Vehicle Age and Emission Control Technology on NOx Emissions"
+        # link:
+
+      - author: Callum Flowerday
+        title: "An Observational Framework for Constructing Ozone Isopleths from Long-Term Monitoring Data: Demonstration in Salt Lake City, Utah"
+        # link:
+
+      - author: Aaron G. Meyer
+        title: "Mobile Methane and VOC Measurements in the Salt Lake Valley: Source Characterization Using Hydrocarbon Ratios"
+        # link:
+
+  - name: Break
+    start_time: 3:00 PM
+    color: "#dc8"
+
+  - name: "Session 4: Air Quality and Policy"
+    start_time: 3:20 PM
+    chair: Randy
+    color: rgba(144, 169, 89, .3)
+    talks:
+      - author: Seth Lyman
+        title: "Regulatory and Voluntary Changes Have Led to a Threefold Reduction in Methane Emissions Intensity in the Uinta Basin"
+        # link:
+
+      - author: Kevin Perry
+        title: "Engineered Dust Mitigation at Great Salt Lake: Costs, Tradeoffs, and a Weight-of-Evidence Decision Framework"
+        # link:
+
+      - author: Zachary Aanderud
+        title: "Understanding Utah’s Dust: Advancing Science for Public Health"
+        # link:
+
+  - name: Poster Awards & Final Comments
+    start_time: 4:20 PM
+    color: "#dc8"

@@ -15,9 +15,19 @@ title: Schedule
     </div>
 
 
+    {% if site.data.schedule.draft %}
     <div class="row">
         <div class="col-lg-9">
-            {% for item in site.data.schedule %}
+            <div class="alert alert-warning" role="alert">
+                This is a draft schedule and is subject to change. We will update the schedule as we get closer to the conference date. Please check back for updates.
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-lg-9">
+            {% for item in site.data.schedule.schedule %}
             <div class="row schedule-item" style="background: {{ item.color }};">
                 <div class="schedule-time">{{ item.start_time }}</div>
                 <div class="col schedule-header">
