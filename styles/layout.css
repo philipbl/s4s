@@ -83,8 +83,10 @@ h2 {
 	padding: 5px 0;
 }
 
-.poster-item:nth-of-type(odd) {
-	background: #dc8;
+/* Alternate poster-item backgrounds within each poster-group so
+   alternation restarts after each h4/category. */
+.poster-group .poster-item:nth-child(odd) {
+	background: rgba(100, 148, 170, .2)
 }
 
 .conference-title-header {
