@@ -7,39 +7,77 @@
 <head>
     {% include head.html %}
     <style>
+        @page {
+            size: legal portrait;
+            margin: 0.5in;
+        }
+
         @media print {
+            body {
+                font-size: 14px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            h2 {
+                font-size: 22px !important;
+                margin: 0 0 14px 0 !important;
+                padding: 0 !important;
+            }
+
+            .mt-5 {
+                margin-top: 0 !important;
+            }
+
+            .mb-3 {
+                margin-bottom: 8px !important;
+            }
+
             .row {
                 display: flex !important;
-                flex-wrap: wrap !important;
+                flex-wrap: nowrap !important;
+                margin: 0 !important;
             }
 
             .col {
                 flex: 1 1 0% !important;
+                padding: 0 !important;
             }
 
             .schedule-time {
-                width: 100px;
-                flex: 0 0 100px;
+                width: 90px;
+                flex: 0 0 90px;
+                font-size: 13px;
+                padding: 3px 6px;
             }
 
             .schedule-speaker {
-                width: 250px;
-                flex: 0 0 250px;
+                width: 220px;
+                flex: 0 0 220px;
+                font-size: 13px;
+                padding: 3px 6px;
             }
 
             .schedule-item {
-                padding-top: 10px;
-                padding-bottom: 10px;
+                padding-top: 8px;
+                padding-bottom: 8px;
             }
 
             .schedule-header {
                 font-weight: 600;
-                font-size: 1em;
+                font-size: 14px;
             }
 
             .schedule-talk-item {
-                margin-left: 20px;
-                margin-bottom: 10px;
+                margin-left: 18px;
+                margin-bottom: 6px;
+                font-size: 13px;
             }
         }
     </style>
