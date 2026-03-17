@@ -9,12 +9,12 @@
     <style>
         @page {
             size: legal portrait;
-            margin: 0.5in;
+            margin: 0.4in;
         }
 
         @media print {
             body {
-                font-size: 14px;
+                font-size: 13px;
                 margin: 0;
                 padding: 0;
             }
@@ -28,7 +28,7 @@
             h2 {
                 font-size: 22px !important;
                 margin: 0 0 14px 0 !important;
-                padding: 0 !important;
+                padding: 0 0 20px 0 !important;
             }
 
             .mt-5 {
@@ -36,7 +36,7 @@
             }
 
             .mb-3 {
-                margin-bottom: 8px !important;
+                margin-bottom: 5px !important;
             }
 
             .row {
@@ -47,12 +47,19 @@
 
             .col {
                 flex: 1 1 0% !important;
-                padding: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
             }
 
             .schedule-time {
                 width: 90px;
                 flex: 0 0 90px;
+                font-size: 13px;
+                padding: 3px 6px;
+            }
+
+            .schedule-header {
+                font-weight: 600;
                 font-size: 13px;
                 padding: 3px 6px;
             }
@@ -67,11 +74,6 @@
             .schedule-item {
                 padding-top: 8px;
                 padding-bottom: 8px;
-            }
-
-            .schedule-header {
-                font-weight: 600;
-                font-size: 14px;
             }
 
             .schedule-talk-item {
