@@ -1,27 +1,11 @@
 - category: Atmospheric Chemistry/Physics
   posters:
-    - author: Demetrios Pagonis
-      title: Spatial Variability of Ozone Formation Chemistry in Salt Lake City
-      link:
-
-    - author: Dan Jaffe
-      title: Ozone in the Salt Lake City Metropolitan Region
-      link:
-
-    - author: Gerardo Carrillo-Cardenas
-      title: Utah's SNOWSCAPE 2026 Aerosol Measurements
-      link:
-
-    - author: Alexis Harper
-      title: Quantifying the Role of Atmospheric Oxidants in Mercury Oxidation Using an Environmental Chamber
+    - author: Elizabeth Lowe
+      title: Dust Attribution in the Great Salt Lake Valley
       link:
 
     - author: Michael Davies
       title: "Fuzzy, Genetic, Deep, Cosmetic: Machine Intelligence in Many Air Quality Applications"
-      link:
-
-    - author: Elizabeth Lowe
-      title: Dust Attribution in the Great Salt Lake Valley
       link:
 
     - author: Ruby W. Burgess
@@ -32,16 +16,28 @@
       title: Investigating Chemical Mechanism Influences on Ozone Production in the Northern Wasatch Front
       link:
 
+    - author: Dan Jaffe
+      title: Ozone in the Salt Lake City Metropolitan Region
+      link:
+
+    - author: Alexis Harper
+      title: Quantifying the Role of Atmospheric Oxidants in Mercury Oxidation Using an Environmental Chamber
+      link:
+
     - author: Zachary Giauque
       title: "Quantifying VOC Interference in Atmospheric Hg⁰ Oxidation Experiments Using Thermal Desorption GC–MS"
       link:
 
-- category: Emissions Sources/Inventory
-  posters:
-    - author: Emma Reeves
-      title: Greenhouse Gas Analysis of the Little Cottonwood Canyon Transportation Scenarios
+    - author: Demetrios Pagonis
+      title: Spatial Variability of Ozone Formation Chemistry in Salt Lake City
       link:
 
+    - author: Gerardo Carrillo-Cardenas
+      title: Utah's SNOWSCAPE 2026 Aerosol Measurements
+      link:
+
+- category: Emissions Sources/Inventory
+  posters:
     - author: Kirsten Steele
       title: A Fuel-Based Emissions Inventory for Heavy Duty Vehicles in Utah
       link:
@@ -50,190 +46,20 @@
       title: Analyzing Trends in Snowpack Composition Within Park City Resort
       link:
 
-    - author: Saeed Alkaabi
-      title: Impact of Holiday Fireworks on PM2.5 Concentrations in Utah
-      link:
-
     - author: Sarah Chan
       title: Characterizing Western U.S. Dust Movement by Mass Flux and Particle Size
       link:
 
+    - author: Emma Reeves
+      title: Greenhouse Gas Analysis of the Little Cottonwood Canyon Transportation Scenarios
+      link:
+
+    - author: Saeed Alkaabi
+      title: Impact of Holiday Fireworks on PM2.5 Concentrations in Utah
+      link:
+
     - author: Tejas Shah
       title: Improving MEGAN Soil NOx Estimates for the Wasatch Front by Updating BDSNP and Adding HONO
-      link:
-
-- category: Meteorology
-  posters:
-    - author: Haley Brenkmann
-      title: Temperature Inversions and Avalanche Conditions in the Central Wasatch
-      link:
-
-    - author: Juan Rogel
-      title: Meteorological Influences in Rising Summer Surface Ozone in Salt Lake City, Utah
-      link:
-
-    - author: Luke Robbins
-      title: Western U.S. Wildfire Smoke Transport Impacts on PM2.5 Concentrations in Northern Utah
-      link:
-
-    - author: Derek V. Mallia
-      title: Forecasting Pyrocumulonimbus Events for NASA's Upcoming 2026/2027 INSPYRE Field Campaign
-      link:
-
-    - author: Carson Utley
-      title: Climatology of Central Utah's Sevier Valley
-      link:
-
-    - author: Walter Hogle
-      title: "Summer Temperature Extremes and Wildfire-Driven PM2.5 in the Western United States: A Comparative Case Study of 2004 and 2021"
-      link:
-
-- category: Modeling
-  posters:
-    - author: Cambria White
-      title: Exploring Spatiotemporal Trends in Wildfire Activity and the Drivers of Increasing Plume Rise Heights Across California
-      link:
-
-    - author: Ilinca Mocuta
-      title: Developing a Machine Learning Model for Wilfitr Groeth Prediction
-      link:
-
-    - author: John R. Lawson
-      title: "Ffion: an AI air-quality forecaster"
-      link:
-
-    - author: Kylie Brown
-      title: High-Resolution Modeling of Predicted Wind Velocities for Utah Dust Emissions
-      link:
-
-    - author: Derek Mallia
-      title: A User-Friendly Tool for Estimating Great Salt Lake Dust Exposure for Communities Across Northern Utah
-      link:
-
-    - author: Myah Derderian
-      title: Identifying inaccurate soil classifications for urban dust sources through Google Earth and NLCD
-      link:
-
-    - author: Kyler Pak
-      title: Evaluating Numerical Wildfire Smoke Forecasts Across Utah
-      link:
-
-    - author: Sishir Dahal
-      title: Developing Novel Approaches to Estimating Wildfire Smoke PM2.5 Exposure in the Western U.S.
-      link:
-
-    - author: Sukrut Shishupal
-      title: A Reusable U.S. Air Quality Shapelet Library for High Temporal Resolution Exposure Pattern Discovery
-      link:
-
-    - author: Ty Hosler
-      title: High-Resolution Dust Emission Modeling over Northwestern Utah Using WRF–WindNinja Downscaling
-      link:
-
-    - author: Srabani Karmakar
-      title: "Evolving Wildland fire Smoke Impacts in Utah: A Long-term Analysis of PM₂.₅ Trends and Smoke Attribution"
-      link:
-
-- category: Monitoring/Measurements
-  posters:
-    - author: Amber Allen
-      title: Evaluating Low-cost Sensors for Identifying High-emitting Heavy-Duty Diesel Vehicles
-      link:
-
-    - author: Allyn Allen
-      title: Design and Deployment of Arduino-Based Xpod Sensor Networks for Multi-Pollutant Characterization at Navajo Technical University
-      link:
-
-    - author: Junhan Chen
-      title: Targeted Spatial and Seasonal Assessment of PFAS in a Snowmelt-Dominated River–Reservoir System in Utah
-      link:
-
-    - author: Henry Carter
-      title: The Effects of Air Pollution on Soil Quality in Salt Lake City
-      link:
-
-    - author: James Mineau
-      title: "Quantifying Methane in the Salt Lake Valley: Inversion Sensitivity and Error Characterization"
-      link:
-
-    - author: James Boyack
-      title: Snowfall Effects on PM2.5 and PM10 in the Salt Lake Valley
-      link:
-
-    - author: Jessica Mulder
-      title: Rural vs. Urban Nitrogen Dioxide Concentrations in Utah
-      link:
-
-    - author: Jordyn Bylsma
-      title: Ozone Variations Along the Wasatch Front and Cache Valley
-      link:
-
-    - author: Kamaljeet Kaur
-      title: Detecting Dust-Dominated Periods and Correcting PM2.5 Using Only Plantower PMS Sensor Data
-      link:
-
-    - author: Spencer Larson
-      title: Heavy-Duty Diesel Emissions Monitoring Using Low-Cost Sensors
-      link:
-
-    - author: Mekenzie Hutchinson
-      title: COVID Alterations of Firework Pollution
-      link:
-
-    - author: Pavan Motagi
-      title: Community-driven Sensor Metadata Approaches for Exposure Health Informatics
-      link:
-
-    - author: Jaden Olvera
-      title: Measurements of Solar Flux Using a Custom Spectral Radiometer
-      link:
-
-    - author: Randon Sandall
-      title: Vertically Resolved Temperature and Particulate Measurements in Richfield, UT
-      link:
-
-    - author: Jaden Olvera
-      title: Cavity-Enhanced Ozone Instrument in the Far UV
-      link:
-
-    - author: David Barlow
-      title: Local Air Quality Impacts of the Monroe Canyon Fire 2025
-      link:
-
-    - author: Grey Bailey
-      title: Ephraim Utah Air Quality Measurements 2025
-      link:
-
-    - author: Aaron Watts
-      title: Richfield, UT Air Quality Measurements 2025
-      link:
-
-    - author: Seth Lyman
-      title: "Harder than it looks: Developing methods for calibration of gas-phase formaldehyde"
-      link:
-
-    - author: Tristalee Mangin
-      title: Understanding Alphasense OPC-N3 Sensor Aging and PM10 Measurement Reliability
-      link:
-
-    - author: Tristan Stevens
-      title: PM2.5 Correlation with the Moisture in the Air and Ground
-      link:
-
-    - author: Aaron Hanson
-      title: "Ambient Particulate Matter Levels on High School Athletic Fields in Utah: Implications from a One-Year Monitoring Study"
-      link:
-
-    - author: Yiqing (Anne) Meng
-      title: Particulate Matter (PM2.5 and PM10) Concentrations in Communities near the Great Salt Lake During Summer 2024
-      link:
-
-    - author: Austin Pero
-      title: Neighborhood-Scale Characterization of Particulate Matter Exposure in the Salt Lake Valley using A Network of Citizen-Hosted Low-Cost PM Sensors
-      link:
-
-    - author: Zachary Driskill
-      title: Modular, Low-Cost, On-Road Emissions Measurement System with ML Calibration
       link:
 
 - category: Indoor Air Quality, Health Impacts, and Public Policy
@@ -246,22 +72,196 @@
       title: Size, Cytopathic Effects, and Prevalence of Influenza, SARS-CoV-2, and RSV in Healthcare Settings
       link:
 
-    - author: Alexander Mass
-      title: Wildfire Infiltration into Salt Lake Valley Childcare Centers
-      link:
-
     - author: Jimmy Jackson Dimpor
       title: "Characterizing Indoor PM2.5 and PM10 in Utah K–12 Schools: Spatial, Temporal, and Occupancy-Driven Patterns"
-      link:
-
-    - author: Rebekah Paine
-      title: The Effect of Personalized Monitoring Results on Home Occupants’ Perceptions of Air Pollution Health Risk
       link:
 
     - author: Sofia Guerrero
       title: Spatial and Temporal Patterns of Indoor Radon in Schools and Their Relationship with Ventilation and Meteorological Indicators
       link:
 
+    - author: Rebekah Paine
+      title: The Effect of Personalized Monitoring Results on Home Occupants’ Perceptions of Air Pollution Health Risk
+      link:
+
+    - author: Alexander Mass
+      title: Wildfire Infiltration into Salt Lake Valley Childcare Centers
+      link:
+
     - author: Randy Martin
       title: "Air Quality: Science for Solutions Participants’ 2025 Random Survey Results"
+      link:
+
+- category: Meteorology
+  posters:
+    - author: Carson Utley
+      title: Climatology of Central Utah's Sevier Valley
+      link:
+
+    - author: Derek V. Mallia
+      title: Forecasting Pyrocumulonimbus Events for NASA's Upcoming 2026/2027 INSPYRE Field Campaign
+      link:
+
+    - author: Juan Rogel
+      title: Meteorological Influences in Rising Summer Surface Ozone in Salt Lake City, Utah
+      link:
+
+    - author: Walter Hogle
+      title: "Summer Temperature Extremes and Wildfire-Driven PM2.5 in the Western United States: A Comparative Case Study of 2004 and 2021"
+      link:
+
+    - author: Haley Brenkmann
+      title: Temperature Inversions and Avalanche Conditions in the Central Wasatch
+      link:
+
+    - author: Luke Robbins
+      title: Western U.S. Wildfire Smoke Transport Impacts on PM2.5 Concentrations in Northern Utah
+      link:
+
+- category: Modeling
+  posters:
+    - author: Sukrut Shishupal
+      title: A Reusable U.S. Air Quality Shapelet Library for High Temporal Resolution Exposure Pattern Discovery
+      link:
+
+    - author: Derek Mallia
+      title: A User-Friendly Tool for Estimating Great Salt Lake Dust Exposure for Communities Across Northern Utah
+      link:
+
+    - author: Ilinca Mocuta
+      title: Developing a Machine Learning Model for Wilfitr Groeth Prediction
+      link:
+
+    - author: Sishir Dahal
+      title: Developing Novel Approaches to Estimating Wildfire Smoke PM2.5 Exposure in the Western U.S.
+      link:
+
+    - author: Kyler Pak
+      title: Evaluating Numerical Wildfire Smoke Forecasts Across Utah
+      link:
+
+    - author: Srabani Karmakar
+      title: "Evolving Wildland fire Smoke Impacts in Utah: A Long-term Analysis of PM₂.₅ Trends and Smoke Attribution"
+      link:
+
+    - author: Cambria White
+      title: Exploring Spatiotemporal Trends in Wildfire Activity and the Drivers of Increasing Plume Rise Heights Across California
+      link:
+
+    - author: John R. Lawson
+      title: "Ffion: an AI air-quality forecaster"
+      link:
+
+    - author: Ty Hosler
+      title: High-Resolution Dust Emission Modeling over Northwestern Utah Using WRF–WindNinja Downscaling
+      link:
+
+    - author: Kylie Brown
+      title: High-Resolution Modeling of Predicted Wind Velocities for Utah Dust Emissions
+      link:
+
+    - author: Myah Derderian
+      title: Identifying inaccurate soil classifications for urban dust sources through Google Earth and NLCD
+      link:
+
+- category: Monitoring/Measurements
+  posters:
+    - author: Allyn Allen
+      title: Design and Deployment of Arduino-Based Xpod Sensor Networks for Multi-Pollutant Characterization at Navajo Technical University
+      link:
+
+    - author: Aaron Hanson
+      title: "Ambient Particulate Matter Levels on High School Athletic Fields in Utah: Implications from a One-Year Monitoring Study"
+      link:
+
+    - author: Jaden Olvera
+      title: Cavity-Enhanced Ozone Instrument in the Far UV
+      link:
+
+    - author: Pavan Motagi
+      title: Community-driven Sensor Metadata Approaches for Exposure Health Informatics
+      link:
+
+    - author: Mekenzie Hutchinson
+      title: COVID Alterations of Firework Pollution
+      link:
+
+    - author: Kamaljeet Kaur
+      title: Detecting Dust-Dominated Periods and Correcting PM2.5 Using Only Plantower PMS Sensor Data
+      link:
+
+    - author: Grey Bailey
+      title: Ephraim Utah Air Quality Measurements 2025
+      link:
+
+    - author: Amber Allen
+      title: Evaluating Low-cost Sensors for Identifying High-emitting Heavy-Duty Diesel Vehicles
+      link:
+
+    - author: Seth Lyman
+      title: "Harder than it looks: Developing methods for calibration of gas-phase formaldehyde"
+      link:
+
+    - author: Spencer Larson
+      title: Heavy-Duty Diesel Emissions Monitoring Using Low-Cost Sensors
+      link:
+
+    - author: David Barlow
+      title: Local Air Quality Impacts of the Monroe Canyon Fire 2025
+      link:
+
+    - author: Jaden Olvera
+      title: Measurements of Solar Flux Using a Custom Spectral Radiometer
+      link:
+
+    - author: Zachary Driskill
+      title: Modular, Low-Cost, On-Road Emissions Measurement System with ML Calibration
+      link:
+
+    - author: Austin Pero
+      title: Neighborhood-Scale Characterization of Particulate Matter Exposure in the Salt Lake Valley using A Network of Citizen-Hosted Low-Cost PM Sensors
+      link:
+
+    - author: Jordyn Bylsma
+      title: Ozone Variations Along the Wasatch Front and Cache Valley
+      link:
+
+    - author: Yiqing (Anne) Meng
+      title: Particulate Matter (PM2.5 and PM10) Concentrations in Communities near the Great Salt Lake During Summer 2024
+      link:
+
+    - author: Tristan Stevens
+      title: PM2.5 Correlation with the Moisture in the Air and Ground
+      link:
+
+    - author: James Mineau
+      title: "Quantifying Methane in the Salt Lake Valley: Inversion Sensitivity and Error Characterization"
+      link:
+
+    - author: Aaron Watts
+      title: Richfield, UT Air Quality Measurements 2025
+      link:
+
+    - author: Jessica Mulder
+      title: Rural vs. Urban Nitrogen Dioxide Concentrations in Utah
+      link:
+
+    - author: James Boyack
+      title: Snowfall Effects on PM2.5 and PM10 in the Salt Lake Valley
+      link:
+
+    - author: Junhan Chen
+      title: Targeted Spatial and Seasonal Assessment of PFAS in a Snowmelt-Dominated River–Reservoir System in Utah
+      link:
+
+    - author: Henry Carter
+      title: The Effects of Air Pollution on Soil Quality in Salt Lake City
+      link:
+
+    - author: Tristalee Mangin
+      title: Understanding Alphasense OPC-N3 Sensor Aging and PM10 Measurement Reliability
+      link:
+
+    - author: Randon Sandall
+      title: Vertically Resolved Temperature and Particulate Measurements in Richfield, UT
       link:
