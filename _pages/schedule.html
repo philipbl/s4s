@@ -80,6 +80,7 @@ title: Schedule
     <div class="poster-group">
         {% for poster in category.posters %}
         {% assign poster_index = poster_index | plus: 1 %}
+        {% unless poster.dropped %}
         <div class="row poster-item">
             <div class="col poster-number">{{ poster_index }}</div>
             {% if poster.link %}
@@ -91,6 +92,7 @@ title: Schedule
 
             <div class="poster-author">{{ poster.author }}</div>
         </div>
+        {% endunless %}
         {% endfor %}
     </div>
     {% endfor %}
