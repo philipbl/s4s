@@ -74,11 +74,14 @@ title: Schedule
 {% endif %}
 <div class="container poster-container">
 
+    {% assign poster_index = 0 %}
     {% for category in site.data.posters %}
     <h4>{{ category.category }}</h4>
     <div class="poster-group">
         {% for poster in category.posters %}
+        {% assign poster_index = poster_index | plus: 1 %}
         <div class="row poster-item">
+            <div class="col poster-number">{{ poster_index }}</div>
             {% if poster.link %}
             <div class="col poster-title"><a href="{{ poster.link }}" target="_blank" rel="noopener noreferrer">{{
                     poster.title }}</a></div>

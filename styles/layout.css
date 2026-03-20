@@ -79,6 +79,16 @@ h2 {
 	width: 200px;
 }
 
+.poster-number {
+	flex: 0 0 2.5rem;
+	max-width: 2.5rem;
+	padding-right: 0.5rem;
+	text-align: right;
+	color: #6c757d;
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
 .poster-item {
 	padding: 5px 0;
 }
