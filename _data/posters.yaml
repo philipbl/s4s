@@ -53,6 +53,7 @@
     - author: Saeed Alkaabi
       title: Impact of Holiday Fireworks on PM2.5 Concentrations in Utah
       link:
+      dropped: true
 
     - author: Sarah Chan
       title: Characterizing Western U.S. Dust Movement by Mass Flux and Particle Size
@@ -135,6 +136,7 @@
     - author: John R. Lawson
       title: "Ffion: an AI air-quality forecaster"
       link:
+      dropped: true
 
     - author: Kyler Pak
       title: Evaluating Numerical Wildfire Smoke Forecasts Across Utah
@@ -170,7 +172,7 @@
       title: "Ambient Particulate Matter Levels on High School Athletic Fields in Utah: Implications from a One-Year Monitoring Study"
       link:
 
-    - author: Aaron Watts
+    - author: Chris Hercules
       title: Richfield, UT Air Quality Measurements 2025
       link:
 
@@ -197,6 +199,7 @@
     - author: Henry Carter
       title: The Effects of Air Pollution on Soil Quality in Salt Lake City
       link:
+      dropped: true
 
     - author: Jaden Olvera
       title: Cavity-Enhanced Ozone Instrument in the Far UV
