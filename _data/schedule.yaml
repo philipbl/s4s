@@ -14,16 +14,19 @@ schedule:
     color: rgba(100, 148, 170, .3)
     talks:
       - author: Norlito Ranchez Jr.
-        title: "Comparative Assessment of Wasatch Front Pollutants: Mortality Risk and Toxicity"
-        # link: https://byu.app.box.com/v/s4s-2025-slides/file/1814866280736
+        title: "Comparative Assessment of Wasatch Front Pollutants: Mortality Risk and
+          Toxicity"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2207761355307
 
       - author: Autumn Jensen
-        title: "Mapping Polycyclic Aromatic Hydrocarbons (PAHs) in Two Utah Cities Using Pines Needles as Passive Samplers"
-        # link:
+        title: "Mapping Polycyclic Aromatic Hydrocarbons (PAHs) in Two Utah Cities Using
+          Pines Needles as Passive Samplers"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2207763865212
 
       - author: Fiona Hopewell
-        title: "Understanding the Effect of Wildfire Smoke and HVAC Settings on Indoor Air Quality Using Networked Sensors"
-        # link:
+        title: "Understanding the Effect of Wildfire Smoke and HVAC Settings on Indoor
+          Air Quality Using Networked Sensors"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2207762319713
 
   - name: Break
     start_time: 10:30 AM
@@ -35,16 +38,19 @@ schedule:
     color: rgba(233, 184, 114, .3)
     talks:
       - author: Carrie Womack
-        title: "Summertime Ozone Formation in Salt Lake City Modeled During the 2024 Utah Summer Ozone Study"
-        # link:
+        title: "Summertime Ozone Formation in Salt Lake City Modeled During the 2024
+          Utah Summer Ozone Study"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2176391997537
 
       - author: Brian Carroll
-        title: "Urban Air Quality Coupled to Mountain and Lake Dynamics: Northern Wasatch Front Airborne Measurements in Summer 2024"
-        # link:
+        title: "Urban Air Quality Coupled to Mountain and Lake Dynamics: Northern
+          Wasatch Front Airborne Measurements in Summer 2024"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2207761847600
 
       - author: Patrick J. Reddy
-        title: "Assessing Ozone Sensitivity to NOx and VOCs, Smoke, Heat, Drought, and Plant Stress in Utah and the Northern Wasatch Front"
-        # link:
+        title: "Assessing Ozone Sensitivity to NOx and VOCs, Smoke, Heat, Drought, and
+          Plant Stress in Utah and the Northern Wasatch Front"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2175075323552
 
   - name: Lunch & Posters
     start_time: 11:50 AM
@@ -56,20 +62,24 @@ schedule:
     color: rgba(166, 61, 64, .21)
     talks:
       - author: Haley Humble
-        title: "Characterizing NOx Emission Uncertainties in an Urban Valley Using Ground Based Column Observations and Transport Analysis"
-        # link:
+        title: "Characterizing NOx Emission Uncertainties in an Urban Valley Using
+          Ground Based Column Observations and Transport Analysis"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2207761195108
 
       - author: Amber Allen
-        title: "Heavy-Duty Diesel Vehicle Deterioration: Impact of Vehicle Age and Emission Control Technology on NOx Emissions"
-        # link:
+        title: "Heavy-Duty Diesel Vehicle Deterioration: Impact of Vehicle Age and
+          Emission Control Technology on NOx Emissions"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2207770516059
 
       - author: Callum Flowerday
-        title: "An Observational Framework for Constructing Ozone Isopleths from Long-Term Monitoring Data: Demonstration in Salt Lake City, Utah"
-        # link:
+        title: "An Observational Framework for Constructing Ozone Isopleths from
+          Long-Term Monitoring Data: Demonstration in Salt Lake City, Utah"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2207773777238
 
       - author: Aaron G. Meyer
-        title: "Mobile Methane and VOC Measurements in the Salt Lake Valley: Source Characterization Using Hydrocarbon Ratios"
-        # link:
+        title: "Mobile Methane and VOC Measurements in the Salt Lake Valley: Source
+          Characterization Using Hydrocarbon Ratios"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2207764362647
 
   - name: Break
     start_time: 3:00 PM
@@ -81,16 +91,18 @@ schedule:
     color: rgba(144, 169, 89, .3)
     talks:
       - author: Seth Lyman
-        title: "Regulatory and Voluntary Changes Have Led to a Threefold Reduction in Methane Emissions Intensity in the Uinta Basin"
-        # link:
+        title: "Regulatory and Voluntary Changes Have Led to a Threefold Reduction in
+          Methane Emissions Intensity in the Uinta Basin"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2207770636156
 
       - author: Kevin Perry
-        title: "Engineered Dust Mitigation at Great Salt Lake: Costs, Tradeoffs, and a Weight-of-Evidence Decision Framework"
-        # link:
+        title: "Engineered Dust Mitigation at Great Salt Lake: Costs, Tradeoffs, and a
+          Weight-of-Evidence Decision Framework"
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2176440383860
 
       - author: Zachary Aanderud
         title: "Understanding Utah’s Dust: Advancing Science for Public Health"
-        # link:
+        link: https://byu.app.box.com/v/s4s-2026-slides/file/2176444446798
 
   - name: Poster Awards & Final Comments
     start_time: 4:20 PM
