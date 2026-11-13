@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Schedule
+title: Program
 ---
 
 <div class="container">
@@ -19,7 +19,7 @@ title: Schedule
     <div class="row">
         <div class="col-lg-9">
             <div class="alert alert-warning" role="alert">
-                This is a draft schedule and is subject to change. We will update the schedule as we get closer to the conference date. Please check back for updates.
+                This is a draft schedule and is subject to change. We will update it as the conference approaches, so please check back for updates.
             </div>
         </div>
     </div>
@@ -55,15 +55,7 @@ title: Schedule
         <div class="col">
             <div class="row">
                 <h3>Our Supporters</h3>
-                <p>
-                    <img class="img-fluid" alt="USU Engineering" src="{% link images/combined_USU_logo_Science_for_Solutions.png %}" />
-                </p>
-                <p>
-                    <img class="img-fluid" alt="UCAIR - Utah Clean Air Partnership" longdesc="UCAIR - Utah Clean Air Partnership" src="{% link images/UCAIR-logo.png %}" />
-                </p>
-                <p>
-                    <img class="img-fluid" alt="DAQ Logo" src="{% link images/DAQ.png %}" />
-                </p>
+                {% include supporters.html %}
             </div>
         </div>
     </div>

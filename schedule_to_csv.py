@@ -129,7 +129,7 @@ def main(yaml_path: str, csv_path: str) -> None:
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python yaml_to_csv.py schedule.yaml output.csv")
+        print(f"Usage: {sys.argv[0]} _data/schedule.yaml output.csv")
         sys.exit(1)
 
     main(sys.argv[1], sys.argv[2])

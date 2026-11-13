@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Contact
+title: Organizing Committee
 ---
 <div class="container">
     <div class="row text-center">
@@ -12,8 +12,7 @@ title: Contact
         <div class="col">
             {% for member in site.data.committee.members %}
             <p>
-                {% if member.email %}<a href="mailto:{{ member.email }}">{% endif %}{{ member.name }}{% if member.email %}</a>{%
-                endif %}, {{ member.affiliation }}
+                {% if member.email %}<a href="mailto:{{ member.email }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}, {{ member.affiliation }}
             </p>
             {% endfor %}
         </div>
