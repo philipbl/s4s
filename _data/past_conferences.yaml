@@ -1,0 +1,16 @@
+# Archived conference sites, newest first, shown on the Past Conferences page.
+# Each one is a frozen copy of that year's built site under past/, so it keeps
+# its own look. `make archive` copies the current site into past/<year>/ and
+# adds an entry to the top of this list.
+
+- name: "2025"
+  url: /past/2025/
+
+- name: "2024"
+  url: /past/2024/
+
+- name: "2023"
+  url: /past/2023/
+
+- name: "2017–2022"
+  url: /past/2023/docs/default.html

@@ -21,4 +21,7 @@ collections:
 exclude:
   - Makefile
   - schedule_to_csv.py
+  - schedule.csv
+  - archive_year.py
+  - .venv
   - README.md

@@ -10,10 +10,9 @@ title: Past Conferences
     </div>
     <div class="row">
         <div class="col">
-            <p><a href="{% link past/2025/index.html %}">2025</a></p>
-            <p><a href="{% link past/2024/index.html %}">2024</a></p>
-            <p><a href="{% link past/2023/index.html %}">2023</a></p>
-            <p><a href="{% link past/2023/docs/default.html %}">2017&ndash;2022</a></p>
+            {% for conference in site.data.past_conferences %}
+            <p><a href="{{ conference.url | relative_url }}">{{ conference.name }}</a></p>
+            {% endfor %}
         </div>
     </div>
 </div>
