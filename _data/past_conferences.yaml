@@ -3,6 +3,9 @@
 # its own look. `make archive` copies the current site into past/<year>/ and
 # adds an entry to the top of this list.
 
+- name: "2026"
+  url: /past/2026/
+
 - name: "2025"
   url: /past/2025/
 
