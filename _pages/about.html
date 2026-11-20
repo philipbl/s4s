@@ -1,0 +1,65 @@
+---
+layout: default
+title: About
+---
+{% include page-header.html eyebrow="About" title="About the conference" lede=site.description %}
+
+<div class="wrap">
+    <nav class="jump" aria-label="On this page">
+        <ul>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#committee">Organizing committee</a></li>
+            <li><a href="#past">Past conferences</a></li>
+            <li><a href="#supporters">Supporters</a></li>
+        </ul>
+    </nav>
+
+    <section id="mission" class="section section--tight split">
+        <h2>Mission and history</h2>
+        <div class="prose">
+            <p>The mission of this conference is to bridge the divides that separate
+                researchers in different disciplines from each other, from
+                professionals in the industrial and regulatory realms, and from the
+                public, and to encourage a cross-pollination of ideas that leads to
+                solutions.</p>
+
+            <p><em>Air Quality: Science for Solutions</em> began in 2015 with a pair of
+                conferences by the same name hosted by the Utah Department of
+                Environmental Quality, Division of Air Quality; the Program for Air
+                Quality, Health, and Society at the University of Utah; and the Utah
+                State University Bingham Entrepreneurship &amp; Energy Research
+                Center.</p>
+        </div>
+    </section>
+
+    <section id="committee" class="section section--tight" aria-labelledby="committee-title">
+        <h2 id="committee-title">Organizing committee</h2>
+        <ul class="people">
+            {% for member in site.data.committee.members %}
+            <li class="person">
+                <p class="person__name">{% if member.email %}<a href="mailto:{{ member.email }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</p>
+                <p class="person__affiliation">{{ member.affiliation }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+
+        {% if site.data.committee.past_members %}
+        <h3 class="people__subhead">Past committee members</h3>
+        <ul class="people people--compact">
+            {% for member in site.data.committee.past_members %}
+            <li class="person">
+                <p class="person__name">{{ member.name }}</p>
+                <p class="person__affiliation">{{ member.affiliation }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </section>
+
+    <section id="past" class="section section--tight" aria-labelledby="past-title">
+        <h2 id="past-title">Past conferences</h2>
+        <p class="lede">Each archive is a copy of that year's conference website.</p>
+        {% include past-conferences.html %}
+    </section>
+
+</div>

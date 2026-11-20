@@ -6,19 +6,16 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {% include masthead.html %}
-            </div>
-        </div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        {% include nav.html %}
+    {% include header.html %}
 
+    <main id="main">
         {{ content }}
+    </main>
 
-        {% include footer.html %}
-    </div>
+    {% include supporters-band.html %}
+    {% include footer.html %}
 </body>
 
 </html>

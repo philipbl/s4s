@@ -1,0 +1,12 @@
+{% comment %}
+  Header band at the top of inner pages.
+  Usage: {% include page-header.html eyebrow="..." title="..." lede="..." %}
+  Only title is required. Pass captured strings for text that uses Liquid.
+{% endcomment %}
+<header class="page-header">
+    <div class="wrap">
+        {% if include.eyebrow %}<p class="eyebrow">{{ include.eyebrow }}</p>{% endif %}
+        <h1>{{ include.title }}</h1>
+        {% if include.lede %}<p class="lede">{{ include.lede }}</p>{% endif %}
+    </div>
+</header>

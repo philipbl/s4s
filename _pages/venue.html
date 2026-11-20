@@ -2,37 +2,28 @@
 layout: default
 title: Venue
 ---
-<div class="container">
-    <div class="row text-center">
-        <div class="col">
-            <h1>Venue Information</h1>
+{% comment %}
+  Directions change with each year's host, so write them here once the
+  location is set in _data/dates.yaml. The 2026 page (BYU's Engineering
+  Building, with parking and transit maps) is archived at past/2026/venue/
+  and is a good model: a section per way of getting there, each with a
+  `split split--media` layout and a photo or map beside the text.
+{% endcomment %}
+{% assign d = site.data.dates %}
+{% capture lede %}{% include event-summary.html %}{% endcapture %}
+{% include page-header.html eyebrow="Venue" title="Getting to the conference" lede=lede %}
+
+<div class="wrap">
+    <section class="section section--tight">
+        {% if d.conference_location %}
+        <div class="prose">
+            <h2>{{ d.conference_location }}</h2>
+            <p>The {{ d.year }} conference will be held at {{ d.conference_location }}. Directions, parking, and
+                public transportation details will be posted here.</p>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-6 mt-3">
-            <p>The conference will be held in the event space of BYU's <b>Engineering Building</b>, which is located on the southeast end of campus (<a href="https://maps.app.goo.gl/w2gUhhfmHd3zXZpp6" target="_blank" rel="noopener">map</a>). There are a few options for getting to the Engineering Building.</p>
-
-            <h3>Car</h3>
-
-            <p>Visitors can park for free in lot 26V (<a href="https://goo.gl/maps/2BBVNyuuYaajmMCL9" target="_blank" rel="noopener">map</a>). If that lot is full, visitors can park in lot 2V (<a href="https://maps.app.goo.gl/xVQPaAJSbzGZr7d26" target="_blank" rel="noopener">map</a>). The map below shows both lots along with walking directions to the front of the building.</p>
-
-            <figure>
-                <img class="img-fluid" src="{% link images/2026/BYU-Parking.png %}" alt="BYU campus map showing visitor parking lots 26V and 2V and walking routes to the Engineering Building.">
-            </figure>
-
-            <h3>Public Transportation</h3>
-
-            <p>The Engineering Building is a two-minute walk from the UVX BYU South Campus station. Take FrontRunner to Provo Station, then take the UVX bus toward BYU South Campus. Buses leave Provo Station every 6 minutes, and the ride takes about 18 minutes.</p>
-
-            <figure>
-                <img class="img-fluid" src="{% link images/2026/BYU-Bus-Trax.png %}" alt="Map showing the walking route from the UVX BYU South Campus station to the Engineering Building.">
-            </figure>
-        </div>
-        <div class="col-6">
-            <figure>
-                <img class="img-fluid" src="{% link images/2026/eb.jpg %}" alt="The Engineering Building at BYU." />
-                <figcaption class="caption">BYU Engineering Building</figcaption>
-            </figure>
-        </div>
-    </div>
+        {% else %}
+        <p class="lede">The location of the {{ d.year }} conference is TBD. Directions, parking, and public
+            transportation details will be posted here once it is set.</p>
+        {% endif %}
+    </section>
 </div>

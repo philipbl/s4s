@@ -2,17 +2,12 @@
 layout: default
 title: Past Conferences
 ---
-<div class="container">
-    <div class="row">
-        <div class="col text-center">
-            <h1>Past Conferences</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            {% for conference in site.data.past_conferences %}
-            <p><a href="{{ conference.url | relative_url }}">{{ conference.name }}</a></p>
-            {% endfor %}
-        </div>
-    </div>
+{% comment %}
+  Archived sites link here as "Past Conferences", so this stays a real page.
+  The list comes from _data/past_conferences.yaml, which `make archive` updates.
+{% endcomment %}
+{% include page-header.html eyebrow="Archive" title="Past conferences" lede="Each archive is a copy of that year's conference website." %}
+
+<div class="wrap section section--tight">
+    {% include past-conferences.html %}
 </div>

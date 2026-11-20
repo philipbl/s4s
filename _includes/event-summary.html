@@ -1,0 +1,16 @@
+{%- comment -%}
+  One line with the conference date and place, from _data/dates.yaml,
+  e.g. "Thursday, March 26, 2026 · Brigham Young University". Blank values
+  show as TBD. Capture it to use it in a page header:
+  {% capture lede %}{% include event-summary.html %}{% endcapture %}
+{%- endcomment -%}
+{%- assign d = site.data.dates -%}
+{%- if d.conference and d.conference_location -%}
+{{ d.conference }}, {{ d.year }} · {{ d.conference_location }}
+{%- elsif d.conference -%}
+{{ d.conference }}, {{ d.year }} · Location TBD
+{%- elsif d.conference_location -%}
+Date TBD · {{ d.conference_location }}
+{%- else -%}
+Date and location TBD
+{%- endif -%}

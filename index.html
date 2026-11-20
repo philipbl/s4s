@@ -1,64 +1,164 @@
 ---
 layout: default
 ---
-<div class="row">
-    <div class="col-9">
-        {% if site.data.dates.next_year_message %}
-        <h3 class="mt-4 conference-date-header text-center">
-            {{ site.data.dates.next_year_message }}
-        </h3>
-        {% endif %}
-        <h1 class="conference-title-header">Air Quality: Science for Solutions {{ site.data.dates.year }}</h1>
-        <h3 class="conference-date-header">{{ site.data.dates.conference }}</h3>
+{% assign d = site.data.dates %}
+{% assign links = site.data.links %}
+{% assign latest = site.data.past_conferences.first %}
 
-        <p><em>Air Quality: Science for Solutions</em> is an annual conference on
-            air quality, with a focus on Utah and the Intermountain West. It began in
-            2015 with a pair of conferences by the same name hosted by the Utah
-            Department of Environmental Quality, Division of Air Quality; the
-            Program for Air Quality, Health, and Society at the University of Utah;
-            and the Utah State University Bingham Entrepreneurship &amp; Energy
-            Research Center.</p>
-
-        <p>The mission of this conference is to bridge the divides that separate
-            researchers in different disciplines from each other, from
-            professionals in the industrial and regulatory realms, and from the
-            public, and to encourage a cross-pollination of ideas that leads to
-            solutions.</p>
-
-        <h2>Topics</h2>
-        <p>The subject of this conference is air science. Topic areas include
-            atmospheric chemistry, health impacts, meteorology, emissions,
-            modeling, and public policy. While the conference focuses on air
-            quality issues important to Utah and the Intermountain West, we also
-            welcome presentations on related air quality topics.</p>
-
-        <h2>Oral Sessions</h2>
-        <p>There are no parallel sessions. Oral presentations should be
-            understandable, at least in part, to air scientists from all fields.
-            A major goal of this conference is the cross-pollination of ideas
-            between fields of study.</p>
-
-        <h2>Poster Sessions</h2>
-        <p>Posters will be on display for the entire conference, and breaks will
-            be held near the posters to encourage interaction. There will also be
-            a student poster competition.</p>
-
-        <h2 class="mt-5">Our Supporters</h2>
-        <p>This conference is made possible by the generous financial support of
-            the following organizations:</p>
-        {% include supporters.html %}
-    </div>
-
-    <div class="col">
-        <figure class="mt-4">
-            <img class="img-fluid" alt="Air quality measuring drone" src="{% link images/snow_drone.jpg %}" />
-            <img class="img-fluid" alt="Air quality measuring rocket on its launch pad" src="{% link images/snow_rocket.jpg %}" />
-            <figcaption class="caption">An air quality measuring drone and rocket built by Dr. Thalman at Snow College.</figcaption>
-        </figure>
-
-        <figure class="mt-4">
-            <img class="img-fluid" alt="Roadside emissions sampling station with an overhead exhaust inlet next to a passing heavy-duty diesel truck" src="{% link images/byu-diesel-emissions.jpg %}" />
-            <figcaption class="caption">Emissions measurement system for heavy-duty diesel trucks built by students of Dr. Sonntag and Dr. Lundrigan at BYU.</figcaption>
-        </figure>
-    </div>
+{% if d.next_year_message %}
+<div class="announcement">
+    <p class="wrap">{{ d.next_year_message }}</p>
 </div>
+{% endif %}
+
+<section class="hero">
+    <div class="wrap hero__inner">
+        <div class="hero__text">
+            <p class="eyebrow">{{ d.conference_number }} Annual Conference · {{ d.year }}</p>
+            <h1 class="hero__title">Air Quality: <span>Science for Solutions</span></h1>
+
+            <dl class="hero__facts">
+                <div>
+                    <dt>When</dt>
+                    <dd>{% if d.conference %}{{ d.conference }}, {{ d.year }}{% else %}TBD{% endif %}</dd>
+                </div>
+                <div>
+                    <dt>Where</dt>
+                    <dd>{% if d.conference_location %}<a href="{{ '/venue/' | relative_url }}">{{ d.conference_location }}</a>{% else %}TBD{% endif %}</dd>
+                </div>
+            </dl>
+            {% if d.remote_option %}<p class="hero__note">A remote option is available for oral sessions.</p>{% endif %}
+
+            {% comment %} Buttons appear as their links are added to _data/links.yaml. {% endcomment %}
+            <div class="actions">
+                {% if links.registration %}
+                <a class="btn btn--primary btn--lg" href="{{ '/attendee/' | relative_url }}">Register</a>
+                {% endif %}
+                {% if links.abstract_form %}
+                <a class="btn btn--secondary btn--lg" href="{{ '/presenters/#submit' | relative_url }}">Submit an abstract</a>
+                {% endif %}
+                {% unless links.registration or links.abstract_form %}
+                {% if latest %}
+                <a class="btn btn--primary btn--lg" href="{{ latest.url | append: 'schedule/' | relative_url }}">See the {{ latest.name }} program</a>
+                {% endif %}
+                {% if links.donate %}
+                <a class="btn btn--secondary btn--lg" href="{{ '/donate/' | relative_url }}">Support the conference</a>
+                {% endif %}
+                {% endunless %}
+            </div>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+            <img src="{{ '/images/brand/mark-full.png' | relative_url }}" alt="" width="760" height="600">
+        </div>
+    </div>
+</section>
+
+<section class="key-dates" aria-labelledby="key-dates-title">
+    <div class="wrap">
+        <h2 id="key-dates-title" class="visually-hidden">Key dates</h2>
+        <ol class="timeline">
+            <li>
+                <a href="{{ '/presenters/#submit' | relative_url }}">
+                    <span class="timeline__label">Abstracts due</span>
+                    <span class="timeline__date">{{ d.abstract | default: "TBD" }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ '/attendee/' | relative_url }}">
+                    <span class="timeline__label">Early registration ends</span>
+                    <span class="timeline__date">{{ d.registration | default: "TBD" }}</span>
+                </a>
+            </li>
+            <li class="timeline__main">
+                <a href="{{ '/schedule/' | relative_url }}">
+                    <span class="timeline__label">Conference day</span>
+                    <span class="timeline__date">{{ d.conference | default: "TBD" }}</span>
+                </a>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap split">
+        <div>
+            <p class="eyebrow">About the conference</p>
+            <h2>Bridging the divides in air quality science</h2>
+        </div>
+        <div class="prose">
+            <p><em>Air Quality: Science for Solutions</em> is an annual conference on
+                air quality, with a focus on Utah and the Intermountain West. Its
+                mission is to bridge the divides that separate researchers in
+                different disciplines from each other, from professionals in the
+                industrial and regulatory realms, and from the public, and to
+                encourage a cross-pollination of ideas that leads to solutions.</p>
+
+            <p>It began in 2015 with a pair of conferences by the same name hosted by
+                the Utah Department of Environmental Quality, Division of Air Quality;
+                the Program for Air Quality, Health, and Society at the University of
+                Utah; and the Utah State University Bingham Entrepreneurship &amp;
+                Energy Research Center. <a href="{{ '/about/' | relative_url }}">More about us</a></p>
+        </div>
+    </div>
+</section>
+
+<section class="section section--tint">
+    <div class="wrap">
+        <p class="eyebrow">The format</p>
+        <h2>What to expect</h2>
+        <div class="cards">
+            <article class="card">
+                <h3>Topics</h3>
+                <p>The subject of this conference is air science. While it focuses on
+                    issues important to Utah and the Intermountain West, we also welcome
+                    presentations on related air quality topics.</p>
+                <ul class="tags">
+                    <li>Atmospheric chemistry</li>
+                    <li>Health impacts</li>
+                    <li>Meteorology</li>
+                    <li>Emissions</li>
+                    <li>Modeling</li>
+                    <li>Public policy</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>Oral sessions</h3>
+                <p>There are no parallel sessions. Oral presentations should be
+                    understandable, at least in part, to air scientists from all fields.
+                    A major goal of this conference is the cross-pollination of ideas
+                    between fields of study.</p>
+            </article>
+
+            <article class="card">
+                <h3>Poster sessions</h3>
+                <p>Posters are on display for the entire conference, and breaks are
+                    held near the posters to encourage interaction. There is also a
+                    student poster competition.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <p class="eyebrow">From our community</p>
+        <h2>Air quality research in Utah</h2>
+
+        <div class="gallery">
+            <figure>
+                <img src="{% link images/snow_drone.jpg %}" alt="An air quality measuring drone on a snowy sidewalk" loading="lazy">
+                <figcaption>An air quality measuring drone built by Dr. Thalman at Snow College.</figcaption>
+            </figure>
+            <figure>
+                <img class="crop-top" src="{% link images/snow_rocket.jpg %}" alt="An air quality measuring rocket on its launch pad" loading="lazy">
+                <figcaption>An air quality measuring rocket, also built by Dr. Thalman at Snow College.</figcaption>
+            </figure>
+            <figure>
+                <img src="{% link images/byu-diesel-emissions.jpg %}" alt="Roadside emissions sampling station with an overhead exhaust inlet next to a passing heavy-duty diesel truck" loading="lazy">
+                <figcaption>A heavy-duty diesel truck emissions system built by students of Dr. Sonntag and Dr. Lundrigan at BYU.</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
