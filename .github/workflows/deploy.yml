@@ -43,7 +43,8 @@ jobs:
       # On the server, the deploy key is locked to
       # `rrsync -wo /home/philipbl/aq.byu.edu`: it can only upload into the web
       # root. Paths are relative to that folder, so an empty path means the web
-      # root itself.
+      # root itself. The command is quoted because YAML reads a trailing colon
+      # as the start of a key.
       - name: Deploy
         if: env.DEPLOY == 'true'
-        run: make deploy DOCKER= DEPLOY_TARGET=philipbl@aq.byu.edu:
+        run: 'make deploy DOCKER= DEPLOY_TARGET=philipbl@aq.byu.edu:'
