@@ -40,6 +40,10 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           echo "aq.byu.edu ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIEo+XQXX2gAOJbBQ8xb26rykG20m7xOKJvwlv2oqNXc" >> ~/.ssh/known_hosts
 
+      # On the server, the deploy key is locked to
+      # `rrsync -wo /home/philipbl/aq.byu.edu`: it can only upload into the web
+      # root. Paths are relative to that folder, so an empty path means the web
+      # root itself.
       - name: Deploy
         if: env.DEPLOY == 'true'
-        run: make deploy DOCKER= DEPLOY_TARGET=philipbl@aq.byu.edu:aq.byu.edu/
+        run: make deploy DOCKER= DEPLOY_TARGET=philipbl@aq.byu.edu:
