@@ -1,0 +1,207 @@
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #fff;
+}
+
+/* Masthead */
+#masthead {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	text-align: right;
+	background: #c5d5e5;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 1) 9%, rgba(197, 213, 229, 1) 31%);
+}
+
+#masthead img {
+	float: left;
+	margin: 5px;
+	padding: 0;
+}
+
+.masthead p {
+	font-size: small;
+	text-align: right;
+	color: #000;
+	margin: 10px 10px 10px 0;
+	padding: 0;
+}
+
+.masthead .conference_location p {
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+.masthead_caption {
+	font-size: 12px !important;
+	margin-top: 0 !important;
+}
+
+.masthead h3 {
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+	margin: 30px 10px 5px 0;
+}
+
+.masthead .important_dates p {
+	margin: 0 10px 0 0;
+}
+
+/* Navigation */
+#navigation {
+	width: auto;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	clear: both;
+	overflow: hidden;
+	background-color: #ca7;
+}
+
+#navigation ul {
+	list-style-type: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#navigation li {
+	float: left;
+}
+
+#navigation a {
+	color: #000;
+	text-decoration: none;
+	display: block;
+	padding: 5px;
+	border: 1px solid #ca7;
+	background-color: #dc8;
+}
+
+#navigation a:hover {
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #ed9;
+	background-color: #ed9;
+}
+
+/* Content */
+h1 {
+	font-size: 2em;
+	color: #393939;
+	margin: 20px 0;
+}
+
+h2 {
+	margin-top: 20px;
+	font-size: 1.75em;
+	color: #469;
+}
+
+h3 {
+	font-size: 1.5em;
+	color: #469;
+}
+
+h4 {
+	padding-top: 30px;
+	font-size: 1.25em;
+	color: #469;
+}
+
+h5 {
+	font-size: 0.75em;
+	color: #469;
+}
+
+h6 {
+	font-size: 0.5em;
+	color: #469;
+}
+
+a {
+	color: #469;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+.caption {
+	font-size: 12px;
+	color: grey;
+	text-align: right;
+}
+
+.supporter-logo {
+	width: 400px;
+}
+
+.conference-title-header {
+	margin-bottom: 0;
+}
+
+.conference-date-header {
+	margin-bottom: 25px;
+	font-style: italic;
+	font-size: 20px;
+}
+
+/* Schedule */
+.schedule-time {
+	width: 100px;
+	vertical-align: middle;
+}
+
+.schedule-speaker {
+	width: 250px;
+	text-align: right;
+}
+
+.schedule-item {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.schedule-header {
+	font-weight: 600;
+	font-size: 1em;
+}
+
+.schedule-talk-item {
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+/* Posters */
+.poster-author {
+	width: 200px;
+}
+
+.poster-number {
+	flex: 0 0 2.5rem;
+	max-width: 2.5rem;
+	padding-right: 0.5rem;
+	text-align: right;
+	color: #6c757d;
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.poster-item {
+	padding: 5px 0;
+}
+
+/* Alternate poster-item backgrounds within each poster-group so
+   alternation restarts after each h4/category. */
+.poster-group .poster-item:nth-child(odd) {
+	background: rgba(100, 148, 170, .2);
+}

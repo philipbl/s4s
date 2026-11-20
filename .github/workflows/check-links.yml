@@ -1,0 +1,25 @@
+name: Check links
+
+# Outside sites go down on their own, so they are checked weekly instead of
+# blocking deploys. GitHub emails you when a scheduled run fails.
+on:
+  schedule:
+    - cron: "0 15 * * 1" # Mondays at 15:00 UTC (8 or 9 a.m. in Utah)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # Ruby version comes from .ruby-version
+
+      - name: Check internal and external links
+        run: make check_links DOCKER=

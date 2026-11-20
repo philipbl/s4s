@@ -1,0 +1,45 @@
+name: Build and deploy
+
+# Every push builds the site and checks internal links. Pushes to main also
+# deploy it to aq.byu.edu.
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Never run two deploys at once; let a running one finish.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DEPLOY: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # Ruby version comes from .ruby-version
+
+      - name: Build and check internal links
+        run: make check_internal_links DOCKER=
+
+      - name: Set up SSH
+        if: env.DEPLOY == 'true'
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "aq.byu.edu ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIEo+XQXX2gAOJbBQ8xb26rykG20m7xOKJvwlv2oqNXc" >> ~/.ssh/known_hosts
+
+      - name: Deploy
+        if: env.DEPLOY == 'true'
+        run: make deploy DOCKER= DEPLOY_TARGET=philipbl@aq.byu.edu:aq.byu.edu/
