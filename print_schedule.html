@@ -11,7 +11,9 @@ sitemap: false
 <html lang="en">
 
 <head>
-    {% include head.html %}
+    {% comment %} Browsers use the title as the file name when saving as PDF. {% endcomment %}
+    {% capture sheet_title %}S4S Schedule {{ site.data.dates.year }}{% endcapture %}
+    {% include head.html title=sheet_title %}
     <style>
         @page {
             size: legal portrait;

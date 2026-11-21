@@ -3,7 +3,8 @@
 <meta name="description" content="{{ site.description }}">
 <meta name="theme-color" content="#00406e">
 
-<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+{% comment %} A page can pass a full title as `title` when it includes this file. {% endcomment %}
+<title>{% if include.title %}{{ include.title }}{% else %}{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}{% endif %}</title>
 
 <link rel="preload" href="{{ '/fonts/outfit-latin-wght.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ '/fonts/inter-latin-wght.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
