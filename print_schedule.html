@@ -41,20 +41,26 @@ sitemap: false
 
     <script>
         // Find the largest text size at which the schedule fits on one legal
-        // page. The sheet on screen is the same width as the printed page's
-        // content (7.7in), so its height here is its printed height. The size
-        // goes into --sheet-size, which main.css uses for the sheet.
+        // page. The sheet on screen is the same size as the printed page's
+        // content, so its height here is its printed height. The size goes
+        // into --sheet-size, which main.css uses for the sheet.
         (function () {
             var root = document.documentElement;
             var content = document.querySelector('.print-sheet__content');
-            // Legal is 14in tall, less 0.8in of @page margins, at 96 CSS px per
-            // inch. Leave some room to spare: Chrome prints text exactly as it
-            // shows it, but Safari sets text about 7% wider when printing than
-            // on screen, so lines wrap sooner and the sheet comes out taller.
+            // Safari lays a printed page out at 15/16 of its size and scales
+            // it up to fill the paper (a 13.2in-tall page holds 12.375in of
+            // content), so the sheet is laid out smaller there to match.
             var isSafari = navigator.vendor === 'Apple Computer, Inc.';
-            var maxHeight = (14 - 0.8) * 96 * (isSafari ? 0.85 : 0.95);
+            var scale = isSafari ? 16 / 15 : 1;
+            root.style.setProperty('--print-scale', scale);
+            // Legal is 14in tall, less 0.8in of @page margins, at 96 CSS px
+            // per inch. Leave 3% to spare for small differences in printing.
+            var maxHeight = (14 - 0.8) / scale * 96 * 0.97;
 
             function fit() {
+                // Measure the schedule at its natural height, not stretched
+                // to fill the page.
+                document.body.classList.add('print-sheet--measuring');
                 var lo = 8, hi = 18; // px
                 for (var i = 0; i < 12; i++) {
                     var mid = (lo + hi) / 2;
@@ -64,6 +70,7 @@ sitemap: false
                 }
                 root.style.fontSize = '';
                 root.style.setProperty('--sheet-size', Math.floor(lo * 10) / 10 + 'px');
+                document.body.classList.remove('print-sheet--measuring');
             }
 
             fit();

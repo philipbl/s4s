@@ -1166,28 +1166,51 @@ a:hover {
 	padding: 0;
 }
 
-.schedule::before {
-	content: "";
-	position: absolute;
-	top: 0.6rem;
-	bottom: 0.6rem;
-	left: calc(var(--rail) - 1px);
-	width: 2px;
-	background: var(--line);
-}
-
+/* Each item draws its own stretch of the rail (::before) and its dot
+   (::after, so it sits on top of the rail). That way the rail starts at the
+   first dot and stops at the last one. --dot-y is how far down the item the
+   center of its dot is. */
 .schedule__item {
+	--dot-y: calc(0.45rem + 5px);
 	position: relative;
 	display: grid;
 	grid-template-columns: var(--time) minmax(0, 1fr);
+	align-content: start;
 	column-gap: 2.5rem;
 	padding-bottom: 1.25rem;
+}
+
+.schedule__item--session {
+	--dot-y: calc(1.55rem + 7px);
 }
 
 .schedule__item::before {
 	content: "";
 	position: absolute;
-	top: 0.45rem;
+	top: 0;
+	bottom: 0;
+	left: calc(var(--rail) - 1px);
+	width: 2px;
+	background: var(--line);
+}
+
+.schedule__item:first-child::before {
+	top: var(--dot-y);
+}
+
+.schedule__item:last-child::before {
+	bottom: auto;
+	height: var(--dot-y);
+}
+
+.schedule__item:only-child::before {
+	display: none;
+}
+
+.schedule__item::after {
+	content: "";
+	position: absolute;
+	top: calc(var(--dot-y) - 5px);
 	left: calc(var(--rail) - 5px);
 	width: 10px;
 	height: 10px;
@@ -1196,8 +1219,8 @@ a:hover {
 	background: var(--white);
 }
 
-.schedule__item--session::before {
-	top: 1.55rem;
+.schedule__item--session::after {
+	top: calc(var(--dot-y) - 7px);
 	left: calc(var(--rail) - 7px);
 	width: 14px;
 	height: 14px;
@@ -1306,8 +1329,8 @@ a:hover {
 		margin-bottom: 0.35rem;
 	}
 
-	.schedule__item--session::before {
-		top: 0.35rem;
+	.schedule__item--session {
+		--dot-y: calc(0.35rem + 7px);
 	}
 
 	.schedule__item--session .schedule__body {
@@ -1546,11 +1569,13 @@ a:hover {
 
 /* The printable schedule (print_schedule.html) has to print on one legal
    page. On screen the page shows the sheet at its printed size: 8.5in wide
-   with the 0.4in @page margins, so 7.7in of content. A script on the page
-   measures the schedule and stores the largest text size that fits in
-   --sheet-size. Sizes on the sheet are in rem so they all scale with it,
-   and the styles below apply on screen and in print alike so the
-   measurement matches what prints. */
+   with the 0.4in @page margins, so 7.7in × 13.2in of content. Safari lays a
+   printed page out 15/16 that size and scales it up to fill the paper, so
+   the page's script sets --print-scale to 16/15 there and the sheet uses
+   the smaller size. The script also measures the schedule and stores the
+   largest text size that fits in --sheet-size. Sizes on the sheet are in
+   rem so they all scale with it, and the styles below apply on screen and
+   in print alike so the measurement matches what prints. */
 html:has(.print-sheet) {
 	font-size: var(--sheet-size, 12px);
 }
@@ -1575,17 +1600,32 @@ html:has(.print-sheet) {
 
 .print-sheet__paper {
 	box-sizing: content-box;
-	width: 7.7in;
-	min-height: 13.2in;
+	width: calc(7.7in / var(--print-scale, 1));
+	min-height: calc(13.2in / var(--print-scale, 1));
 	margin: 16px auto 32px;
 	padding: 0.4in;
 	background: var(--white);
 	box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 8px 24px rgb(0 0 0 / 8%);
 }
 
-/* flow-root keeps child margins inside, so the script measures all of it. */
+/* The content is as tall as the page (a hair less, so rounding can't spill
+   onto a blank second page). The timeline fills whatever the header leaves:
+   its last item sits at the bottom and the spare room is shared equally
+   between the other items. While the script measures, the content goes
+   back to its natural height (print-sheet--measuring). */
 .print-sheet__content {
-	display: flow-root;
+	display: flex;
+	flex-direction: column;
+	height: calc(13.2in / var(--print-scale, 1) - 2px);
+}
+
+.print-sheet--measuring .print-sheet__content {
+	height: auto;
+}
+
+/* Keep the dot's pale ring inside the page, or Safari clips it. */
+.print-sheet .eyebrow::before {
+	margin-left: 4px;
 }
 
 .print-sheet a {
@@ -1606,11 +1646,22 @@ html:has(.print-sheet) {
 	--time: 5.25rem;
 	--rail: calc(var(--time) + 1rem);
 	margin-top: 1rem;
+	flex: 1 0 auto;
+	display: flex;
+	flex-direction: column;
 }
 
+/* Every item but the last grows by the same amount to fill the page. The
+   growth is inside each item, so the rail stays unbroken. */
 .print-sheet .schedule__item {
+	flex-grow: 1;
 	column-gap: 2rem;
 	padding-bottom: 0.5rem;
+}
+
+.print-sheet .schedule__item:last-child {
+	flex-grow: 0;
+	padding-bottom: 0;
 }
 
 /* A session's label, title, and chair share one line, with the talks below. */
@@ -1626,8 +1677,8 @@ html:has(.print-sheet) {
 	padding-top: 0.5rem;
 }
 
-.print-sheet .schedule__item--session::before {
-	top: 0.8rem;
+.print-sheet .schedule__item--session {
+	--dot-y: calc(0.8rem + 7px);
 }
 
 .print-sheet .schedule__label {
