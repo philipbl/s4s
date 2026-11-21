@@ -72,10 +72,12 @@
 	box-sizing: border-box;
 }
 
-/* The page's own background (body) is white. The footer's navy goes on
-   html, which colors whatever lies past the end of the page: on iPhones,
-   the strip Safari leaves under its toolbar at the bottom of the page,
-   and the space below a short page. */
+/* The footer's navy goes on html, so it colors whatever lies past the end of
+   the page: on iPhones, the strip Safari leaves under its toolbar at the
+   bottom of the page, and the space below a short page. The page itself is
+   white, but body paints its white as a background image, not a color.
+   Safari picks the color past the page by laying body's background color
+   over html's and ignores images, so a white body color would win. */
 html {
 	background-color: var(--navy-900);
 	-webkit-text-size-adjust: 100%;
@@ -89,7 +91,7 @@ body {
 	font-size: 1.0625rem;
 	line-height: 1.65;
 	color: var(--ink);
-	background: var(--white);
+	background: linear-gradient(var(--white), var(--white)); /* see html */
 	-webkit-font-smoothing: antialiased;
 }
 
