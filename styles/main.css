@@ -864,11 +864,14 @@ a:hover {
 	border-top: 1px solid var(--line);
 }
 
-.supporters-band__inner {
-	display: grid;
-	grid-template-columns: minmax(0, 0.85fr) minmax(0, 2fr);
-	gap: 2rem 3.5rem;
-	align-items: center;
+/* The intro sits above the logos so the logos get the full width. */
+.supporters-band__intro {
+	max-width: 42rem;
+	margin-bottom: 1.75rem;
+}
+
+.supporters-band__intro > :last-child {
+	margin-bottom: 0;
 }
 
 .supporters-band__title {
@@ -885,16 +888,16 @@ a:hover {
 .supporters-band .supporters {
 	margin: 0;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+	gap: 1.25rem;
 }
 
 .supporters-band .supporters li {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 120px;
-	padding: 1rem 1.25rem;
+	height: 180px;
+	padding: 1.5rem;
 	border: 1px solid var(--line);
 	border-radius: var(--radius-sm);
 	background: var(--white);
@@ -911,23 +914,17 @@ a:hover {
 	width: auto;
 	height: auto;
 	max-width: 100%;
-	max-height: 86px;
+	max-height: 128px;
 }
 
 @media (max-width: 520px) {
 	.supporters-band .supporters li {
-		height: 96px;
-		padding: 0.75rem;
+		height: 140px;
+		padding: 1.25rem;
 	}
 
 	.supporters-band .supporters img {
-		max-height: 70px;
-	}
-}
-
-@media (max-width: 900px) {
-	.supporters-band__inner {
-		grid-template-columns: 1fr;
+		max-height: 100px;
 	}
 }
 
@@ -1391,6 +1388,35 @@ a:hover {
 	background: var(--white);
 }
 
+/* Photo above the name; on phones it sits beside it (see the 520px query). */
+.person--photo {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.9rem;
+}
+
+.person__photo {
+	flex: none;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	object-fit: cover;
+	background: var(--sky-100);
+}
+
+/* Stand-in until a member has a photo: their initials in a circle. */
+.person__photo--placeholder {
+	display: grid;
+	place-items: center;
+	border: 1px solid var(--sky);
+	font-family: var(--font-display);
+	font-size: 1.6rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: var(--navy);
+}
+
 .person__name {
 	margin: 0;
 	font-family: var(--font-display);
@@ -1497,6 +1523,21 @@ a:hover {
 
 	.person {
 		padding: 0.85rem 1rem;
+	}
+
+	.person--photo {
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.person__photo {
+		width: 64px;
+		height: 64px;
+	}
+
+	.person__photo--placeholder {
+		font-size: 1.3rem;
 	}
 }
 

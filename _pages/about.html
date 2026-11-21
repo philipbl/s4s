@@ -36,9 +36,17 @@ title: About
         <h2 id="committee-title">Organizing committee</h2>
         <ul class="people">
             {% for member in site.data.committee.members %}
-            <li class="person">
-                <p class="person__name">{% if member.email %}<a href="mailto:{{ member.email }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</p>
-                <p class="person__affiliation">{{ member.affiliation }}</p>
+            <li class="person person--photo">
+                {% if member.photo %}
+                <img class="person__photo" src="{{ member.photo | relative_url }}" alt="" width="80" height="80" loading="lazy">
+                {% else %}
+                {% assign names = member.name | split: " " %}
+                <span class="person__photo person__photo--placeholder" aria-hidden="true">{{ names.first | slice: 0 }}{{ names.last | slice: 0 }}</span>
+                {% endif %}
+                <div>
+                    <p class="person__name">{% if member.email %}<a href="mailto:{{ member.email }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</p>
+                    <p class="person__affiliation">{{ member.affiliation }}</p>
+                </div>
             </li>
             {% endfor %}
         </ul>
