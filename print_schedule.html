@@ -2,8 +2,10 @@
 sitemap: false
 ---
 {% comment %}
-  One-page printable schedule (legal paper) for posting at the venue.
-  It shares its timeline with the Program page; print styles live in main.css.
+  One-page printable schedule (legal paper) for posting at the venue. It
+  shares its timeline with the Program page; its styles are under
+  "Printing" in main.css. The script at the bottom makes the text as large
+  as it can be while the schedule still fits on the page.
 {% endcomment %}
 <!doctype html>
 <html lang="en">
@@ -19,19 +21,56 @@ sitemap: false
 </head>
 
 <body class="print-sheet">
-    <main class="wrap">
-        <header class="print-sheet__header">
-            <p class="eyebrow">Air Quality: Science for Solutions {{ site.data.dates.year }}</p>
-            <h1>Conference Schedule</h1>
-            <p class="lede">{% include event-summary.html %}</p>
-        </header>
-        {% assign talk_count = site.data.schedule.schedule.size | default: 0 %}
-        {% if talk_count > 0 %}
-        {% include program-timeline.html %}
-        {% else %}
-        <p>The schedule hasn't been posted yet.</p>
-        {% endif %}
+    <p class="print-sheet__note">This prints on one legal-size page (8.5 × 14 in). If the print dialog shows
+        another paper size, such as US Letter, change it to US Legal.</p>
+    <main class="print-sheet__paper">
+        <div class="print-sheet__content">
+            <header class="print-sheet__header">
+                <p class="eyebrow">Air Quality: Science for Solutions {{ site.data.dates.year }}</p>
+                <h1>Conference Schedule</h1>
+                <p class="lede">{% include event-summary.html %}</p>
+            </header>
+            {% assign talk_count = site.data.schedule.schedule.size | default: 0 %}
+            {% if talk_count > 0 %}
+            {% include program-timeline.html %}
+            {% else %}
+            <p>The schedule hasn't been posted yet.</p>
+            {% endif %}
+        </div>
     </main>
+
+    <script>
+        // Find the largest text size at which the schedule fits on one legal
+        // page. The sheet on screen is the same width as the printed page's
+        // content (7.7in), so its height here is its printed height. The size
+        // goes into --sheet-size, which main.css uses for the sheet.
+        (function () {
+            var root = document.documentElement;
+            var content = document.querySelector('.print-sheet__content');
+            // Legal is 14in tall, less 0.8in of @page margins, at 96 CSS px per
+            // inch. Leave some room to spare: Chrome prints text exactly as it
+            // shows it, but Safari sets text about 7% wider when printing than
+            // on screen, so lines wrap sooner and the sheet comes out taller.
+            var isSafari = navigator.vendor === 'Apple Computer, Inc.';
+            var maxHeight = (14 - 0.8) * 96 * (isSafari ? 0.85 : 0.95);
+
+            function fit() {
+                var lo = 8, hi = 18; // px
+                for (var i = 0; i < 12; i++) {
+                    var mid = (lo + hi) / 2;
+                    root.style.fontSize = mid + 'px';
+                    if (content.getBoundingClientRect().height <= maxHeight) lo = mid;
+                    else hi = mid;
+                }
+                root.style.fontSize = '';
+                root.style.setProperty('--sheet-size', Math.floor(lo * 10) / 10 + 'px');
+            }
+
+            fit();
+            if (document.fonts) document.fonts.ready.then(fit);
+            window.addEventListener('beforeprint', fit);
+        })();
+    </script>
 </body>
 
 </html>

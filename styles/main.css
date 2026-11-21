@@ -1544,12 +1544,122 @@ a:hover {
 /* Printing
    ========================================================================== */
 
-.print-sheet main {
-	padding-block: 2.5rem;
+/* The printable schedule (print_schedule.html) has to print on one legal
+   page. On screen the page shows the sheet at its printed size: 8.5in wide
+   with the 0.4in @page margins, so 7.7in of content. A script on the page
+   measures the schedule and stores the largest text size that fits in
+   --sheet-size. Sizes on the sheet are in rem so they all scale with it,
+   and the styles below apply on screen and in print alike so the
+   measurement matches what prints. */
+html:has(.print-sheet) {
+	font-size: var(--sheet-size, 12px);
+}
+
+.print-sheet {
+	font-size: 1rem;
+	background: var(--sky-50);
+	-webkit-print-color-adjust: exact; /* Safari skips backgrounds otherwise */
+	print-color-adjust: exact;
+}
+
+/* In px, not rem, so it doesn't change size with the sheet's text. */
+.print-sheet__note {
+	max-width: 8.5in;
+	margin: 20px auto 0;
+	padding-inline: 16px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--muted);
+	text-align: center;
+}
+
+.print-sheet__paper {
+	box-sizing: content-box;
+	width: 7.7in;
+	min-height: 13.2in;
+	margin: 16px auto 32px;
+	padding: 0.4in;
+	background: var(--white);
+	box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 8px 24px rgb(0 0 0 / 8%);
+}
+
+/* flow-root keeps child margins inside, so the script measures all of it. */
+.print-sheet__content {
+	display: flow-root;
+}
+
+.print-sheet a {
+	color: inherit;
+	text-decoration: none;
 }
 
 .print-sheet__header {
-	margin-bottom: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.print-sheet h1 {
+	font-size: 2.4rem;
+	margin-bottom: 0.15em;
+}
+
+.print-sheet .schedule {
+	--time: 5.25rem;
+	--rail: calc(var(--time) + 1rem);
+	margin-top: 1rem;
+}
+
+.print-sheet .schedule__item {
+	column-gap: 2rem;
+	padding-bottom: 0.5rem;
+}
+
+/* A session's label, title, and chair share one line, with the talks below. */
+.print-sheet .schedule__item--session .schedule__body {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	column-gap: 0.75rem;
+	padding: 0.45rem 1rem 0.2rem;
+}
+
+.print-sheet .schedule__item--session .schedule__time {
+	padding-top: 0.5rem;
+}
+
+.print-sheet .schedule__item--session::before {
+	top: 0.8rem;
+}
+
+.print-sheet .schedule__label {
+	margin: 0;
+}
+
+.print-sheet .schedule__item--session .schedule__title {
+	font-size: 1.2rem;
+}
+
+.print-sheet .schedule__item--session .schedule__chair {
+	margin: 0 0 0 auto;
+}
+
+.print-sheet .talks {
+	flex-basis: 100%;
+	margin-top: 0.3rem;
+}
+
+/* Each speaker sits to the right of their talk, like the old sheet. */
+.print-sheet .talk {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	column-gap: 1.5rem;
+	align-items: baseline;
+	padding: 0.3rem 0;
+}
+
+.print-sheet .talk__speaker {
+	margin: 0;
+	text-align: right;
+	white-space: nowrap;
 }
 
 @media print {
@@ -1621,49 +1731,20 @@ a:hover {
 		padding: 0.4rem 0;
 	}
 
-	/* The schedule sheet has to fit on one legal page. */
-	html:has(.print-sheet) {
-		font-size: 11.5px;
+	/* The printable schedule: drop the on-screen page frame. */
+	.print-sheet {
+		background: none;
 	}
 
-	.print-sheet main {
+	.print-sheet__note {
+		display: none;
+	}
+
+	.print-sheet__paper {
+		width: auto;
+		min-height: 0;
+		margin: 0;
 		padding: 0;
-	}
-
-	.print-sheet__header {
-		margin-bottom: 0.5rem;
-	}
-
-	.print-sheet h1 {
-		font-size: 2.4rem;
-		margin-bottom: 0.15em;
-	}
-
-	.print-sheet .schedule {
-		margin-top: 1rem;
-	}
-
-	.print-sheet .schedule__item {
-		padding-bottom: 0.45rem;
-	}
-
-	.print-sheet .schedule__item--session .schedule__body {
-		padding: 0.5rem 1rem 0.2rem;
-	}
-
-	.print-sheet .schedule__item--session .schedule__time {
-		padding-top: 0.55rem;
-	}
-
-	.print-sheet .schedule__item--session::before {
-		top: 0.95rem;
-	}
-
-	.print-sheet .talks {
-		margin-top: 0.35rem;
-	}
-
-	.print-sheet .talk {
-		padding: 0.3rem 0;
+		box-shadow: none;
 	}
 }
