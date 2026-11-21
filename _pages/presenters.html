@@ -1,0 +1,91 @@
+---
+layout: default
+title: Presenters
+---
+{% assign d = site.data.dates %}
+{% assign links = site.data.links %}
+{% capture lede %}{% if d.abstract %}Abstracts for talks and posters are due {{ d.abstract }}.{% else %}The abstract deadline for the {{ d.year }} conference is TBD.{% endif %} Below are the details on submitting and on preparing your presentation.{% endcapture %}
+{% include page-header.html eyebrow="Call for talks and posters" title="Presenters" lede=lede %}
+
+<div class="wrap">
+    <nav class="jump" aria-label="On this page">
+        <ul>
+            <li><a href="#submit">Submit an abstract</a></li>
+            <li><a href="#oral">Oral presentations</a></li>
+            <li><a href="#posters">Poster presentations</a></li>
+        </ul>
+    </nav>
+
+    <section id="submit" class="section section--tight split split--aside">
+        <div class="prose">
+            <h2>Submit an abstract</h2>
+            <p>The Air Quality: Science for Solutions conference seeks high-quality
+                talks and posters on air quality issues important to Utah and the
+                Intermountain West. We also welcome presentations on related air
+                quality topics.</p>
+
+            <p>All abstracts are reviewed by the committee before being accepted.
+                While we try to honor requests for oral or poster formats, only a
+                small number of oral presentations are possible due to limited
+                time.</p>
+        </div>
+
+        <aside class="callout">
+            <p class="callout__label">Abstract deadline</p>
+            <p class="callout__value">{{ d.abstract | default: "TBD" }}</p>
+            {% if links.abstract_form %}
+            <a class="btn btn--primary btn--lg" href="{{ links.abstract_form }}">Submit an abstract</a>
+            <p class="callout__note">If your talk or poster is accepted, you must still
+                <a href="{{ '/attendee/' | relative_url }}">register</a> for the conference.</p>
+            {% else %}
+            <p class="callout__note">The submission form will be posted here when the call for abstracts opens.</p>
+            {% endif %}
+        </aside>
+    </section>
+
+    <div id="guidelines">
+        <section id="oral" class="section section--tight split split--aside">
+            <div class="prose">
+                <h2>Oral presentations</h2>
+                <p>Talks will be <strong>15 minutes maximum</strong>, with 3 minutes for Q&amp;A
+                    and the transition to the next speaker, for a total of 18 minutes.
+                    The session moderator will step in to keep things on track if
+                    necessary. All talks need to be preloaded onto the conference
+                    computer before the conference begins.</p>
+            </div>
+
+            <dl class="stats">
+                <div>
+                    <dt>Talk</dt>
+                    <dd>15 min</dd>
+                </div>
+                <div>
+                    <dt>Q&amp;A and changeover</dt>
+                    <dd>3 min</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section id="posters" class="section section--tight split split--aside">
+            <div class="prose">
+                <h2>Poster presentations</h2>
+                <p>Thank you for preparing a poster for the Science for Solutions
+                    conference. We look forward to viewing it and learning about your
+                    work. We want to archive your poster on the conference website and
+                    make it available to a wider audience, so in addition to bringing a
+                    printed copy to the conference, please upload a PDF of your poster
+                    using the link we will send you.</p>
+
+                <p>Posters will be displayed on easels like the one shown in the photo.
+                    Each easel holds a <strong>42&Prime; &times; 36&Prime;</strong> poster board in either landscape
+                    or portrait orientation. We have found that landscape
+                    posters are generally easier to read, especially for people who use
+                    wheelchairs or are shorter in stature.</p>
+            </div>
+
+            <figure class="photo photo--narrow">
+                <img src="{% link images/ConferencePosterStand.png %}" alt="A poster displayed on a conference easel" width="464" height="600" loading="lazy">
+            </figure>
+        </section>
+    </div>
+</div>

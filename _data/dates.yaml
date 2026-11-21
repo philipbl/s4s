@@ -1,7 +1,16 @@
-conference_number: 10th
-conference_location: Brigham Young University
-year: 2026
-conference: Thursday, March 26
-registration: March 18
-abstract: February 13
+# The upcoming conference. Leave anything that isn't decided yet blank: the
+# site shows "TBD" in its place. Buttons for abstracts, registration, and
+# donations are turned on in _data/links.yaml.
+
+conference_number: 11th
+year: 2027
+conference:            # day and date, e.g. Thursday, March 26
+conference_location:   # e.g. Brigham Young University
+abstract:              # abstract deadline, e.g. February 13
+registration:          # early registration deadline, e.g. March 18
+
+# Set to true to say "A remote option is available for oral sessions."
+remote_option: false
+
+# An optional banner across the top of the homepage. HTML is allowed.
 # next_year_message: We are happy to announce that next year the conference will be held at <br>Brigham Young University on March 26, 2026. <br>More details will be posted here as they become available.

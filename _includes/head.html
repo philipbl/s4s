@@ -1,10 +1,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ site.description }}">
+<meta name="theme-color" content="#00406e">
 
-<title>{{ site.title }}{% if page.title %} :: {{ page.title }}{% endif %}</title>
+{% comment %} A page can pass a full title as `title` when it includes this file. {% endcomment %}
+<title>{% if include.title %}{{ include.title }}{% else %}{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}{% endif %}</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
-
-<link href="{% link styles/main.css %}" media="screen" rel="stylesheet">
+<link rel="preload" href="{{ '/fonts/outfit-latin-wght.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/fonts/inter-latin-wght.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{% link styles/main.css %}">
+{% comment %}
+  Icons are the brand mark on a navy tile, which stays legible at small
+  sizes. favicon.ico (16, 32, and 48px) is for browser tabs; iPhones use
+  the 180px apple-touch-icon for their tab list and home screen.
+{% endcomment %}
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">

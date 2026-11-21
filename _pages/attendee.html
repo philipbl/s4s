@@ -2,19 +2,30 @@
 layout: default
 title: Registration
 ---
+{% assign d = site.data.dates %}
+{% assign links = site.data.links %}
+{% capture lede %}{% include event-summary.html %}{% if d.remote_option %}. A remote option is available for oral sessions.{% endif %}{% endcapture %}
+{% include page-header.html eyebrow="Registration" title="Register for the conference" lede=lede %}
 
-<div class="container">
-    <div class="row text-center">
-        <div class="col">
-            <h1>Conference Registration</h1>
-            <p>Use this form to register for either remote or in-person attendance. Registration is handled through the Weber State University (WSU) online payment system.</p>
-            <p><b>After the early registration deadline ({{ site.data.dates.registration }}), the fee doubles.</b></p>
-            <!-- <p>Coming soon...</p> -->
+<div class="wrap">
+    <section class="section section--tight split split--aside">
+        <div class="prose">
+            <h2>How to register</h2>
+            <p>Registration{% if d.remote_option %} for either remote or in-person attendance{% endif %}
+                is handled through the Weber State University (WSU) online payment system.</p>
+            <p><strong>After the early registration deadline{% if d.registration %} ({{ d.registration }}){% endif %}, the fee doubles.</strong></p>
+            <p>Presenting a talk or poster? Accepted presenters must also register.</p>
         </div>
-    </div>
-    <div class="row text-center">
-        <div class="col">
-            <a href="https://secure.touchnet.com/C20249_ustores/web/store_main.jsp?STOREID=107" role="button" class="btn btn-primary btn-lg text-decoration-none">Register</a>
-        </div>
-    </div>
+
+        <aside class="callout">
+            <p class="callout__label">Early registration ends</p>
+            <p class="callout__value">{{ d.registration | default: "TBD" }}</p>
+            {% if links.registration %}
+            <a class="btn btn--primary btn--lg" href="{{ links.registration }}">Register</a>
+            <p class="callout__note">Opens the WSU payment site.</p>
+            {% else %}
+            <p class="callout__note">Registration for the {{ d.year }} conference isn't open yet. The link will be posted here when it opens.</p>
+            {% endif %}
+        </aside>
+    </section>
 </div>

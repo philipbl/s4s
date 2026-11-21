@@ -1,0 +1,34 @@
+---
+layout: default
+title: Donate
+---
+{% comment %}
+  The Donate button appears once `donate` is set in _data/links.yaml.
+  Consider adding what donations pay for and how gifts are handled
+  (for example, which institution receives them and whether they are tax
+  deductible) to the "Make a donation" section.
+{% endcomment %}
+{% assign links = site.data.links %}
+{% include page-header.html eyebrow="Support" title="Support the conference" lede="Air Quality: Science for Solutions brings together researchers, regulators, industry, and the public to find solutions to air quality problems in Utah and the Intermountain West. Your donation helps make it possible." %}
+
+<div class="wrap">
+    <section class="section section--tight split split--aside">
+        <div class="prose">
+            <h2>Make a donation</h2>
+            <p>Gifts of any size help support the conference.</p>
+            <p>Organizations interested in supporting the conference can contact the
+                <a href="{{ '/about/#committee' | relative_url }}">organizing committee</a>.</p>
+        </div>
+
+        <aside class="callout">
+            <p class="callout__label">Give online</p>
+            {% if links.donate %}
+            <p class="callout__value">Thank you</p>
+            <a class="btn btn--primary btn--lg" href="{{ links.donate }}">Donate</a>
+            {% else %}
+            <p class="callout__value">Coming soon</p>
+            <p class="callout__note">Online donations aren't set up yet. Please check back.</p>
+            {% endif %}
+        </aside>
+    </section>
+</div>

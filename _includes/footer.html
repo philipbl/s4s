@@ -1,3 +1,26 @@
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-body-secondary">© {{ site.data.dates.year }} Air Quality: Science for Solutions</p>
+<footer class="site-footer">
+    <div class="wrap site-footer__inner">
+        <div class="site-footer__about">
+            <p class="site-footer__name">Air Quality: Science for Solutions</p>
+            <p>{{ site.description }}</p>
+        </div>
+
+        <nav class="site-footer__links" aria-label="Footer">
+            <ul>
+                <li><a href="{{ '/schedule/' | relative_url }}">Program</a></li>
+                <li><a href="{{ '/presenters/' | relative_url }}">Presenters</a></li>
+                <li><a href="{{ '/venue/' | relative_url }}">Venue</a></li>
+                <li><a href="{{ '/attendee/' | relative_url }}">Register</a></li>
+            </ul>
+            <ul>
+                <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+                <li><a href="{{ '/about/#committee' | relative_url }}">Organizing committee</a></li>
+                <li><a href="{{ '/about/#past' | relative_url }}">Past conferences</a></li>
+                {% if site.data.links.donate %}<li><a href="{{ '/donate/' | relative_url }}">Donate</a></li>{% endif %}
+            </ul>
+        </nav>
+    </div>
+    <div class="wrap site-footer__legal">
+        <p>&copy; {{ site.time | date: "%Y" }} Air Quality: Science for Solutions</p>
+    </div>
 </footer>

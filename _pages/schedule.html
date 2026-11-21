@@ -2,90 +2,80 @@
 layout: default
 title: Program
 ---
+{% assign d = site.data.dates %}
+{% comment %} Empty lists count as true in Liquid, so check sizes instead. {% endcomment %}
+{% assign talk_count = site.data.schedule.schedule.size | default: 0 %}
+{% assign poster_count = site.data.posters.size | default: 0 %}
+{% assign latest = site.data.past_conferences.first %}
+{% capture eyebrow %}{{ d.year }} Conference{% endcapture %}
+{% capture lede %}{% include event-summary.html %}{% endcapture %}
+{% include page-header.html eyebrow=eyebrow title="Program" lede=lede %}
 
-<div class="container">
-    <div class="row text-center">
-        <div class="col">
-            <h1>Conference Program</h1>
+<div class="wrap program">
+    {% if talk_count == 0 and poster_count == 0 %}
+    <section class="program__section">
+        <p class="lede">The {{ d.year }} program will be posted here once talks and posters are selected.</p>
+        {% if latest %}
+        <p><a class="btn btn--secondary" href="{{ latest.url | append: 'schedule/' | relative_url }}">See the {{ latest.name }} program</a></p>
+        {% endif %}
+    </section>
+    {% else %}
 
-            {% if site.data.schedule.size == null %}
-            Coming soon...
-            {% endif %}
-        </div>
-    </div>
-
+    <nav class="jump" aria-label="On this page">
+        <ul>
+            {% if talk_count > 0 %}<li><a href="#talks">Talks</a></li>{% endif %}
+            {% if poster_count > 0 %}<li><a href="#posters">Posters</a></li>{% endif %}
+        </ul>
+    </nav>
 
     {% if site.data.schedule.draft %}
-    <div class="row">
-        <div class="col-lg-9">
-            <div class="alert alert-warning" role="alert">
-                This is a draft schedule and is subject to change. We will update it as the conference approaches, so please check back for updates.
-            </div>
-        </div>
-    </div>
+    <p class="notice" role="note">This is a draft schedule and is subject to change. We will update it as
+        the conference approaches, so please check back for updates.</p>
     {% endif %}
 
-    <div class="row">
-        <div class="col-lg-9">
-            {% for item in site.data.schedule.schedule %}
-            <div class="row schedule-item" style="background: {{ item.color }};">
-                <div class="schedule-time">{{ item.start_time }}</div>
-                <div class="col schedule-header">
-                    {{ item.name }}
-                    {% if item.chair %}({{ item.chair }}){% endif %}
+    {% if talk_count > 0 %}
+    <section id="talks" class="program__section" aria-labelledby="talks-title">
+        <h2 id="talks-title">Talks</h2>
+        <p class="program__intro">There are no parallel sessions. Talk titles link to the slides when they are available.</p>
+        {% include program-timeline.html %}
+    </section>
+    {% endif %}
+
+    {% if poster_count > 0 %}
+    <section id="posters" class="program__section" aria-labelledby="posters-title">
+        <h2 id="posters-title">Posters</h2>
+        <p class="program__intro">Posters are on display for the entire conference. Titles link to the posters when
+            they are available.</p>
+
+        <nav aria-label="Poster categories">
+            <ul class="tags tags--links">
+                {% for category in site.data.posters %}
+                <li><a href="#{{ category.category | slugify }}">{{ category.category }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+
+        {% assign poster_number = 0 %}
+        {% for category in site.data.posters %}
+        <h3 id="{{ category.category | slugify }}" class="posters__category">{{ category.category }}</h3>
+        <ul class="posters">
+            {% for poster in category.posters %}
+            {% comment %} Dropped posters keep their number, so later numbers don't shift. {% endcomment %}
+            {% assign poster_number = poster_number | plus: 1 %}
+            {% unless poster.dropped %}
+            <li class="poster">
+                <span class="poster__number">{{ poster_number }}</span>
+                <div>
+                    <p class="poster__title">{% if poster.link %}<a href="{{ poster.link }}" target="_blank" rel="noopener noreferrer">{{ poster.title }}</a>{% else %}{{ poster.title }}{% endif %}</p>
+                    <p class="poster__author">{{ poster.author }}</p>
                 </div>
-                <div class="schedule-speaker"></div>
-            </div>
-            {% if item.talks %}
-            {% for talk in item.talks %}
-            <div class="row" style="background: {{ item.color }};">
-                <div class="schedule-time"></div>
-                {% if talk.link %}
-                <div class="col schedule-talk-item"><a href="{{ talk.link }}" target="_blank" rel="noopener noreferrer">{{
-                        talk.title }}</a></div>
-                {% else %}
-                <div class="col schedule-talk-item">{{ talk.title }}</div>
-                {% endif %}
-                <div class="schedule-speaker">{{ talk.author }}</div>
-            </div>
+            </li>
+            {% endunless %}
             {% endfor %}
-            {% endif %}
-            {% endfor %}
-        </div>
-        <div class="col">
-            <div class="row">
-                <h3>Our Supporters</h3>
-                {% include supporters.html %}
-            </div>
-        </div>
-    </div>
-</div>
-
-{% if site.data.posters.size != null %}
-<h2 class="mt-5 mb-3">Conference Posters</h2>
-{% endif %}
-<div class="container poster-container">
-
-    {% assign poster_index = 0 %}
-    {% for category in site.data.posters %}
-    <h4>{{ category.category }}</h4>
-    <div class="poster-group">
-        {% for poster in category.posters %}
-        {% assign poster_index = poster_index | plus: 1 %}
-        {% unless poster.dropped %}
-        <div class="row poster-item">
-            <div class="col poster-number">{{ poster_index }}</div>
-            {% if poster.link %}
-            <div class="col poster-title"><a href="{{ poster.link }}" target="_blank" rel="noopener noreferrer">{{
-                    poster.title }}</a></div>
-            {% else %}
-            <div class="col poster-title">{{ poster.title }}</div>
-            {% endif %}
-
-            <div class="poster-author">{{ poster.author }}</div>
-        </div>
-        {% endunless %}
+        </ul>
         {% endfor %}
-    </div>
-    {% endfor %}
+    </section>
+    {% endif %}
+
+    {% endif %}
 </div>
