@@ -9,4 +9,10 @@
 <link rel="preload" href="{{ '/fonts/outfit-latin-wght.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ '/fonts/inter-latin-wght.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{% link styles/main.css %}">
-<link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+{% comment %}
+  Icons are the brand mark on a navy tile, which stays legible at small
+  sizes. favicon.ico (16, 32, and 48px) is for browser tabs; iPhones use
+  the 180px apple-touch-icon for their tab list and home screen.
+{% endcomment %}
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
