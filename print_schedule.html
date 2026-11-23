@@ -1,136 +1,85 @@
 ---
+sitemap: false
 ---
-
+{% comment %}
+  One-page printable schedule (legal paper) for posting at the venue. It
+  shares its timeline with the Program page; its styles are under
+  "Printing" in main.css. The script at the bottom makes the text as large
+  as it can be while the schedule still fits on the page.
+{% endcomment %}
 <!doctype html>
 <html lang="en">
 
 <head>
-    {% include head.html %}
+    {% comment %} Browsers use the title as the file name when saving as PDF. {% endcomment %}
+    {% capture sheet_title %}S4S Schedule {{ site.data.dates.year }}{% endcapture %}
+    {% include head.html title=sheet_title %}
     <style>
         @page {
             size: legal portrait;
             margin: 0.4in;
         }
-
-        @media print {
-
-            html,
-            body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-
-            body {
-                font-size: 13px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .container {
-                max-width: 100% !important;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-
-            h2 {
-                font-size: 26px !important;
-                margin: 0 0 14px 0 !important;
-                padding: 0 0 20px 0 !important;
-            }
-
-            .mt-5 {
-                margin-top: 0 !important;
-            }
-
-            .mb-3 {
-                margin-bottom: 5px !important;
-            }
-
-            .row {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                margin: 0 !important;
-            }
-
-            .col {
-                flex: 1 1 0% !important;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-            }
-
-            .schedule-time {
-                width: 90px;
-                flex: 0 0 90px;
-                font-size: 13px;
-                padding: 3px 6px;
-                font-weight: 600;
-            }
-
-            .schedule-header {
-                font-weight: 600;
-                font-size: 13px;
-                padding: 3px 6px;
-            }
-
-            .schedule-speaker {
-                width: 220px;
-                flex: 0 0 150px;
-                font-size: 13px;
-                padding: 3px 6px;
-                text-align: right;
-            }
-
-            .schedule-item {
-                padding-top: 8px;
-                padding-bottom: 8px;
-            }
-
-            .schedule-talk-item {
-                margin-left: 18px;
-                margin-bottom: 20px;
-                font-size: 13px;
-            }
-        }
     </style>
 </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <h2 class="mt-5 mb-3 text-center">Conference Schedule</h2>
+<body class="print-sheet">
+    <p class="print-sheet__note">This prints on one legal-size page (8.5 × 14 in). If the print dialog shows
+        another paper size, such as US Letter, change it to US Legal.</p>
+    <main class="print-sheet__paper">
+        <div class="print-sheet__content">
+            <header class="print-sheet__header">
+                <p class="eyebrow">Air Quality: Science for Solutions {{ site.data.dates.year }}</p>
+                <h1>Conference Schedule</h1>
+                <p class="lede">{% include event-summary.html %}</p>
+            </header>
+            {% assign talk_count = site.data.schedule.schedule.size | default: 0 %}
+            {% if talk_count > 0 %}
+            {% include program-timeline.html %}
+            {% else %}
+            <p>The schedule hasn't been posted yet.</p>
+            {% endif %}
         </div>
-        <div class="row">
-            <div class="col">
-                {% for item in site.data.schedule.schedule %}
-                <div class="row schedule-item" style="background: {{ item.color }};">
-                    <div class="schedule-time">{{ item.start_time }}</div>
-                    <div class="col schedule-header">
-                        {{ item.name }}
-                        {% if item.chair %}({{ item.chair }}){% endif %}
-                    </div>
-                    <div class="schedule-speaker"></div>
-                </div>
-                {% if item.talks %}
-                {% for talk in item.talks %}
-                <div class="row" style="background: {{ item.color }};">
-                    <div class="schedule-time"></div>
-                    {% if talk.link %}
-                    <div class="col schedule-talk-item"><a href="{{ talk.link }}" target="_blank" rel="noopener noreferrer">{{
-                            talk.title }}</a></div>
-                    {% else %}
-                    <div class="col schedule-talk-item">{{ talk.title }}</div>
-                    {% endif %}
-                    <div class="schedule-speaker">{{ talk.author }}</div>
-                </div>
-                {% endfor %}
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+    </main>
 
+    <script>
+        // Find the largest text size at which the schedule fits on one legal
+        // page. The sheet on screen is the same size as the printed page's
+        // content, so its height here is its printed height. The size goes
+        // into --sheet-size, which main.css uses for the sheet.
+        (function () {
+            var root = document.documentElement;
+            var content = document.querySelector('.print-sheet__content');
+            // Safari lays a printed page out at 15/16 of its size and scales
+            // it up to fill the paper (a 13.2in-tall page holds 12.375in of
+            // content), so the sheet is laid out smaller there to match.
+            var isSafari = navigator.vendor === 'Apple Computer, Inc.';
+            var scale = isSafari ? 16 / 15 : 1;
+            root.style.setProperty('--print-scale', scale);
+            // Legal is 14in tall, less 0.8in of @page margins, at 96 CSS px
+            // per inch. Leave 3% to spare for small differences in printing.
+            var maxHeight = (14 - 0.8) / scale * 96 * 0.97;
+
+            function fit() {
+                // Measure the schedule at its natural height, not stretched
+                // to fill the page.
+                document.body.classList.add('print-sheet--measuring');
+                var lo = 8, hi = 18; // px
+                for (var i = 0; i < 12; i++) {
+                    var mid = (lo + hi) / 2;
+                    root.style.fontSize = mid + 'px';
+                    if (content.getBoundingClientRect().height <= maxHeight) lo = mid;
+                    else hi = mid;
+                }
+                root.style.fontSize = '';
+                root.style.setProperty('--sheet-size', Math.floor(lo * 10) / 10 + 'px');
+                document.body.classList.remove('print-sheet--measuring');
+            }
+
+            fit();
+            if (document.fonts) document.fonts.ready.then(fit);
+            window.addEventListener('beforeprint', fit);
+        })();
+    </script>
 </body>
 
 </html>

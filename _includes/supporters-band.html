@@ -1,0 +1,17 @@
+{% comment %}
+  Supporter logos, shown above the footer on every page (see
+  _layouts/default.html). The logos are in supporters.html. The button to
+  the Donate page appears once `donate` is set in _data/links.yaml.
+{% endcomment %}
+<section id="supporters" class="supporters-band" aria-labelledby="supporters-band-title">
+    <div class="wrap supporters-band__inner">
+        <div class="supporters-band__intro">
+            <h2 id="supporters-band-title" class="supporters-band__title">Our supporters</h2>
+            <p>This conference is made possible by the generous financial support of these organizations.</p>
+            {% if site.data.links.donate and page.url != '/donate/' %}
+            <a class="btn btn--secondary" href="{{ '/donate/' | relative_url }}">Support the conference</a>
+            {% endif %}
+        </div>
+        {% include supporters.html %}
+    </div>
+</section>

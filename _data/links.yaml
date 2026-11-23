@@ -1,0 +1,13 @@
+# Outside links for things that open and close each year. While a link is
+# blank, its button is hidden and the page says it isn't open yet.
+
+# The abstract submission form. 2026 used:
+# https://docs.google.com/forms/d/e/1FAIpQLSdecfwGOfR7lB54ffpumy8sNlHPL4rzW649P0pUT0cHLpwFIg/viewform
+abstract_form:
+
+# The registration store. 2026 used:
+# https://secure.touchnet.com/C20249_ustores/web/store_main.jsp?STOREID=107
+registration:
+
+# Where people can donate to the conference.
+donate:             # once set, "Support the conference" buttons and a footer link appear

@@ -1,0 +1,27 @@
+{% comment %}
+  Site header: brand on the left, section links, and a Register button.
+  The nav wraps onto its own row on small screens, so no JavaScript is needed.
+{% endcomment %}
+{% assign nav = "Program|/schedule/,Presenters|/presenters/,Venue|/venue/,About|/about/" | split: "," %}
+<header class="site-header">
+    <div class="wrap site-header__inner">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}, home">
+            <img class="brand__mark" src="{{ '/images/brand/mark-128.png' | relative_url }}" alt="" width="64" height="51">
+            <span class="brand__text">
+                <span class="brand__name">Air Quality</span>
+                <span class="brand__tagline">Science for Solutions</span>
+            </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main">
+            <ul>
+                {% for item in nav %}
+                {% assign parts = item | split: "|" %}
+                <li><a href="{{ parts[1] | relative_url }}"{% if page.url == parts[1] %} aria-current="page"{% endif %}>{{ parts[0] }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+
+        <a class="btn btn--primary site-header__cta" href="{{ '/attendee/' | relative_url }}"{% if page.url == '/attendee/' %} aria-current="page"{% endif %}>Register</a>
+    </div>
+</header>

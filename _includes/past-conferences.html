@@ -1,0 +1,14 @@
+{% comment %}
+  Cards linking to each archived year, from _data/past_conferences.yaml.
+  `make archive` adds new years to that file.
+{% endcomment %}
+<ul class="year-cards">
+    {% for conference in site.data.past_conferences %}
+    <li>
+        <a href="{{ conference.url | relative_url }}">
+            <span class="year-cards__year">{{ conference.name }}</span>
+            <span class="year-cards__cta">View the archived site</span>
+        </a>
+    </li>
+    {% endfor %}
+</ul>

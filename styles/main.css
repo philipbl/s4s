@@ -1,207 +1,1810 @@
+/* ==========================================================================
+   Air Quality: Science for Solutions
+   Colors come from the conference logo. Edit the tokens in :root to retheme.
+   ========================================================================== */
+
+/* Fonts are self-hosted (SIL Open Font License; see /fonts/OFL-*.txt). */
+@font-face {
+	font-family: "Outfit";
+	src: url("../fonts/outfit-latin-wght.woff2") format("woff2");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("../fonts/inter-latin-wght.woff2") format("woff2");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("../fonts/inter-latin-wght-italic.woff2") format("woff2");
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+:root {
+	/* Logo colors */
+	--navy: #00406e;
+	--sun: #ffcc39;
+	--sun-light: #ffe8ab;
+	--sky: #acd0e6;
+
+	/* Derived shades */
+	--navy-900: #002a4a;
+	--navy-700: #0b5285;
+	--sun-dark: #f2b705;
+	--sun-50: #fff8e6;
+	--sky-100: #e4f0f8;
+	--sky-50: #f4f8fb;
+	--gold-text: #7a5a00; /* sun-family color with AA contrast on white */
+
+	/* Neutrals */
+	--ink: #16222d;
+	--muted: #56616b;
+	--line: #dde5ec;
+	--white: #fff;
+
+	/* Type */
+	--font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+	--font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+	/* Layout */
+	--wrap: 1160px;
+	--gutter: clamp(1.25rem, 4vw, 2rem);
+	--radius: 16px;
+	--radius-sm: 10px;
+	--section: clamp(3.5rem, 7vw, 6rem);
+	--shadow: 0 1px 2px rgb(0 42 74 / 6%), 0 8px 24px rgb(0 42 74 / 8%);
+}
+
+/* Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* The footer's navy goes on html, so it colors whatever lies past the end of
+   the page: on iPhones, the strip Safari leaves under its toolbar at the
+   bottom of the page, and the space below a short page. The page itself is
+   white, but body paints its white as a background image, not a color.
+   Safari picks the color past the page by laying body's background color
+   over html's and ignores images, so a white body color would win. */
+html {
+	background-color: var(--navy-900);
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	scroll-padding-top: 6rem;
+}
+
 body {
 	margin: 0;
-	padding: 0;
-	border: 0;
-	color: #000;
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #fff;
+	font-family: var(--font-body);
+	font-size: 1.0625rem;
+	line-height: 1.65;
+	color: var(--ink);
+	background: linear-gradient(var(--white), var(--white)); /* see html */
+	-webkit-font-smoothing: antialiased;
 }
 
-/* Masthead */
-#masthead {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	overflow: auto;
-	text-align: right;
-	background: #c5d5e5;
-	background: linear-gradient(90deg, rgba(255, 255, 255, 1) 9%, rgba(197, 213, 229, 1) 31%);
-}
-
-#masthead img {
-	float: left;
-	margin: 5px;
-	padding: 0;
-}
-
-.masthead p {
-	font-size: small;
-	text-align: right;
-	color: #000;
-	margin: 10px 10px 10px 0;
-	padding: 0;
-}
-
-.masthead .conference_location p {
-	font-size: 14px;
-	margin-bottom: 0;
-}
-
-.masthead_caption {
-	font-size: 12px !important;
-	margin-top: 0 !important;
-}
-
-.masthead h3 {
-	font-size: 14px;
-	color: #000;
-	font-weight: bold;
-	margin: 30px 10px 5px 0;
-}
-
-.masthead .important_dates p {
-	margin: 0 10px 0 0;
-}
-
-/* Navigation */
-#navigation {
-	width: auto;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	clear: both;
-	overflow: hidden;
-	background-color: #ca7;
-}
-
-#navigation ul {
-	list-style-type: none;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-#navigation li {
-	float: left;
-}
-
-#navigation a {
-	color: #000;
-	text-decoration: none;
+img {
+	max-width: 100%;
+	height: auto;
 	display: block;
-	padding: 5px;
-	border: 1px solid #ca7;
-	background-color: #dc8;
 }
 
-#navigation a:hover {
-	color: #000;
-	text-decoration: none;
-	border: 1px solid #ed9;
-	background-color: #ed9;
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-display);
+	color: var(--navy);
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+	margin: 0 0 0.6em;
+	text-wrap: balance;
 }
 
-/* Content */
 h1 {
-	font-size: 2em;
-	color: #393939;
-	margin: 20px 0;
+	font-size: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+	font-weight: 700;
 }
 
 h2 {
-	margin-top: 20px;
-	font-size: 1.75em;
-	color: #469;
+	font-size: clamp(1.75rem, 1.35rem + 1.5vw, 2.5rem);
+	font-weight: 600;
 }
 
 h3 {
-	font-size: 1.5em;
-	color: #469;
+	font-size: 1.3rem;
+	font-weight: 600;
 }
 
 h4 {
-	padding-top: 30px;
-	font-size: 1.25em;
-	color: #469;
+	font-size: 1.1rem;
+	font-weight: 600;
 }
 
-h5 {
-	font-size: 0.75em;
-	color: #469;
-}
-
-h6 {
-	font-size: 0.5em;
-	color: #469;
+p {
+	margin: 0 0 1em;
 }
 
 a {
-	color: #469;
-	text-decoration: underline;
+	color: var(--navy-700);
+	text-decoration-line: underline;
+	text-decoration-color: var(--sky);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 0.2em;
+	transition: color 0.15s, text-decoration-color 0.15s;
 }
 
 a:hover {
-	color: #000;
+	color: var(--navy);
+	text-decoration-color: currentColor;
+}
+
+:focus-visible {
+	outline: 3px solid var(--navy-700);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+.wrap {
+	width: 100%;
+	max-width: var(--wrap);
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+.visually-hidden {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+.skip-link {
+	position: absolute;
+	left: 1rem;
+	top: -3rem;
+	z-index: 100;
+	padding: 0.6rem 1rem;
+	background: var(--navy);
+	color: var(--white);
+	border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+	top: 1rem;
+}
+
+.eyebrow {
+	font-family: var(--font-display);
+	font-size: 0.85rem;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--gold-text);
+	margin-bottom: 0.75rem;
+	display: flex;
+	align-items: flex-start;
+	gap: 0.6rem;
+}
+
+/* The dot lines up with the first line if the label wraps. */
+.eyebrow::before {
+	content: "";
+	width: 0.7rem;
+	height: 0.7rem;
+	margin-top: 0.42em;
+	border-radius: 50%;
+	background: var(--sun);
+	box-shadow: 0 0 0 4px var(--sun-light);
+	flex: none;
+}
+
+.lede {
+	font-size: 1.15rem;
+	color: var(--muted);
+	max-width: 60ch;
+}
+
+/* Buttons
+   ========================================================================== */
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.6rem 1.2rem;
+	border: 2px solid transparent;
+	border-radius: 999px;
+	font-family: var(--font-display);
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.2;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: background-color 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.btn--primary {
+	background: var(--sun);
+	color: var(--navy-900);
+}
+
+.btn--primary:hover {
+	background: var(--sun-dark);
+	color: var(--navy-900);
+	box-shadow: 0 6px 16px rgb(242 183 5 / 35%);
+}
+
+.btn--secondary {
+	border-color: var(--navy);
+	color: var(--navy);
+	background: transparent;
+}
+
+.btn--secondary:hover {
+	background: var(--navy);
+	color: var(--white);
+}
+
+.btn--lg {
+	padding: 0.85rem 1.6rem;
+	font-size: 1.075rem;
+}
+
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+/* On phones, buttons that wrap onto their own lines fill the width. */
+@media (max-width: 520px) {
+	.actions .btn {
+		flex: 1 1 auto;
+	}
+}
+
+/* Header
+   ========================================================================== */
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background: rgb(255 255 255 / 92%);
+	backdrop-filter: saturate(1.4) blur(10px);
+	-webkit-backdrop-filter: saturate(1.4) blur(10px);
+	border-bottom: 1px solid var(--line);
+}
+
+.site-header__inner {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	min-height: 76px;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	text-decoration: none;
+	margin-right: auto;
+}
+
+.brand__mark {
+	width: 56px;
+	height: auto;
+}
+
+.brand__text {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.1;
+}
+
+.brand__name {
+	font-family: var(--font-display);
+	font-weight: 600;
+	font-size: 1.05rem;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--navy);
+}
+
+.brand__tagline {
+	font-style: italic;
+	font-size: 0.78rem;
+	letter-spacing: 0.1em;
+	color: var(--muted);
+	margin-top: 0.2rem;
+}
+
+.site-nav ul {
+	display: flex;
+	gap: 0.25rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav a {
+	display: block;
+	padding: 0.5rem 0.9rem;
+	border-radius: 999px;
+	font-family: var(--font-display);
+	font-weight: 500;
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.site-nav a:hover {
+	background: var(--sky-50);
+	color: var(--navy);
+}
+
+.site-nav a[aria-current="page"] {
+	background: var(--sky-100);
+	color: var(--navy);
+	font-weight: 600;
+}
+
+@media (max-width: 760px) {
+	/* The header isn't sticky on phones, so anchors need little offset. */
+	html {
+		scroll-padding-top: 1rem;
+	}
+
+	.site-header {
+		position: static;
+	}
+
+	.site-header__inner {
+		flex-wrap: wrap;
+		gap: 0.75rem 1rem;
+		padding-block: 0.75rem;
+	}
+
+	.site-nav {
+		order: 3;
+		width: calc(100% + 1rem);
+		margin-inline: -0.5rem;
+		overflow-x: auto;
+	}
+
+	.site-nav a {
+		padding: 0.45rem 0.75rem;
+	}
+}
+
+/* Small phones: spread the four links across the width so all of them fit,
+   and shrink the brand and button so they share the top row. */
+@media (max-width: 420px) {
+	:root {
+		--gutter: 1rem;
+	}
+
+	.site-nav ul {
+		justify-content: space-between;
+		gap: 0;
+	}
+
+	.site-nav a {
+		padding-inline: 0.5rem;
+		font-size: 0.95rem;
+	}
+
+	.brand {
+		gap: 0.5rem;
+	}
+
+	.brand__mark {
+		width: 44px;
+	}
+
+	.brand__name {
+		font-size: 0.95rem;
+		letter-spacing: 0.16em;
+	}
+
+	.brand__tagline {
+		font-size: 0.75rem;
+		letter-spacing: 0.01em;
+	}
+
+	.site-header__cta {
+		padding: 0.5rem 0.95rem;
+		font-size: 0.9rem;
+	}
+}
+
+/* Footer
+   ========================================================================== */
+
+.site-footer {
+	background: var(--navy-900);
+	color: #c9d8e5;
+	font-size: 0.95rem;
+}
+
+.site-footer a {
+	color: var(--white);
+	text-decoration: none;
+}
+
+.site-footer a:hover {
 	text-decoration: underline;
+	text-decoration-color: var(--sun);
 }
 
-.caption {
-	font-size: 12px;
-	color: grey;
-	text-align: right;
+.site-footer :focus-visible {
+	outline-color: var(--sun);
 }
 
-.supporter-logo {
-	width: 400px;
+.site-footer__inner {
+	display: grid;
+	grid-template-columns: 1.4fr 1fr;
+	gap: 2rem;
+	padding-block: 3.5rem 2.5rem;
 }
 
-.conference-title-header {
+.site-footer__name {
+	font-family: var(--font-display);
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: var(--white);
+	margin-bottom: 0.4rem;
+}
+
+.site-footer__links {
+	display: flex;
+	gap: 3rem;
+}
+
+.site-footer__links ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 0.25rem;
+	align-content: start;
+}
+
+/* Taller links are easier to tap on phones. */
+.site-footer__links a {
+	display: inline-block;
+	padding-block: 0.3rem;
+}
+
+.site-footer__legal {
+	padding-bottom: 1.25rem;
+	font-size: 0.85rem;
+}
+
+.site-footer__legal p {
+	margin: 0;
+	padding-top: 1.25rem;
+	border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+@media (max-width: 700px) {
+	.site-footer__inner {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Homepage
+   ========================================================================== */
+
+.announcement {
+	background: var(--sun-50);
+	border-bottom: 1px solid var(--sun-light);
+	color: var(--navy-900);
+	text-align: center;
+	font-weight: 500;
+}
+
+.announcement p {
+	margin: 0;
+	padding-block: 0.9rem;
+}
+
+/* Line breaks written for desktop read badly on a narrow screen. */
+@media (max-width: 760px) {
+	.announcement {
+		text-align: left;
+		font-size: 0.95rem;
+	}
+
+	.announcement br {
+		display: none;
+	}
+}
+
+.hero {
+	position: relative;
+	overflow: hidden;
+	padding-block: clamp(3rem, 7vw, 5.5rem) clamp(5rem, 9vw, 7.5rem);
+	background:
+		radial-gradient(circle at 82% 38%, rgb(255 232 171 / 55%) 0, rgb(255 232 171 / 0%) 32%),
+		linear-gradient(180deg, var(--white) 0%, var(--sky-50) 70%, var(--sky-100) 100%);
+}
+
+.hero__inner {
+	display: grid;
+	grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+	align-items: center;
+	gap: 2rem;
+}
+
+.hero__title {
+	font-size: clamp(2.5rem, 1.5rem + 3.6vw, 4.25rem);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	margin-bottom: 1.75rem;
+}
+
+.hero__title span {
+	display: block;
+	font-weight: 300;
+	color: var(--navy-700);
+	text-wrap: nowrap;
+}
+
+@media (max-width: 520px) {
+	.hero__title span {
+		text-wrap: wrap;
+	}
+}
+
+.hero__facts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 2.5rem;
+	margin: 0 0 0.75rem;
+}
+
+.hero__facts div {
+	padding-left: 1rem;
+	border-left: 3px solid var(--sun);
+}
+
+.hero__facts dt {
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.hero__facts dd {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: 1.35rem;
+	font-weight: 500;
+	color: var(--navy);
+}
+
+.hero__facts dd a {
+	color: inherit;
+	text-decoration-color: var(--sun);
+}
+
+.hero__note {
+	color: var(--muted);
 	margin-bottom: 0;
 }
 
-.conference-date-header {
-	margin-bottom: 25px;
-	font-style: italic;
-	font-size: 20px;
+.hero__text .actions {
+	margin-top: 2rem;
 }
 
-/* Schedule */
-.schedule-time {
-	width: 100px;
-	vertical-align: middle;
+.hero__art img {
+	width: 100%;
+	max-width: 520px;
+	margin-left: auto;
 }
 
-.schedule-speaker {
-	width: 250px;
-	text-align: right;
+/* Below this width there isn't room for the title and the art side by side. */
+@media (max-width: 960px) {
+	.hero__inner {
+		grid-template-columns: 1fr;
+	}
+
+	.hero__art {
+		display: none;
+	}
 }
 
-.schedule-item {
-	padding-top: 10px;
-	padding-bottom: 10px;
+/* Key dates: three cards that overlap the bottom of the hero. */
+.key-dates {
+	position: relative;
+	margin-top: -3.5rem;
 }
 
-.schedule-header {
+.timeline {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.timeline a {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	height: 100%;
+	padding: 1.4rem 1.6rem;
+	background: var(--white);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	text-decoration: none;
+	transition: transform 0.15s, border-color 0.15s;
+}
+
+.timeline a:hover {
+	transform: translateY(-2px);
+	border-color: var(--sky);
+}
+
+.timeline__label {
+	font-size: 0.8rem;
 	font-weight: 600;
-	font-size: 1em;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--muted);
 }
 
-.schedule-talk-item {
-	margin-left: 20px;
-	margin-bottom: 10px;
+.timeline__date {
+	font-family: var(--font-display);
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: var(--navy);
 }
 
-/* Posters */
-.poster-author {
-	width: 200px;
+.timeline__main a {
+	background: var(--navy);
+	border-color: var(--navy);
 }
 
-.poster-number {
-	flex: 0 0 2.5rem;
-	max-width: 2.5rem;
-	padding-right: 0.5rem;
-	text-align: right;
-	color: #6c757d;
+.timeline__main .timeline__label {
+	color: var(--sky);
+}
+
+.timeline__main .timeline__date {
+	color: var(--sun);
+}
+
+@media (max-width: 760px) {
+	.key-dates {
+		margin-top: -2.5rem;
+	}
+
+	.timeline {
+		grid-template-columns: 1fr;
+		gap: 0.6rem;
+	}
+
+	.timeline a {
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 0.9rem 1.2rem;
+	}
+
+	.timeline__date {
+		font-size: 1.2rem;
+		text-align: right;
+		white-space: nowrap;
+	}
+
+	.timeline__main a {
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.timeline__main .timeline__date {
+		font-size: 1.45rem;
+		text-align: left;
+	}
+}
+
+/* Sections
+   ========================================================================== */
+
+.section {
+	padding-block: var(--section);
+}
+
+.section--tint {
+	background: var(--sky-50);
+}
+
+.split {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+	gap: 2rem 4rem;
+	align-items: start;
+}
+
+.split--aside {
+	grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+}
+
+.split--media {
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+/* A heading that sits alone in the first column needs no bottom margin. */
+.split > h2,
+.split > div:first-child > h2:last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 860px) {
+	.split,
+	.split--aside,
+	.split--media {
+		grid-template-columns: 1fr;
+		row-gap: 1.25rem;
+	}
+}
+
+.prose {
+	max-width: 68ch;
+}
+
+.prose p:last-child {
+	margin-bottom: 0;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.card {
+	background: var(--white);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: 1.9rem;
+}
+
+.card::before {
+	content: "";
+	display: block;
+	width: 2.25rem;
+	height: 4px;
+	border-radius: 2px;
+	background: var(--sun);
+	margin-bottom: 1.25rem;
+}
+
+.card p:last-child {
+	margin-bottom: 0;
+}
+
+.tags {
+	list-style: none;
+	margin: 1.25rem 0 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.tags li {
+	padding: 0.3rem 0.8rem;
+	border-radius: 999px;
+	background: var(--sky-100);
+	color: var(--navy);
+	font-family: var(--font-display);
 	font-size: 0.9rem;
 	font-weight: 500;
 }
 
-.poster-item {
-	padding: 5px 0;
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
 }
 
-/* Alternate poster-item backgrounds within each poster-group so
-   alternation restarts after each h4/category. */
-.poster-group .poster-item:nth-child(odd) {
-	background: rgba(100, 148, 170, .2);
+.gallery figure {
+	margin: 0;
+}
+
+.gallery img {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	border-radius: var(--radius-sm);
+}
+
+.gallery img.crop-top {
+	object-position: 50% 0;
+}
+
+.gallery figcaption {
+	margin-top: 0.75rem;
+	font-size: 0.9rem;
+	color: var(--muted);
+}
+
+@media (max-width: 760px) {
+	.gallery {
+		grid-template-columns: 1fr;
+	}
+
+	.gallery img {
+		aspect-ratio: 16 / 10;
+	}
+}
+
+/* Supporters strip above the footer on every page. Each logo sits on a white
+   tile so logos with their own white backgrounds still look tidy. */
+.supporters-band {
+	padding-block: clamp(2.5rem, 5vw, 3.5rem);
+	background: var(--sky-50);
+	border-top: 1px solid var(--line);
+}
+
+/* The intro sits above the logos so the logos get the full width. */
+.supporters-band__intro {
+	max-width: 42rem;
+	margin-bottom: 1.75rem;
+}
+
+.supporters-band__intro > :last-child {
+	margin-bottom: 0;
+}
+
+.supporters-band__title {
+	font-size: 1.5rem;
+	margin-bottom: 0.4em;
+}
+
+.supporters-band__intro p {
+	color: var(--muted);
+	font-size: 0.95rem;
+	margin-bottom: 1.25rem;
+}
+
+.supporters-band .supporters {
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+	gap: 1.25rem;
+}
+
+.supporters-band .supporters li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 180px;
+	padding: 1.5rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-sm);
+	background: var(--white);
+}
+
+.supporters-band .supporters li > a {
+	display: flex;
+	justify-content: center;
+	max-width: 100%;
+}
+
+/* Fit each logo inside its tile without stretching it. */
+.supporters-band .supporters img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 128px;
+}
+
+@media (max-width: 520px) {
+	.supporters-band .supporters li {
+		height: 140px;
+		padding: 1.25rem;
+	}
+
+	.supporters-band .supporters img {
+		max-height: 100px;
+	}
+}
+
+.supporters {
+	list-style: none;
+	margin: 2.25rem 0 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 2.5rem 4rem;
+}
+
+.supporters img {
+	width: 240px;
+	max-width: 100%;
+}
+
+/* Inner pages
+   ========================================================================== */
+
+.page-header {
+	padding-block: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
+	background:
+		radial-gradient(circle at 88% 15%, rgb(255 232 171 / 50%) 0, rgb(255 232 171 / 0%) 28%),
+		linear-gradient(180deg, var(--white) 0%, var(--sky-50) 100%);
+	border-bottom: 1px solid var(--line);
+}
+
+.page-header h1 {
+	margin-bottom: 0.35em;
+}
+
+.page-header .lede {
+	margin: 0;
+}
+
+.section--tight {
+	padding-block: clamp(2.5rem, 5vw, 4rem);
+	border-top: 1px solid var(--line);
+}
+
+/* No divider above the first section on a page. */
+.page-header + .section--tight,
+.page-header + .wrap > .section--tight:first-child,
+.jump + .section--tight {
+	border-top: 0;
+}
+
+.prose h2 {
+	margin-bottom: 0.5em;
+}
+
+/* "On this page" links under the page header. */
+.jump ul {
+	list-style: none;
+	margin: 1.75rem 0 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.jump a {
+	display: inline-block;
+	padding: 0.4rem 0.95rem;
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	background: var(--white);
+	color: var(--navy);
+	font-family: var(--font-display);
+	font-size: 0.95rem;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.jump a:hover {
+	border-color: var(--sky);
+	background: var(--sky-50);
+}
+
+.tags--links li {
+	padding: 0;
+	background: none;
+}
+
+.tags--links a {
+	display: block;
+	padding: 0.3rem 0.8rem;
+	border-radius: 999px;
+	background: var(--sky-100);
+	color: var(--navy);
+	text-decoration: none;
+}
+
+.tags--links a:hover {
+	background: var(--sky);
+}
+
+.notice {
+	margin: 1.5rem 0 0;
+	padding: 1rem 1.25rem;
+	border-left: 4px solid var(--sun);
+	border-radius: var(--radius-sm);
+	background: var(--sun-50);
+	color: var(--navy-900);
+}
+
+/* A navy panel for a key date and its button. */
+.callout {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 2rem;
+	border-radius: var(--radius);
+	background: var(--navy);
+	color: #d6e4ef;
+}
+
+.callout__label {
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--sky);
+}
+
+.callout__value {
+	margin: 0.15rem 0 1.25rem;
+	font-family: var(--font-display);
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--sun);
+}
+
+.callout__note {
+	margin: 1rem 0 0;
+	font-size: 0.92rem;
+}
+
+.callout a:not(.btn) {
+	color: var(--white);
+	text-decoration-color: var(--sun);
+}
+
+.callout :focus-visible {
+	outline-color: var(--sun);
+}
+
+@media (max-width: 520px) {
+	.callout {
+		padding: 1.5rem;
+	}
+
+	.callout .btn {
+		align-self: stretch;
+	}
+}
+
+.stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 1rem;
+	margin: 0;
+}
+
+.stats div {
+	padding: 1.25rem 1.4rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--sky-50);
+}
+
+.stats dt {
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.stats dd {
+	margin: 0.2rem 0 0;
+	font-family: var(--font-display);
+	font-size: 2.25rem;
+	font-weight: 600;
+	color: var(--navy);
+}
+
+.photo {
+	margin: 0;
+}
+
+.photo img {
+	width: 100%;
+	border-radius: var(--radius-sm);
+}
+
+.photo figcaption {
+	margin-top: 0.6rem;
+	font-size: 0.9rem;
+	color: var(--muted);
+}
+
+.photo--narrow {
+	max-width: 300px;
+	justify-self: center;
+}
+
+.photo--map img {
+	border: 1px solid var(--line);
+	background: var(--white);
+}
+
+/* Program
+   ========================================================================== */
+
+.program__section {
+	padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.program__section + .program__section {
+	border-top: 1px solid var(--line);
+}
+
+.program__intro {
+	color: var(--muted);
+	max-width: 65ch;
+}
+
+/* Timeline: times on the left, a rail with a dot per item, then the item. */
+.schedule {
+	--time: 6.5rem;
+	--rail: calc(var(--time) + 1.25rem);
+	position: relative;
+	list-style: none;
+	margin: 2rem 0 0;
+	padding: 0;
+}
+
+/* Each item draws its own stretch of the rail (::before) and its dot
+   (::after, so it sits on top of the rail). That way the rail starts at the
+   first dot and stops at the last one. --dot-y is how far down the item the
+   center of its dot is. */
+.schedule__item {
+	--dot-y: calc(0.45rem + 5px);
+	position: relative;
+	display: grid;
+	grid-template-columns: var(--time) minmax(0, 1fr);
+	align-content: start;
+	column-gap: 2.5rem;
+	padding-bottom: 1.25rem;
+}
+
+.schedule__item--session {
+	--dot-y: calc(1.55rem + 7px);
+}
+
+.schedule__item::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: calc(var(--rail) - 1px);
+	width: 2px;
+	background: var(--line);
+}
+
+.schedule__item:first-child::before {
+	top: var(--dot-y);
+}
+
+.schedule__item:last-child::before {
+	bottom: auto;
+	height: var(--dot-y);
+}
+
+.schedule__item:only-child::before {
+	display: none;
+}
+
+.schedule__item::after {
+	content: "";
+	position: absolute;
+	top: calc(var(--dot-y) - 5px);
+	left: calc(var(--rail) - 5px);
+	width: 10px;
+	height: 10px;
+	border: 2px solid var(--sky);
+	border-radius: 50%;
+	background: var(--white);
+}
+
+.schedule__item--session::after {
+	top: calc(var(--dot-y) - 7px);
+	left: calc(var(--rail) - 7px);
+	width: 14px;
+	height: 14px;
+	border: 0;
+	background: var(--sun);
+	box-shadow: 0 0 0 4px var(--sun-light);
+}
+
+.schedule__time {
+	margin: 0;
+	padding-top: 0.05rem;
+	text-align: right;
+	font-family: var(--font-display);
+	font-weight: 600;
+	color: var(--navy);
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+.schedule__item--session .schedule__time {
+	padding-top: 1.15rem;
+}
+
+.schedule__item--session .schedule__body {
+	padding: 1.1rem 1.5rem 0.5rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--white);
+}
+
+.schedule__label {
+	margin: 0 0 0.15rem;
+	font-family: var(--font-display);
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--gold-text);
+}
+
+.schedule__title {
+	margin: 0;
+}
+
+.schedule__item--break .schedule__title {
+	font-family: var(--font-display);
+	font-weight: 500;
+	color: var(--ink);
+}
+
+.schedule__chair {
+	margin: 0.2rem 0 0;
+	font-size: 0.95rem;
+	color: var(--muted);
+}
+
+.schedule__item--break .schedule__chair {
+	font-family: var(--font-body);
+	font-weight: 400;
+}
+
+.talks {
+	list-style: none;
+	margin: 0.75rem 0 0;
+	padding: 0;
+}
+
+.talk {
+	padding: 0.8rem 0;
+	border-top: 1px solid var(--line);
+}
+
+.talk__title {
+	margin: 0;
+	font-weight: 500;
+	line-height: 1.45;
+}
+
+/* Vertical padding on an inline link enlarges its tap area without moving
+   any text. */
+.talk__title a,
+.poster__title a {
+	padding-block: 0.15rem;
+}
+
+.talk__speaker {
+	margin: 0.15rem 0 0;
+	font-size: 0.95rem;
+	color: var(--muted);
+}
+
+@media (max-width: 640px) {
+	.schedule {
+		--rail: 0.5rem;
+	}
+
+	.schedule__item {
+		grid-template-columns: minmax(0, 1fr);
+		padding-left: 1.75rem;
+	}
+
+	.schedule__time,
+	.schedule__item--session .schedule__time {
+		text-align: left;
+		padding-top: 0;
+		margin-bottom: 0.35rem;
+	}
+
+	.schedule__item--session {
+		--dot-y: calc(0.35rem + 7px);
+	}
+
+	.schedule__item--session .schedule__body {
+		padding-inline: 1.1rem;
+	}
+}
+
+.posters__category {
+	margin: 2.75rem 0 0;
+}
+
+.posters {
+	list-style: none;
+	margin: 0.75rem 0 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: 2.5rem;
+}
+
+.poster {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	padding: 0.85rem 0;
+	border-bottom: 1px solid var(--line);
+}
+
+.poster__number {
+	flex: none;
+	display: grid;
+	place-items: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	border-radius: 50%;
+	background: var(--sky-100);
+	color: var(--navy);
+	font-family: var(--font-display);
+	font-size: 0.95rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+.poster__title {
+	margin: 0;
+	font-weight: 500;
+	line-height: 1.45;
+}
+
+.poster__author {
+	margin: 0.2rem 0 0;
+	font-size: 0.95rem;
+	color: var(--muted);
+}
+
+@media (max-width: 760px) {
+	.posters {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* About
+   ========================================================================== */
+
+.people {
+	list-style: none;
+	margin: 1.5rem 0 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 1rem;
+}
+
+.person {
+	padding: 1.1rem 1.25rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-sm);
+	background: var(--white);
+}
+
+/* Photo above the name; on phones it sits beside it (see the 520px query). */
+.person--photo {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.9rem;
+}
+
+.person__photo {
+	flex: none;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	object-fit: cover;
+	background: var(--sky-100);
+}
+
+/* Stand-in until a member has a photo: their initials in a circle. */
+.person__photo--placeholder {
+	display: grid;
+	place-items: center;
+	border: 1px solid var(--sky);
+	font-family: var(--font-display);
+	font-size: 1.6rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: var(--navy);
+}
+
+.person__name {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--navy);
+}
+
+.person__name a {
+	display: inline-block;
+	padding-block: 0.15rem;
+	color: inherit;
+}
+
+.person__affiliation {
+	margin: 0.2rem 0 0;
+	font-size: 0.95rem;
+	line-height: 1.45;
+	color: var(--muted);
+}
+
+.people__subhead {
+	margin-top: 2.5rem;
+}
+
+.people--compact {
+	gap: 0 1.5rem;
+}
+
+.people--compact .person {
+	padding: 0.6rem 0;
+	border: 0;
+	border-bottom: 1px solid var(--line);
+	border-radius: 0;
+	background: none;
+}
+
+.people--compact .person__name {
+	font-size: 1rem;
+	color: var(--ink);
+}
+
+.year-cards {
+	list-style: none;
+	margin: 1.5rem 0 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+	gap: 1rem;
+}
+
+.year-cards a {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	height: 100%;
+	padding: 1.25rem 1.4rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--white);
+	text-decoration: none;
+	transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.year-cards a:hover {
+	transform: translateY(-2px);
+	border-color: var(--sky);
+	box-shadow: var(--shadow);
+}
+
+.year-cards__year {
+	font-family: var(--font-display);
+	font-size: 1.75rem;
+	font-weight: 600;
+	color: var(--navy);
+}
+
+.year-cards__cta {
+	font-size: 0.9rem;
+	color: var(--muted);
+}
+
+/* Phones: one compact row per year. */
+@media (max-width: 520px) {
+	.year-cards {
+		gap: 0.6rem;
+	}
+
+	.year-cards a {
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 0.85rem 1.2rem;
+	}
+
+	.year-cards__year {
+		font-size: 1.35rem;
+	}
+
+	.people {
+		gap: 0.6rem;
+	}
+
+	.person {
+		padding: 0.85rem 1rem;
+	}
+
+	.person--photo {
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.person__photo {
+		width: 64px;
+		height: 64px;
+	}
+
+	.person__photo--placeholder {
+		font-size: 1.3rem;
+	}
+}
+
+/* Printing
+   ========================================================================== */
+
+/* The printable schedule (print_schedule.html) has to print on one legal
+   page. On screen the page shows the sheet at its printed size: 8.5in wide
+   with the 0.4in @page margins, so 7.7in × 13.2in of content. Safari lays a
+   printed page out 15/16 that size and scales it up to fill the paper, so
+   the page's script sets --print-scale to 16/15 there and the sheet uses
+   the smaller size. The script also measures the schedule and stores the
+   largest text size that fits in --sheet-size. Sizes on the sheet are in
+   rem so they all scale with it, and the styles below apply on screen and
+   in print alike so the measurement matches what prints. */
+html:has(.print-sheet) {
+	font-size: var(--sheet-size, 12px);
+}
+
+.print-sheet {
+	font-size: 1rem;
+	background: var(--sky-50);
+	-webkit-print-color-adjust: exact; /* Safari skips backgrounds otherwise */
+	print-color-adjust: exact;
+}
+
+/* In px, not rem, so it doesn't change size with the sheet's text. */
+.print-sheet__note {
+	max-width: 8.5in;
+	margin: 20px auto 0;
+	padding-inline: 16px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--muted);
+	text-align: center;
+}
+
+.print-sheet__paper {
+	box-sizing: content-box;
+	width: calc(7.7in / var(--print-scale, 1));
+	min-height: calc(13.2in / var(--print-scale, 1));
+	margin: 16px auto 32px;
+	padding: 0.4in;
+	background: var(--white);
+	box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 8px 24px rgb(0 0 0 / 8%);
+}
+
+/* The content is as tall as the page (a hair less, so rounding can't spill
+   onto a blank second page). The timeline fills whatever the header leaves:
+   its last item sits at the bottom and the spare room is shared equally
+   between the other items. While the script measures, the content goes
+   back to its natural height (print-sheet--measuring). */
+.print-sheet__content {
+	display: flex;
+	flex-direction: column;
+	height: calc(13.2in / var(--print-scale, 1) - 2px);
+}
+
+.print-sheet--measuring .print-sheet__content {
+	height: auto;
+}
+
+/* Keep the dot's pale ring inside the page, or Safari clips it. */
+.print-sheet .eyebrow::before {
+	margin-left: 4px;
+}
+
+.print-sheet a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.print-sheet__header {
+	margin-bottom: 0.5rem;
+}
+
+.print-sheet h1 {
+	font-size: 2.4rem;
+	margin-bottom: 0.15em;
+}
+
+.print-sheet .schedule {
+	--time: 5.25rem;
+	--rail: calc(var(--time) + 1rem);
+	margin-top: 1rem;
+	flex: 1 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Every item but the last grows by the same amount to fill the page. The
+   growth is inside each item, so the rail stays unbroken. */
+.print-sheet .schedule__item {
+	flex-grow: 1;
+	column-gap: 2rem;
+	padding-bottom: 0.5rem;
+}
+
+.print-sheet .schedule__item:last-child {
+	flex-grow: 0;
+	padding-bottom: 0;
+}
+
+/* A session's label, title, and chair share one line, with the talks below. */
+.print-sheet .schedule__item--session .schedule__body {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	column-gap: 0.75rem;
+	padding: 0.45rem 1rem 0.2rem;
+}
+
+.print-sheet .schedule__item--session .schedule__time {
+	padding-top: 0.5rem;
+}
+
+.print-sheet .schedule__item--session {
+	--dot-y: calc(0.8rem + 7px);
+}
+
+.print-sheet .schedule__label {
+	margin: 0;
+}
+
+.print-sheet .schedule__item--session .schedule__title {
+	font-size: 1.2rem;
+}
+
+.print-sheet .schedule__item--session .schedule__chair {
+	margin: 0 0 0 auto;
+}
+
+.print-sheet .talks {
+	flex-basis: 100%;
+	margin-top: 0.3rem;
+}
+
+/* Each speaker sits to the right of their talk, like the old sheet. */
+.print-sheet .talk {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	column-gap: 1.5rem;
+	align-items: baseline;
+	padding: 0.3rem 0;
+}
+
+.print-sheet .talk__speaker {
+	margin: 0;
+	text-align: right;
+	white-space: nowrap;
+}
+
+@media print {
+	.site-header,
+	.site-footer,
+	.skip-link,
+	.jump,
+	.announcement,
+	.hero__art,
+	.actions,
+	.callout .btn,
+	.supporters-band .btn,
+	nav[aria-label="Poster categories"] {
+		display: none !important;
+	}
+
+	/* Most sizes are in rem, so this scales the whole page down for paper.
+	   No navy behind the page on paper, even with backgrounds printing. */
+	html {
+		font-size: 12px;
+		background: none;
+	}
+
+	body {
+		font-size: 1rem;
+		color: #000;
+	}
+
+	.hero,
+	.page-header,
+	.section--tint {
+		background: none !important;
+		padding-block: 0 1rem;
+		border: 0;
+	}
+
+	.key-dates {
+		margin-top: 0;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.wrap {
+		max-width: none;
+		padding-inline: 0;
+	}
+
+	.program__section {
+		padding-block: 1rem;
+	}
+
+	#posters {
+		break-before: page;
+	}
+
+	.schedule__item,
+	.poster,
+	.person,
+	.card {
+		break-inside: avoid;
+	}
+
+	.schedule__item {
+		padding-bottom: 0.6rem;
+	}
+
+	.talk {
+		padding: 0.4rem 0;
+	}
+
+	/* The printable schedule: drop the on-screen page frame. */
+	.print-sheet {
+		background: none;
+	}
+
+	.print-sheet__note {
+		display: none;
+	}
+
+	.print-sheet__paper {
+		width: auto;
+		min-height: 0;
+		margin: 0;
+		padding: 0;
+		box-shadow: none;
+	}
 }

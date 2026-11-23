@@ -1,3 +1,10 @@
+# Shown on the About page. A member without a photo gets a circle with their
+# initials. To add a photo, put a square image (at least 160x160) in
+# images/committee/ and point to it from the member, e.g.
+#
+#   - name: Rachel Edie
+#     photo: /images/committee/rachel-edie.jpg
+
 members:
   - name: Rachel Edie
     email: redie@utah.gov

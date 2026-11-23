@@ -1,0 +1,44 @@
+{% comment %}
+  The day's schedule from _data/schedule.yaml, as a timeline. Used by the
+  Program page and the printable schedule (print_schedule.html).
+  Items with talks are sessions; everything else (breaks, lunch, welcome)
+  is shown as a short row. A name like "Session 1: Exposure Assessment" is
+  split into a label ("Session 1") and a title.
+{% endcomment %}
+<ol class="schedule">
+    {% for item in site.data.schedule.schedule %}
+    {% assign label = item.name | split: ": " | first %}
+    {% if label == item.name %}
+        {% assign label = nil %}
+        {% assign title = item.name %}
+    {% else %}
+        {% assign title = item.name | remove_first: label | remove_first: ": " %}
+    {% endif %}
+
+    {% if item.talks %}
+    <li class="schedule__item schedule__item--session">
+        <p class="schedule__time">{{ item.start_time }}</p>
+        <div class="schedule__body">
+            {% if label %}<p class="schedule__label">{{ label }}</p>{% endif %}
+            <h3 class="schedule__title">{{ title }}</h3>
+            {% if item.chair %}<p class="schedule__chair">Chair: {{ item.chair }}</p>{% endif %}
+            <ul class="talks">
+                {% for talk in item.talks %}
+                <li class="talk">
+                    <p class="talk__title">{% if talk.link %}<a href="{{ talk.link }}" target="_blank" rel="noopener noreferrer">{{ talk.title }}</a>{% else %}{{ talk.title }}{% endif %}</p>
+                    <p class="talk__speaker">{{ talk.author }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </li>
+    {% else %}
+    <li class="schedule__item schedule__item--break">
+        <p class="schedule__time">{{ item.start_time }}</p>
+        <div class="schedule__body">
+            <p class="schedule__title">{{ title }}{% if item.chair %} <span class="schedule__chair">· {{ item.chair }}</span>{% endif %}</p>
+        </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ol>
